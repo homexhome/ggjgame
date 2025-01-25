@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cf8prbpwa0ymh"]
+[gd_scene load_steps=14 format=3 uid="uid://8up1xsdd7t1x"]
 
-[ext_resource type="Script" path="res://scenes/level.gd" id="1_8fmxb"]
-[ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="2_36yio"]
-[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="3_1sbfo"]
-[ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="4_gmnf3"]
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_wcjwt"]
+[ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="2_w4s03"]
+[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="3_gfkuv"]
+[ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="4_7un43"]
+[ext_resource type="PackedScene" uid="uid://vw064nrftrc8" path="res://scenes/teleport_point.tscn" id="6_hythh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yj88"]
-albedo_texture = ExtResource("2_36yio")
+albedo_texture = ExtResource("2_w4s03")
 uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cmkps"]
@@ -29,8 +30,8 @@ size = Vector3(2, 1, 5.84821)
 size = Vector3(1, 1, 4)
 
 [node name="Level" type="Node3D" node_paths=PackedStringArray("access_poits")]
-script = ExtResource("1_8fmxb")
-website_path = "www.verygoodgame.com/hub"
+script = ExtResource("1_wcjwt")
+website_path = "1"
 access_poits = [NodePath("AccessPoint")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -50,7 +51,7 @@ use_collision = true
 size = Vector3(4, 1, 1)
 material = SubResource("StandardMaterial3D_2yj88")
 
-[node name="AccessPoint" parent="." instance=ExtResource("3_1sbfo")]
+[node name="AccessPoint" parent="." instance=ExtResource("3_gfkuv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.09677, 0.573416, -1.55002)
 id = 0
 
@@ -58,7 +59,7 @@ id = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.17023, 0.515991, -1.6549)
 collision_layer = 0
 monitorable = false
-script = ExtResource("4_gmnf3")
+script = ExtResource("4_7un43")
 
 [node name="Collision" type="CollisionShape3D" parent="CameraPlacer"]
 shape = SubResource("BoxShape3D_cmkps")
@@ -71,7 +72,7 @@ mesh = SubResource("BoxMesh_b6rqu")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.02247, 0.515991, -6.21308)
 collision_layer = 0
 monitorable = false
-script = ExtResource("4_gmnf3")
+script = ExtResource("4_7un43")
 
 [node name="Collision" type="CollisionShape3D" parent="CameraPlacer2"]
 shape = SubResource("BoxShape3D_gpsq1")
@@ -113,3 +114,7 @@ shape = SubResource("BoxShape3D_rcocn")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.607972, 0.793959, 0, -0.793959, 0.607972, -8.98671, 2.89812, -1.77102)
 light_energy = 0.556
+
+[node name="TeleportPoint" parent="." instance=ExtResource("6_hythh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -4)
+website_to = "www.verygoodgame.com/hub"
