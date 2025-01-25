@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmti64qangmbb"]
+
+[ext_resource type="Script" path="res://scripts/scalable_object.gd" id="1_2001a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kes7q"]
+custom_solver_bias = 0.229
+margin = 0.5
+size = Vector3(1.195, 1, 1.25)
+
+[node name="ScalableObject" type="CSGBox3D"]
+use_collision = true
+script = ExtResource("1_2001a")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+priority = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_kes7q")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
