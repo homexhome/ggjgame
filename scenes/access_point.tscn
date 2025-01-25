@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn7fx557coo2v"]
+
+[ext_resource type="Script" path="res://scripts/access_point.gd" id="1_wmqgd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fhj1q"]
+radius = 0.1
+height = 0.2
+
+[node name="AccessPoint" type="Node3D"]
+script = ExtResource("1_wmqgd")
+
+[node name="SpawnPoint" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_fhj1q")

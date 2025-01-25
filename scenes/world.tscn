@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://tx0w5xboxs2d"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_nr2mp"]
+[ext_resource type="Script" path="res://scenes/test_scenes/test_level_loader.gd" id="2_lwgvp"]
+
+[sub_resource type="Environment" id="Environment_iji23"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+ambient_light_source = 1
+ambient_light_energy = 0.82
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_nr2mp")
+
+[node name="Node3D" type="Node3D" parent="."]
+script = ExtResource("2_lwgvp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iji23")

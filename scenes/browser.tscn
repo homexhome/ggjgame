@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://wvvqegxjx5rh"]
+
+[ext_resource type="Script" path="res://scripts/browser.gd" id="1_v8pjd"]
+[ext_resource type="Script" path="res://scenes/browser_line.gd" id="2_d03vt"]
+[ext_resource type="Script" path="res://scripts/loading_background.gd" id="2_t4od5"]
+
+[node name="Browser" type="Node" node_paths=PackedStringArray("browser_line")]
+script = ExtResource("1_v8pjd")
+browser_line = NodePath("BrowserUI/Bar/LineEdit")
+
+[node name="Browser3D" type="Node3D" parent="."]
+
+[node name="BrowserUI" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Control" parent="BrowserUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="LoadingBackground" type="ColorRect" parent="BrowserUI/Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.629675, 0.629675, 0.629675, 1)
+script = ExtResource("2_t4od5")
+
+[node name="ColorRect" type="ColorRect" parent="BrowserUI/Background"]
+layout_mode = 0
+offset_right = 1602.0
+offset_bottom = 85.0
+color = Color(0.496326, 0.65867, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="BrowserUI/Background"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -85.0
+offset_right = 1602.0
+grow_vertical = 0
+color = Color(0.498039, 0.658824, 1, 1)
+
+[node name="Bar" type="Control" parent="BrowserUI"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 84.0
+grow_horizontal = 2
+
+[node name="LineEdit" type="LineEdit" parent="BrowserUI/Bar"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 9.0
+offset_right = 1493.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Enter website..."
+script = ExtResource("2_d03vt")

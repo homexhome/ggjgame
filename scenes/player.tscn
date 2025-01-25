@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://elqyna6ncvxs"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_3lh6r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x3qvh"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5dq8r"]
+radius = 0.25
+height = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_3lh6r")
+FORWARD_SPEED = 2.0
+BACK_SPEED = 1.0
+TURN_SPEED = 0.06
+stop_speed = 30.0
+acceleration_speed = 50.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_x3qvh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CapsuleMesh_5dq8r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.565, 0, 0, 0, -0.0777245, -0.559628, 0, 0.559628, -0.0777245, 0, 0.710905, -0.171732)
+mesh = SubResource("CapsuleMesh_5dq8r")
