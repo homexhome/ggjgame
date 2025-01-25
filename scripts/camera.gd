@@ -25,6 +25,6 @@ func _process(_delta):
 			var old = transform.basis
 			look_at(player.global_position)
 			var new = transform.basis
-			transform.basis = lerp(old, new, .1)
+			transform.basis = lerp(old, new, .1).orthonormalized()
 	else:
 		set_up_player()

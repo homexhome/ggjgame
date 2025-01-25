@@ -18,6 +18,7 @@ class_name Player
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var browser : Browser
+@export var animation_player : AnimationPlayer
 
 func _ready():
 	Session.set_up_player(self)
@@ -39,13 +40,16 @@ func move_character(delta):
 	if input_direction == Vector2(0,0):
 		velocity.z = move_toward(velocity.z,0,delta * stop_speed)
 		velocity.x = move_toward(velocity.x,0,delta * stop_speed)
-		
+		if animation_player.current_animation != "idle":
+			animation_player.play("idle")
 	if input_direction.y !=  0 and input_direction.x == 0:
 		var _delta_y = velocity.y
 		var delta_velocity = direction * (BACK_SPEED if input_direction.y > 0 else FORWARD_SPEED)
 		velocity.x = move_toward(velocity.x,delta_velocity.x,delta * acceleration_speed)
 		velocity.z = move_toward(velocity.z,delta_velocity.z,delta * acceleration_speed)
 		velocity.y = _delta_y
+		if animation_player.current_animation != "walk":
+			animation_player.play("walk")
 	if input_direction.x !=  0:
 		velocity.z = 0
 		velocity.x = 0

@@ -1,4 +1,4 @@
 extends Node3D
 
 func _ready() -> void:
-	Loader.load_level("www.verygoodgame.com/level_1")
+	Loader.load_level("www.verygoodgame.com/hub")

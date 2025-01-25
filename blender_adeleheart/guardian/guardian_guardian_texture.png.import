@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg5k3c8ef2cx1"
-path.s3tc="res://.godot/imported/player_player_texture.png-54ad2b77a99a2821b8ab7b055d05c3ea.s3tc.ctex"
+uid="uid://blmbubcflb6qe"
+path.s3tc="res://.godot/imported/guardian_guardian_texture.png-c15108ab26c89f7d807cfb545a459e91.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "e81d14ff56c7a74e4e873526cc24fa91"
+"md5": "0897a5303cd262c5bb09cdffd819f21d"
 }
 
 [deps]
 
-source_file="res://blender_adeleheart/player/player_player_texture.png"
-dest_files=["res://.godot/imported/player_player_texture.png-54ad2b77a99a2821b8ab7b055d05c3ea.s3tc.ctex"]
+source_file="res://blender_adeleheart/guardian/guardian_guardian_texture.png"
+dest_files=["res://.godot/imported/guardian_guardian_texture.png-c15108ab26c89f7d807cfb545a459e91.s3tc.ctex"]
 
 [params]
 
