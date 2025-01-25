@@ -10,4 +10,6 @@ func place_camera_to_place(body):
 	if !Session.camera_initialized: return
 	
 	if body is Player:
+		if Session.get_camera().global_position == camera_place.global_position: return
 		Session.get_camera().global_position = camera_place.global_position
+		Session.get_camera().skipping_frame = true

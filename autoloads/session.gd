@@ -14,6 +14,8 @@ var refresh_frame : bool = false
 var datamosh_mount: float = 0.0
 var force_datamosh:float = 0.0
 
+var active_tool : Tool
+
 func set_up_player(node):
 	player = node
 
@@ -60,3 +62,11 @@ func pi_2_pi(theta):
 
 func get_datamosh_amount() -> float:
 	return max(datamosh_mount, force_datamosh)
+
+func set_tool(_tool : Tool):
+	active_tool = _tool
+
+func get_tool_type() -> Tool.TYPE:
+	if active_tool == null:
+		return Tool.TYPE.MOUSE
+	return active_tool.tool_type
