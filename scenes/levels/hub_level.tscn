@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cf8prbpwa0ymh"]
+[gd_scene load_steps=14 format=3 uid="uid://cf8prbpwa0ymh"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_8fmxb"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="2_36yio"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="3_1sbfo"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="4_gmnf3"]
+[ext_resource type="PackedScene" uid="uid://dixe6g56v5evm" path="res://blender_adeleheart/enviroment/fish/fish.glb" id="5_otjnc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yj88"]
 albedo_texture = ExtResource("2_36yio")
@@ -113,3 +114,6 @@ shape = SubResource("BoxShape3D_rcocn")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.607972, 0.793959, 0, -0.793959, 0.607972, -8.98671, 2.89812, -1.77102)
 light_energy = 0.556
+
+[node name="fish2" parent="." instance=ExtResource("5_otjnc")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -14, 1, -10)

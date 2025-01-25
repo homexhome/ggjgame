@@ -59,3 +59,7 @@ shape = SubResource("BoxShape3D_yt5y1")
 [node name="CameraPlace" type="MeshInstance3D" parent="CameraPlacer2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6632, 8.14857, -5.91201)
 mesh = SubResource("BoxMesh_b6rqu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.607972, 0.793959, 0, -0.793959, 0.607972, -8.98671, 2.89812, -1.77102)
+light_energy = 0.556
