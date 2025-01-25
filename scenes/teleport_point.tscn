@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://vw064nrftrc8"]
+
+[ext_resource type="Script" path="res://scripts/teleport_point.gd" id="1_24cu3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kc0aw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fr8xv"]
+radius = 0.25
+height = 0.5
+
+[node name="TeleportPoint" type="Node3D"]
+script = ExtResource("1_24cu3")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_kc0aw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_fr8xv")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
