@@ -91,7 +91,7 @@ geometry_source_group_name = &"bake"
 material = ExtResource("11_ec52a")
 size = Vector2(0.01, 0.01)
 
-[node name="Level3" type="Node3D" node_paths=PackedStringArray("access_poits")]
+[node name="Level4" type="Node3D" node_paths=PackedStringArray("access_poits")]
 script = ExtResource("1_8fmxb")
 website_path = "http://awell.world/hub"
 access_poits = [NodePath("AccessPoint")]

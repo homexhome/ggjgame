@@ -42,7 +42,7 @@ func increase_object_scale(_state : STATE):
 	if scale_state == STATE.SMALL:
 		if _state == STATE.NORMAL:
 			y_pos += 0.15
-
+	$AudioStreamPlayer3D.play()
 	match _state:
 		STATE.LARGE:
 			__tween.tween_property(collision.shape, "size", Vector3(collision.shape.size.x,LARGE_SCALE + 0.1,collision.shape.size.z), 1)
@@ -77,7 +77,7 @@ func decrease_object_scale(_state : STATE):
 	if scale_state == STATE.LARGE:
 		if _state == STATE.NORMAL:
 			y_pos -= 0.2
-
+	$AudioStreamPlayer3D.play()
 	match _state:
 		STATE.NORMAL:
 			__tween.tween_property(collision.shape, "size", Vector3(collision.shape.size.x,NORMAL_SCALE + 0.1,collision.shape.size.z), 1)

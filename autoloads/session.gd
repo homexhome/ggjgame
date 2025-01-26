@@ -83,8 +83,8 @@ func pi_2_pi(theta):
 func get_datamosh_amount() -> float:
 	return max(datamosh_mount, force_datamosh)
 
+var count = 0
 func set_tool(_tool : Tool):
-	var count = 0
 	active_tool = _tool
 	if active_tool.tool_type == Tool.TYPE.INFO:
 		info_signal.emit()

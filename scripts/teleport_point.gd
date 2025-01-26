@@ -33,4 +33,6 @@ func _on_area_3d_input_event(_camera: Node, _event: InputEvent, _event_position:
 			Session.get_browser().play_message("Can't use that tool here!")
 			return
 		active = false
+		$AudioStreamPlayer.play()
+		await $AudioStreamPlayer.finished
 		Loader.load_level(website_to,access_point_id_to)

@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_0lboy"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="2_elr50"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="3_b1ty1"]
-[ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="4_2lrtg"]
 [ext_resource type="PackedScene" uid="uid://dmti64qangmbb" path="res://scenes/scalable_object.tscn" id="7_vw557"]
 [ext_resource type="Script" path="res://scripts/fish_path_follow_3d.gd" id="8_yjio3"]
 [ext_resource type="PackedScene" uid="uid://bta7nxuh6c0sl" path="res://scenes/fish.tscn" id="9_2ajjt"]
@@ -36,12 +35,15 @@ size = Vector3(0.453125, 5.83722, 14.237)
 [sub_resource type="BoxShape3D" id="BoxShape3D_epohp"]
 size = Vector3(1, 6.37793, 14.2746)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yul8t"]
+load_path = "res://.godot/imported/texture_07.png-c4cc82af21e95dca9745838edddce19f.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yj88"]
-albedo_texture = ExtResource("4_2lrtg")
+albedo_texture = SubResource("CompressedTexture2D_yul8t")
 uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofw7s"]
-albedo_texture = ExtResource("4_2lrtg")
+albedo_texture = SubResource("CompressedTexture2D_yul8t")
 uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="Curve3D" id="Curve3D_kh216"]

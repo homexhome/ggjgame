@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmti64qangmbb"]
+[gd_scene load_steps=8 format=3 uid="uid://dmti64qangmbb"]
 
 [ext_resource type="Material" uid="uid://ruabjqh3378x" path="res://resources/base_object_scaler.tres" id="1_7b546"]
 [ext_resource type="Script" path="res://scripts/scalable_object.gd" id="1_2001a"]
 [ext_resource type="Material" uid="uid://dc3rg4btj70wj" path="res://resources/good_hover.tres" id="3_o0gk0"]
 [ext_resource type="Material" uid="uid://60adtidk21ma" path="res://resources/bad_hover.tres" id="4_2f1ax"]
 [ext_resource type="PackedScene" uid="uid://3fcqnc8iona" path="res://scenes/overlay_node.tscn" id="5_7ufec"]
+[ext_resource type="AudioStream" uid="uid://bk1qx5weoi604" path="res://music/sounds/scaling.wav" id="6_0734r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kes7q"]
 custom_solver_bias = 0.229
@@ -27,6 +28,9 @@ priority = 1
 shape = SubResource("BoxShape3D_kes7q")
 
 [node name="OverlayNode" parent="." instance=ExtResource("5_7ufec")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_0734r")
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]
