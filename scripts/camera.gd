@@ -3,7 +3,6 @@ class_name Camera
 
 var player : Player
 var last_player_pos : Vector3
-@onready var helper = $Helper
 var skipping_frame : bool = false
 
 func _ready():

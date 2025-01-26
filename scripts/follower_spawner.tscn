@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://coo2r12xb6pn5"]
+
+[ext_resource type="Script" path="res://scripts/follower_spawn.gd" id="1_u5vt3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jq06c"]
+size = Vector3(1.44153, 1, 1.78345)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bs4fr"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_u5vt3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jq06c")
+
+[node name="PlaceToSpawn" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_bs4fr")
