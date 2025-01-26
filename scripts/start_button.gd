@@ -9,7 +9,7 @@ func _on_pressed():
 	show_lore()
 
 func show_lore():
-	var time = 5.0
+	var time = 14.0
 	hide()
 	while time > 0:
 		time -= get_process_delta_time() 
