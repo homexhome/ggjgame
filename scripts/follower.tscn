@@ -397,8 +397,6 @@ mesh = SubResource("CapsuleMesh_6qcfu")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.8
 target_desired_distance = 0.8
-debug_enabled = true
-debug_use_custom = true
 debug_path_custom_color = Color(1, 0, 1, 1)
 
 [node name="guardian" type="Node3D" parent="."]

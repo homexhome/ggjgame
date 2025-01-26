@@ -94,8 +94,15 @@ func set_tool(_tool : Tool):
 			if count == 0:
 				browser.play_important_message("Use your tools!", 3.0)
 				count +=1
-			if count:
-				pass
+			elif count == 1:
+				browser.play_important_message("Did you forget how to use your tools?!", 3.0)
+				count +=1
+			elif count == 2:
+				browser.play_important_message("They not gonna pay you for slacking", 3.0)
+				count +=1
+			else:
+				browser.play_important_message("Use your tools!", 3.0)
+
 	if _tool.mouse_texture != null:
 		Input.set_custom_mouse_cursor(_tool.mouse_texture)
 

@@ -60,7 +60,7 @@ _data = {
 }
 point_count = 17
 
-[node name="Level" type="Node3D" node_paths=PackedStringArray("access_poits")]
+[node name="Level2" type="Node3D" node_paths=PackedStringArray("access_poits")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0261402, -0.0106106, -0.00465226)
 script = ExtResource("1_0lboy")
 website_path = "http://awell.world/treasure"

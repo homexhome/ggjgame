@@ -27,3 +27,4 @@ func play_message(string : String):
 func play_important_message(string : String, custom_time : float = 0.0):
 	important_message.play_message(string, custom_time)
 	
+	
