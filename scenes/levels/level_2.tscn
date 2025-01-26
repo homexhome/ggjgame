@@ -114,7 +114,7 @@ transform = Transform3D(0.999949, 0, 0, 0, 1, 0, 0, 0, 0.999949, -0.0636873, 0.0
 shape = SubResource("BoxShape3D_vj8mx")
 
 [node name="CameraPlace" type="MeshInstance3D" parent="CameraPlacer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.605292, 2.5, 2.84705)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71528, 2.46947, 2.9349)
 mesh = SubResource("BoxMesh_b6rqu")
 
 [node name="CameraPlacer6" type="Area3D" parent="."]

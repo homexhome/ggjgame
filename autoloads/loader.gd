@@ -23,7 +23,7 @@ func _ready() -> void:
 		await get_tree().process_frame
 	Session.get_world().add_child(browser)
 
-func load_level(path : String, place_id_for_player : int = 0):
+func load_level(path : String, place_id_for_player : int = 0, last_level : String = ""):
 	while Session.get_world() == null:
 		await get_tree().process_frame
 	if loading: return false
@@ -53,12 +53,16 @@ func load_level(path : String, place_id_for_player : int = 0):
 		if level.event_on_load != -1:
 			Session.add_event(level.event_on_load)
 
+		if level.loading_another_level_node != null and last_level != "":
+			level.loading_another_level_node.pass_last_level(last_level)
+
 		loaded_scenes.append_array([level,camera,player])
 		loaded = true
 		Session.get_browser().set_line_text(level.website_path)
 	loading = false
 	if loaded:
 		await get_tree().create_timer(1.0).timeout
+		Session.clear_ads()
 	loading_ended.emit()
 	return loaded
 

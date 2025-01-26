@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3ak65ell3d02"]
+[gd_scene load_steps=14 format=3 uid="uid://d3ak65ell3d02"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_p6kgu"]
 [ext_resource type="Material" uid="uid://b8fbmss5ylspk" path="res://basic_level.tres" id="2_frhrq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="4_6o1du"]
 [ext_resource type="PackedScene" uid="uid://brpch4odq03sh" path="res://blender_adeleheart/enviroment/fish/fish.glb" id="5_ewbmd"]
 [ext_resource type="PackedScene" uid="uid://cv8lv3gtw6117" path="res://scripts/follower.tscn" id="6_fne6j"]
+[ext_resource type="Script" path="res://scenes/last_loading_level.gd" id="7_tihan"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cmkps"]
 size = Vector3(3.80653, 0.442383, 3.7735)
@@ -222,3 +223,6 @@ turn_off = true
 [node name="CharacterBody3D6" parent="." instance=ExtResource("6_fne6j")]
 transform = Transform3D(-0.456427, 0, 0.569714, 0, 0.73, 0, -0.569714, 0, -0.456427, -7.499, 0.461, -3.75)
 turn_off = true
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("7_tihan")

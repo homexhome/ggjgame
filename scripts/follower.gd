@@ -238,3 +238,7 @@ func _debug_stair_step_up(param, value):
 			print("SSU: Exited due to non-floor stepping")
 		"SSU_APPLIED":
 			print("SSU: Player moved up by ", value, " units")
+
+func show_ad():
+	if active and initialized:
+		Session.show_ad()

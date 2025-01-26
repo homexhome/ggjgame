@@ -389,8 +389,6 @@ mesh = SubResource("CapsuleMesh_6qcfu")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.8
 target_desired_distance = 0.8
-debug_enabled = true
-debug_use_custom = true
 debug_path_custom_color = Color(1, 0, 1, 1)
 
 [node name="guardian" type="Node3D" parent="."]
@@ -518,3 +516,9 @@ autoplay = "walk"
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.271603, 0)
 light_color = Color(1, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="show_ad"]
