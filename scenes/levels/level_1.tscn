@@ -423,7 +423,7 @@ script = ExtResource("8_m66td")
 
 [node name="TeleportPoint" parent="." instance=ExtResource("9_nl5n4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1976, 0.929757, -1.34257)
-website_to = "http://awell.world/blueprint "
+website_to = "http://awell.world/blueprint"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_jmepx")

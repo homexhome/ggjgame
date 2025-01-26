@@ -3,8 +3,9 @@ extends TextureButton
 
 func _ready() -> void:
 	pressed.connect(_on_pressed)
-
+	$AudioStreamPlayer.play()
 func _on_pressed():
+	$"../../../BrowserUI/Tool/AudioStreamPlayer".play()
 	show_lore()
 
 func show_lore():
@@ -21,4 +22,5 @@ func start_game():
 	$"../../../Camera".queue_free()
 	Session.get_world().get_node("WorldEnvironment").environment.background_color = Color.WHITE
 	await Loader.load_level("http://awell.world/hub")
+	$"../../../MainPlayer".play()
 	$"../..".queue_free()

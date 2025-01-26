@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cf8prbpwa0ymh"]
+[gd_scene load_steps=32 format=3 uid="uid://cf8prbpwa0ymh"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_8fmxb"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="3_1sbfo"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://xaeeqtijrbes" path="res://assets/imports/пол много.png" id="10_sxbm5"]
 [ext_resource type="Material" uid="uid://60adtidk21ma" path="res://resources/bad_hover.tres" id="11_ec52a"]
 [ext_resource type="PackedScene" uid="uid://ch3da3dbymsdd" path="res://scenes/bubble_1.tscn" id="13_ypr2o"]
+[ext_resource type="PackedScene" uid="uid://coac3p14csmbp" path="res://scenes/text.tscn" id="14_emlu6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1t4e"]
 size = Vector3(9.30183, 1, 1.05537)
@@ -277,7 +278,7 @@ transform = Transform3D(0.998567, -0.0535211, 0, 0.0535211, 0.998567, 0, 0, 0, 1
 curve = SubResource("Curve3D_vxncg")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D"]
-transform = Transform3D(0.998371, 0.00017364, 0.0569995, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998365, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569995, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998364, -1.945, 0, 0)
 script = ExtResource("8_mbqem")
 
 [node name="Fish" parent="Environment/Fishes/Path3D/PathFollow3D" instance=ExtResource("8_4g87q")]
@@ -287,7 +288,7 @@ transform = Transform3D(0.320054, -0.0171543, -0.947244, 0.0535211, 0.998567, 0,
 curve = SubResource("Curve3D_vxncg")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D3"]
-transform = Transform3D(0.998371, 0.00017364, 0.0569995, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998365, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569995, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998364, -1.945, 0, 0)
 script = ExtResource("8_mbqem")
 
 [node name="Bubble" parent="Environment/Fishes/Path3D3/PathFollow3D" instance=ExtResource("13_ypr2o")]
@@ -298,7 +299,7 @@ transform = Transform3D(1.15375, -0.0618386, 0.816862, 0.0757323, 1.41297, 8.837
 curve = SubResource("Curve3D_vxncg")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D4"]
-transform = Transform3D(0.998371, 0.00017364, 0.0569995, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998365, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569995, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998364, -1.945, 0, 0)
 script = ExtResource("8_mbqem")
 
 [node name="Bubble" parent="Environment/Fishes/Path3D4/PathFollow3D" instance=ExtResource("13_ypr2o")]
@@ -309,7 +310,7 @@ transform = Transform3D(0.178267, -0.00955474, 1.40369, 0.0757323, 1.41297, 1.12
 curve = SubResource("Curve3D_vxncg")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D5"]
-transform = Transform3D(0.998371, 0.00017364, 0.0569995, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998365, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569995, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998364, -1.945, 0, 0)
 script = ExtResource("8_mbqem")
 
 [node name="Bubble" parent="Environment/Fishes/Path3D5/PathFollow3D" instance=ExtResource("13_ypr2o")]
@@ -379,6 +380,10 @@ mesh = SubResource("QuadMesh_nsxk2")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Preload"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.480607, 0, 0)
 mesh = SubResource("QuadMesh_nsxk2")
+
+[node name="Text" parent="." instance=ExtResource("14_emlu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4169, 0.5, -2.11088)
+array_of_text = Array[String](["At last you've booted up woof!", "Today your target is a certain Alexander Well.", "Expert in creating the right aerodynamics of an airplane.", "And most importantly remember to avoid damaged network zones."])
 
 [connection signal="input_event" from="Walls/ScalableObject/Area3D" to="Walls/ScalableObject" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="ObjectsToScale/ScalableObject2/Area3D" to="ObjectsToScale/ScalableObject2" method="_on_area_3d_input_event"]

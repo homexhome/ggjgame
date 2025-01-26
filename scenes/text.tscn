@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://coac3p14csmbp"]
+
+[ext_resource type="Script" path="res://scripts/zone_text.gd" id="1_s03fd"]
+[ext_resource type="AudioStream" uid="uid://c0r3yvagrydh2" path="res://music/sounds/woof.wav" id="2_8tfbs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y64sv"]
+
+[node name="Text" type="Node3D"]
+script = ExtResource("1_s03fd")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_y64sv")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_8tfbs")

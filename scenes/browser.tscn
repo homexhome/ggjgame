@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=4 uid="uid://wvvqegxjx5rh"]
+[gd_scene load_steps=90 format=4 uid="uid://wvvqegxjx5rh"]
 
 [ext_resource type="Script" path="res://scripts/browser.gd" id="1_v8pjd"]
 [ext_resource type="Texture2D" uid="uid://dmj02texqgj76" path="res://blender_adeleheart/enviroment/menu/human_human_texture.png" id="2_31yk2"]
@@ -12,11 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://dpkch4leakkw2" path="res://assets/imports/шторка_низ1 (2).png" id="4_uddce"]
 [ext_resource type="Script" path="res://scripts/refresh_page_button.gd" id="5_fbk0t"]
 [ext_resource type="Script" path="res://resources/tool_resource.gd" id="5_wkb65"]
+[ext_resource type="AudioStream" uid="uid://b1whuxxrofjfe" path="res://music/sounds/rain.wav" id="6_avq85"]
 [ext_resource type="Script" path="res://scripts/message.gd" id="6_id0ia"]
 [ext_resource type="Texture2D" uid="uid://clsf6w7tpncil" path="res://assets/imports/курсоры (3).png" id="8_on8ve"]
 [ext_resource type="Texture2D" uid="uid://c680lwfa3y51o" path="res://assets/imports/диал.окна (2).png" id="11_sd8es"]
 [ext_resource type="Texture2D" uid="uid://doejfni7hrbns" path="res://assets/imports/песГолова.png" id="12_jngmd"]
 [ext_resource type="Texture2D" uid="uid://b1p5sdd5umkhy" path="res://assets/imports/пёсТело.png" id="13_kwkyy"]
+[ext_resource type="AudioStream" uid="uid://efrjpdxv2i8l" path="res://music/sounds/ui_click.wav" id="15_0mqse"]
 [ext_resource type="Script" path="res://scripts/spam.gd" id="15_ffxbg"]
 [ext_resource type="Texture2D" uid="uid://dqm4tlwm36rwm" path="res://assets/imports/рекламаКура.png" id="15_h34kp"]
 [ext_resource type="Texture2D" uid="uid://bsbxkjyl30m83" path="res://assets/imports/крестик.png" id="16_kk3nj"]
@@ -24,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://bca557ugm7r11" path="res://assets/imports/рекламаМашины.png" id="19_itd8a"]
 [ext_resource type="Texture2D" uid="uid://cwcyuvj1isghi" path="res://assets/imports/рекламаГоремыка.png" id="20_b3cpo"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="22_tqofj"]
+[ext_resource type="AudioStream" uid="uid://c0r3yvagrydh2" path="res://music/sounds/woof.wav" id="27_2q3x7"]
+[ext_resource type="Script" path="res://scenes/cheat_audio.gd" id="27_j5473"]
 
 [sub_resource type="Shader" id="Shader_jm88j"]
 code = "shader_type spatial;
@@ -1213,7 +1217,7 @@ bones/32/rotation = Quaternion(0.00746078, -1.16886e-07, 0.000134004, 0.999972)
 bones/32/scale = Vector3(1, 1, 1)
 
 [node name="head_2" type="BoneAttachment3D" parent="human/Armature/Skeleton3D"]
-transform = Transform3D(1, 4.09889e-17, -3.81601e-18, -4.09889e-17, 0.982814, -0.184597, -3.81601e-18, 0.184597, 0.982814, 2.37269e-17, 4.30049, 0.145305)
+transform = Transform3D(1, 4.0989e-17, -3.81602e-18, -4.0989e-17, 0.982814, -0.184598, -3.81604e-18, 0.184598, 0.982814, 2.37272e-17, 4.30049, 0.145307)
 bone_name = "head_2"
 bone_idx = 4
 
@@ -1222,7 +1226,7 @@ mesh = SubResource("ArrayMesh_w2uad")
 skeleton = NodePath("")
 
 [node name="hood" type="BoneAttachment3D" parent="human/Armature/Skeleton3D"]
-transform = Transform3D(1, 4.09889e-17, -3.81601e-18, -4.09889e-17, 0.982814, -0.184597, -3.81601e-18, 0.184597, 0.982814, 1.9803e-17, 4.21839, -0.00110543)
+transform = Transform3D(1, 4.0989e-17, -3.81602e-18, -4.0989e-17, 0.982814, -0.184598, -3.81604e-18, 0.184598, 0.982814, 1.98033e-17, 4.21839, -0.00110429)
 bone_name = "hood"
 bone_idx = 5
 
@@ -1231,7 +1235,7 @@ mesh = SubResource("ArrayMesh_x5son")
 skeleton = NodePath("")
 
 [node name="laptop" type="BoneAttachment3D" parent="human/Armature/Skeleton3D"]
-transform = Transform3D(2.68221e-07, 20.0577, 1.93715e-07, -1, -1.90735e-06, 2.23517e-07, 1.49012e-08, -7.15256e-07, 1, 0.0043298, 1.32754, 2.00995)
+transform = Transform3D(2.11596e-06, 20.0577, 1.81794e-06, -1, 4.00543e-05, 1.13249e-06, 1.19209e-06, -3.71933e-05, 1, 0.00433421, 1.32754, 2.00996)
 bone_name = "laptop"
 bone_idx = 12
 
@@ -1296,6 +1300,10 @@ texture_normal = SubResource("AtlasTexture_e6c1h")
 texture_pressed = SubResource("AtlasTexture_7kmlw")
 texture_hover = SubResource("AtlasTexture_eynal")
 script = ExtResource("3_63344")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="human/Control/Button"]
+stream = ExtResource("6_avq85")
+volume_db = -14.0
 
 [node name="Browser3D" type="Node3D" parent="."]
 
@@ -1461,6 +1469,9 @@ script = ExtResource("4_gke0k")
 tool = SubResource("Resource_pfcnl")
 need_release_focus = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BrowserUI/Tool/Help"]
+stream = ExtResource("27_2q3x7")
+
 [node name="RefreshPage" type="TextureButton" parent="BrowserUI/Tool"]
 z_index = 101
 layout_mode = 1
@@ -1480,6 +1491,9 @@ texture_focused = SubResource("AtlasTexture_pb1vd")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("5_fbk0t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BrowserUI/Tool"]
+stream = ExtResource("15_0mqse")
 
 [node name="Messages" type="Control" parent="BrowserUI"]
 layout_mode = 3
@@ -1944,5 +1958,12 @@ script = ExtResource("17_50t5p")
 transform = Transform3D(1, 0, 0, 0, 0.78152, 0.62388, 0, -0.62388, 0.78152, 0, 8.44, 10)
 script = ExtResource("22_tqofj")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_2q3x7")
+script = ExtResource("27_j5473")
+
+[node name="MainPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="BrowserUI/Tool/Help" to="BrowserUI/Tool/Help/AudioStreamPlayer" method="play"]
 [connection signal="timeout" from="BrowserUI/Messages/Message/Label/Timer" to="BrowserUI/Messages/Message" method="stop_message"]
 [connection signal="timeout" from="BrowserUI/Messages/ImportantMessage/Label/Timer" to="BrowserUI/Messages/ImportantMessage" method="stop_message"]

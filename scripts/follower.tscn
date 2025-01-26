@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://cv8lv3gtw6117"]
+[gd_scene load_steps=14 format=4 uid="uid://cv8lv3gtw6117"]
 
 [ext_resource type="Script" path="res://scripts/follower.gd" id="1_lb231"]
 [ext_resource type="Texture2D" uid="uid://blmbubcflb6qe" path="res://blender_adeleheart/guardian/guardian_guardian_texture.png" id="2_to2a5"]
+[ext_resource type="Script" path="res://scripts/catcher_area.gd" id="3_ua58p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w6nlu"]
 radius = 0.05
@@ -368,6 +369,9 @@ _data = {
 "walk": SubResource("Animation_heo6q")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5elk6"]
+height = 1.55524
+
 [node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("nav_agent", "light", "animator")]
 script = ExtResource("1_lb231")
 speed = 0.8
@@ -389,6 +393,8 @@ mesh = SubResource("CapsuleMesh_6qcfu")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.8
 target_desired_distance = 0.8
+debug_enabled = true
+debug_use_custom = true
 debug_path_custom_color = Color(1, 0, 1, 1)
 
 [node name="guardian" type="Node3D" parent="."]
@@ -520,5 +526,14 @@ light_color = Color(1, 0, 0, 1)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+monitorable = false
+script = ExtResource("3_ua58p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772908, 0.00603247)
+shape = SubResource("CapsuleShape3D_5elk6")
 
 [connection signal="timeout" from="Timer" to="." method="show_ad"]
