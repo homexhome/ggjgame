@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b67ny5rpuh3jv"]
+[gd_scene load_steps=25 format=3 uid="uid://sqxk1265thk2"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_0lboy"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="2_elr50"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/fish_path_follow_3d.gd" id="8_yjio3"]
 [ext_resource type="PackedScene" uid="uid://bta7nxuh6c0sl" path="res://scenes/fish.tscn" id="9_2ajjt"]
 [ext_resource type="PackedScene" uid="uid://vw064nrftrc8" path="res://scenes/teleport_point.tscn" id="10_bimfm"]
+[ext_resource type="PackedScene" uid="uid://1lvifrvk5sc5" path="res://scenes/items/photo.tscn" id="11_sgg7b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vj8mx"]
 size = Vector3(2.7, 1, 2.7)
@@ -210,7 +211,7 @@ transform = Transform3D(0.998567, -0.0535211, 0, 0.0535211, 0.998567, 0, 0, 0, 1
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_yjio3")
 
 [node name="Fish" parent="Environment/Fishes/Path3D/PathFollow3D" instance=ExtResource("9_2ajjt")]
@@ -220,7 +221,7 @@ transform = Transform3D(-0.751268, 0.0402664, -0.658768, 0.0535211, 0.998567, 0,
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D2"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_yjio3")
 
 [node name="Fish" parent="Environment/Fishes/Path3D2/PathFollow3D" instance=ExtResource("9_2ajjt")]
@@ -230,10 +231,13 @@ transform = Transform3D(0.0487275, -0.00261169, -0.998809, 0.0535211, 0.998567, 
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D3"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_yjio3")
 
 [node name="Fish" parent="Environment/Fishes/Path3D3/PathFollow3D" instance=ExtResource("9_2ajjt")]
 
 [node name="TeleportPoint" parent="." instance=ExtResource("10_bimfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.90326, 1.9408, -15.707)
+
+[node name="Item" parent="." instance=ExtResource("11_sgg7b")]
+transform = Transform3D(1, 0, 0, 0, 0.517176, -0.855879, 0, 0.855879, 0.517176, -9.89311, 2.17811, -14.8361)
