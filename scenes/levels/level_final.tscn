@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://b67ny5rpuh3jv"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_0lboy"]
-[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="2_elr50"]
+[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="2_elr50"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="3_b1ty1"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="4_2lrtg"]
 [ext_resource type="Texture2D" uid="uid://dxcc3psrfg6r4" path="res://assets/imports/Light/texture_10.png" id="5_fo6eo"]
