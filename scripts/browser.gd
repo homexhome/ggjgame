@@ -7,6 +7,7 @@ class_name Browser
 
 func _ready() -> void:
 	Session.set_up_browser(self)
+	$BrowserUI.hide()
 
 func get_browser_line_status():
 	var result : bool = false
