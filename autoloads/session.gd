@@ -16,6 +16,11 @@ var force_datamosh:float = 0.0
 
 var active_tool : Tool
 
+var custom_info_area
+
+signal info_signal
+
+
 func set_up_player(node):
 	player = node
 
@@ -65,8 +70,21 @@ func get_datamosh_amount() -> float:
 
 func set_tool(_tool : Tool):
 	active_tool = _tool
+	if active_tool.tool_type == Tool.TYPE.INFO:
+		info_signal.emit()
+		if custom_info_area != null:
+			browser.play_important_message(custom_info_area.message)
+		else:
+			browser.play_important_message("Use your tools!", 3.0)
+	if _tool.mouse_texture != null:
+		Input.set_custom_mouse_cursor(_tool.mouse_texture)
 
 func get_tool_type() -> Tool.TYPE:
 	if active_tool == null:
 		return Tool.TYPE.MOUSE
 	return active_tool.tool_type
+
+func set_custom_info_area(area):
+	custom_info_area = area
+	if custom_info_area != null:
+		browser.play_important_message(custom_info_area.message)

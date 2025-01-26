@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_pyfsg"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="2_kiqbg"]
 [ext_resource type="Texture2D" uid="uid://c78yr6x1ifser" path="res://assets/imports/Dark/texture_01.png" id="3_cb6wm"]
-[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="5_b2lh3"]
+[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="5_b2lh3"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="6_327uf"]
-[ext_resource type="PackedScene" uid="uid://dixe6g56v5evm" path="res://blender_adeleheart/enviroment/fish/fish.glb" id="7_cn3y4"]
+[ext_resource type="PackedScene" uid="uid://brpch4odq03sh" path="res://blender_adeleheart/enviroment/fish/fish.glb" id="7_cn3y4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yj88"]
 albedo_texture = ExtResource("2_kiqbg")

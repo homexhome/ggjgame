@@ -12,6 +12,15 @@ const LARGE_SCALE : float = 1.0
 
 var changing_scale : bool = false
 	
+@export var material_good_hover : StandardMaterial3D
+@export var material_bad_hover : StandardMaterial3D
+@onready var area = $Area3D
+
+func _ready() -> void:
+	material_good_hover = preload("res://resources/good_hover.tres")
+	material_bad_hover = preload("res://resources/bad_hover.tres")
+	if area.mouse_exited.is_connected(_on_area_3d_mouse_exited) == false:
+		area.mouse_exited.connect(_on_area_3d_mouse_exited)
 
 func increase_object_scale(_state : STATE):
 	if scale_state == _state: return
@@ -23,6 +32,7 @@ func increase_object_scale(_state : STATE):
 	var y_pos = position.y
 	
 	if scale_state == STATE.LARGE:
+		Session.get_browser().play_message("Can't use that")
 		return
 
 	if scale_state == STATE.NORMAL:
@@ -56,6 +66,7 @@ func decrease_object_scale(_state : STATE):
 	var y_pos = position.y
 	
 	if scale_state == STATE.SMALL:
+		Session.get_browser().play_message("Can't use that")
 		return
 
 	if scale_state == STATE.NORMAL:
@@ -83,17 +94,39 @@ func decrease_object_scale(_state : STATE):
 
 
 func _on_area_3d_input_event(_camera: Node, _event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+	match Session.get_tool_type():
+		Tool.TYPE.SCALING_PLUS:
+			if scale_state == STATE.LARGE:
+				material_override = material_bad_hover
+			else:
+				material_override = material_good_hover
+
+		Tool.TYPE.SCALING_MINUS:
+			if scale_state == STATE.SMALL:
+				material_override = material_bad_hover
+			else:
+				material_override = material_good_hover
+		
+
 	if Input.is_action_just_pressed("left_click"):
 		match Session.get_tool_type():
 			Tool.TYPE.SCALING_PLUS:
 				if scale_state == STATE.SMALL:
 					increase_object_scale(STATE.NORMAL)
-				if scale_state == STATE.NORMAL:
+				elif scale_state == STATE.NORMAL:
 					increase_object_scale(STATE.LARGE)
-
+				else:
+					Session.get_browser().play_message("Can't use that")
 			Tool.TYPE.SCALING_MINUS:
 				if scale_state == STATE.NORMAL:
 					decrease_object_scale(STATE.SMALL)
-				if scale_state == STATE.LARGE:
+				elif scale_state == STATE.LARGE:
 					decrease_object_scale(STATE.NORMAL)
+				else:
+					Session.get_browser().play_message("Can't use that")
 		
+
+
+func _on_area_3d_mouse_exited() -> void:
+	if material_override != null:
+		material_override = null

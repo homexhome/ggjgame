@@ -45,7 +45,8 @@ func load_level(path : String, place_id_for_player : int = 0):
 		loaded = true
 		Session.get_browser().set_line_text(level.website_path)
 	loading = false
-	await get_tree().create_timer(1.0).timeout
+	if loaded:
+		await get_tree().create_timer(1.0).timeout
 	loading_ended.emit()
 	return loaded
 

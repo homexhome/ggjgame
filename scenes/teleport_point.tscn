@@ -1,12 +1,98 @@
-[gd_scene load_steps=4 format=3 uid="uid://vw064nrftrc8"]
+[gd_scene load_steps=8 format=3 uid="uid://vw064nrftrc8"]
 
 [ext_resource type="Script" path="res://scripts/teleport_point.gd" id="1_24cu3"]
+[ext_resource type="Texture2D" uid="uid://bvpie8ewprju3" path="res://icon.svg" id="2_ht60m"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kc0aw"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_fr8xv"]
 radius = 0.25
 height = 0.5
+
+[sub_resource type="Animation" id="Animation_mkb5b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D2:quaternion")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(-0.16815, -0.712121, -0.283692, 0.61978)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D3:quaternion")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0.0496126, 0.686858, -0.608826, -0.393822)]
+}
+
+[sub_resource type="Animation" id="Animation_jkimg"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Quaternion(0, 0, 0, 1), Quaternion(1, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D2:quaternion")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Quaternion(-0.16815, -0.712121, -0.283692, 0.61978), Quaternion(0.71157, -0.170467, 0.618853, 0.285708)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D3:quaternion")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Quaternion(0.0496126, 0.686858, -0.608826, -0.393822), Quaternion(-0.0520651, 0.658824, 0.632791, 0.403505)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qsg25"]
+_data = {
+"RESET": SubResource("Animation_mkb5b"),
+"idle": SubResource("Animation_jkimg")
+}
 
 [node name="TeleportPoint" type="Node3D"]
 script = ExtResource("1_24cu3")
@@ -17,6 +103,28 @@ script = ExtResource("1_24cu3")
 shape = SubResource("SphereShape3D_kc0aw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("SphereMesh_fr8xv")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.375, 0, 0, 0)
+rotation_edit_mode = 1
+texture = ExtResource("2_ht60m")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.0656985, 0.221677, -0.295242, -0.0420626, 0.293433, 0.229679, 0.366796, 0.0733552, -0.0265434, 0, 0, 0)
+rotation_edit_mode = 1
+texture = ExtResource("2_ht60m")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(-0.256832, -0.154269, -0.225529, 0.205384, 0.095152, -0.298979, 0.180221, -0.328286, 0.0193236, 0, 0, 0)
+rotation_edit_mode = 1
+texture = ExtResource("2_ht60m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qsg25")
+}
+autoplay = "idle"
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
