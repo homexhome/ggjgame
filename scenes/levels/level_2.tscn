@@ -326,6 +326,7 @@ script = ExtResource("8_rfgm6")
 
 [node name="TeleportPoint" parent="." instance=ExtResource("10_bl80a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63059, 1.9408, -8.21823)
+website_to = "http://awell.world/doublethought"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_u7uol")

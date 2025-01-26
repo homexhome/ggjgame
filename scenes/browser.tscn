@@ -373,6 +373,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mv6s7")
 
+[sub_resource type="Animation" id="Animation_vjc3j"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_ali4b"]
 resource_name = "a_pose"
 length = 0.0416667
@@ -715,9 +718,6 @@ tracks/23/path = NodePath("Armature/Skeleton3D:r_u_thumbs")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = PackedFloat32Array(0, 1, 0.789844, -0.0443139, 0.086779, 0.605518)
-
-[sub_resource type="Animation" id="Animation_vjc3j"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ul7t4"]
 _data = {

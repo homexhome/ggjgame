@@ -1,7 +1,7 @@
 [gd_scene load_steps=40 format=3 uid="uid://bcapll2vqvrcu"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_ooi14"]
-[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="2_dyo1a"]
+[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="2_dyo1a"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="3_x7wqg"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="4_cd7y2"]
 [ext_resource type="Texture2D" uid="uid://dxcc3psrfg6r4" path="res://assets/imports/Light/texture_10.png" id="5_31v3y"]
@@ -100,8 +100,8 @@ _data = {
 point_count = 17
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_jmepx"]
-vertices = PackedVector3Array(-10.6252, 1, -0.668066, -9.12524, 1, -0.668066, -8.82524, 1, -4.26807, -10.6252, 1, -5.16807, -13.0252, 1, -0.668066, -12.4252, 1, -0.668066, -12.1252, 1, -9.36807, -13.0252, 1, -9.66807, -6.42524, 1, -5.16807, -6.72524, 1, -3.96807, -4.02524, 1, -1.56807, -3.12524, 1, -0.668066, -3.12524, 1, -9.66807, -4.02524, 1, -9.36807, -6.42524, 1, -1.56807, -6.72524, 1, -0.668066, -10.0252, 4.75, -8.16807, -10.0252, 4.75, -6.36807, -8.52524, 4.75, -6.36807, -8.52524, 5, -8.16807)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(9, 2, 8), PackedInt32Array(8, 2, 3), PackedInt32Array(13, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(15, 9, 14), PackedInt32Array(14, 9, 8), PackedInt32Array(6, 7, 13), PackedInt32Array(13, 7, 12), PackedInt32Array(14, 10, 15), PackedInt32Array(15, 10, 11), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17)]
+vertices = PackedVector3Array(-13, 1, -12.375, -11.8, 1, -12.675, -11.8, 1, -13.275, -18.4, 1, -13.275, -8.8, 1, 0.225, -8.8, 1, -2.775, -9.4, 1, -3.075, -9.4, 1, -4.875, -8.8, 1, -5.175, -10, 1, -9.075, -18.4, 1, 0.225, -13, 1, -9.375, -10.6, 1, -12.675, -2.5, 1, -13.275, -10.3, 1, -11.475, -9.4, 1, -11.175, -9.4, 1, -9.375, -4.3, 1, -2.775, -2.5, 1, 0.225, -4, 1, -4.875, -11.8, 3, -11.475, -11.8, 3, -10.275, -11.2, 3, -10.275)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(9, 8, 7), PackedInt32Array(6, 4, 11), PackedInt32Array(11, 4, 10), PackedInt32Array(11, 10, 3), PackedInt32Array(7, 6, 9), PackedInt32Array(9, 6, 11), PackedInt32Array(3, 0, 11), PackedInt32Array(1, 2, 12), PackedInt32Array(12, 2, 13), PackedInt32Array(14, 12, 15), PackedInt32Array(15, 12, 13), PackedInt32Array(16, 8, 9), PackedInt32Array(5, 17, 4), PackedInt32Array(4, 17, 18), PackedInt32Array(17, 19, 18), PackedInt32Array(18, 19, 13), PackedInt32Array(16, 15, 8), PackedInt32Array(8, 15, 19), PackedInt32Array(19, 15, 13), PackedInt32Array(22, 21, 20)]
 geometry_source_geometry_mode = 2
 geometry_source_group_name = &"bake"
 cell_size = 0.3
@@ -116,7 +116,7 @@ size = Vector3(0.2, 0.2, 0.2)
 [node name="Level" type="Node3D" node_paths=PackedStringArray("access_poits")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0261402, -0.0106106, -0.00465226)
 script = ExtResource("1_ooi14")
-website_path = "www.verygoodgame.com/level_3"
+website_path = "http://awell.world/doublethought"
 access_poits = [NodePath("AccessPoint"), null]
 
 [node name="AccessPoint" parent="." instance=ExtResource("2_dyo1a")]
@@ -339,22 +339,22 @@ material = SubResource("StandardMaterial3D_2bixl")
 
 [node name="Obstacles" type="Node3D" parent="Environment"]
 
-[node name="ScalableObject3" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject3" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25, 1, -6.1)
 
-[node name="ScalableObject4" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject4" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25, 1, -5)
 
-[node name="ScalableObject5" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject5" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25, 1, -3.9)
 
-[node name="ScalableObject10" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject10" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2, 1, -5)
 
-[node name="ScalableObject15" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject15" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4, 1, -5)
 
-[node name="ScalableObject16" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject16" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5495, 1.00086, -10.2699)
 
 [node name="ScalableObject22" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
@@ -366,27 +366,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 2.2, -10.25)
 [node name="ScalableObject24" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 2.2, -11.3)
 
-[node name="ScalableObject17" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject17" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6, 1, -10.3)
 
-[node name="ScalableObject18" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject18" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6, 1, -11.32)
 
-[node name="ScalableObject19" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject19" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6, 1, -12.35)
 
-[node name="ScalableObject20" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject20" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6, 1, -13.375)
 
-[node name="ScalableObject21" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject21" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.625, 1, -13.375)
 
-[node name="ScalableObject13" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject13" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -4)
 material_good_hover = SubResource("StandardMaterial3D_v5bj4")
 material_bad_hover = SubResource("StandardMaterial3D_cmrrs")
 
-[node name="ScalableObject14" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_jgblo")]
+[node name="ScalableObject14" parent="Environment/Obstacles" instance=ExtResource("7_jgblo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 1, -4)
 material_good_hover = SubResource("StandardMaterial3D_v5bj4")
 material_bad_hover = SubResource("StandardMaterial3D_cmrrs")
@@ -399,7 +399,7 @@ transform = Transform3D(0.998567, -0.0535211, 0, 0.0535211, 0.998567, 0, 0, 0, 1
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_a2ae5")
 
 [node name="Fish" parent="Environment/Fishes/Path3D/PathFollow3D" instance=ExtResource("9_scebk")]
@@ -409,7 +409,7 @@ transform = Transform3D(-0.751268, 0.0402664, -0.658768, 0.0535211, 0.998567, 0,
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D2"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_a2ae5")
 
 [node name="Fish" parent="Environment/Fishes/Path3D2/PathFollow3D" instance=ExtResource("9_scebk")]
@@ -419,13 +419,14 @@ transform = Transform3D(0.0487275, -0.00261169, -0.998809, 0.0535211, 0.998567, 
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D3"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_a2ae5")
 
 [node name="Fish" parent="Environment/Fishes/Path3D3/PathFollow3D" instance=ExtResource("9_scebk")]
 
 [node name="TeleportPoint" parent="." instance=ExtResource("10_5m3og")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 3.5, -12)
+website_to = "http://awell.world/treasure"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_jmepx")

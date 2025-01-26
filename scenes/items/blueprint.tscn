@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=4 uid="uid://cs5qexqx0j8nl"]
+
+[ext_resource type="Script" path="res://scenes/items/scarf.gd" id="1_4uyiy"]
+[ext_resource type="Script" path="res://scripts/to_delete.gd" id="2_2tsbw"]
+[ext_resource type="Texture2D" uid="uid://b2ivmqrkcmnx4" path="res://blender_adeleheart/enviroment/blueprint/blueprint_blueprint_texture.png" id="3_ivbyw"]
+[ext_resource type="AudioStream" uid="uid://deigejxewe6e5" path="res://music/sounds/pickup.wav" id="4_tofdb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7gnde"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7iae"]
+resource_name = "blueprint"
+cull_mode = 2
+albedo_texture = ExtResource("3_ivbyw")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pywxh"]
+_surfaces = [{
+"aabb": AABB(-0.201662, 0.0347685, -0.0682762, 0.403325, 0.561056, 0.0434021),
+"format": 34896613377,
+"index_count": 108,
+"index_data": PackedByteArray("BwAEAAgABwAFAAQABQADAAQABQACAAMACAAGAAcACAAJAAYAAAAJAAEAAAAGAAkAEQAOAA8AEQASAA4ADwANAAwADwAOAA0AEgAQABMAEgARABAACgATABAACgALABMAAQAKAAAAAQALAAoABAASAAgABAAOABIAAgANAAMAAgAMAA0ABQAMAAIABQAPAAwACAATAAkACAASABMABgARAAcABgAQABEAAAAQAAYAAAAKABAACQALAAEACQATAAsABwAPAAUABwARAA8AAwAOAAQAAwANAA4A"),
+"lods": [0.026102, PackedByteArray("BgADAAgABgACAAMAAAAGAAgAAAAIAAEAEAANAAwAEAASAA0ACgASABAACgALABIAAQAKAAAAAQALAAoAAgANAAMAAgAMAA0ABgAMAAIABgAQAAwAAAAQAAYAAAAKABAACAALAAEACAASAAsAAwASAAgAAwANABIA")],
+"name": "blueprint",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AACkAP//AAD//6QA//8AAAAA///oLwAA/////+gvAAD//9fRYWYAAAAA19FhZgAAAADzW6wvAAAAANyjzi8AAP//3KPOLwAA///zW6wvAAAAAAAA3dAAAP//AADd0AAAAACo/0AAAAD//6j/QAAAAP//2NGFNgAAAADY0YU2AAAAAKBbAAAAAAAAB6QAAAAA//8HpAAAAAD//6BbAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_akwpl"]
+resource_name = "blueprint_Плоскость_004"
+_surfaces = [{
+"aabb": AABB(-0.201662, 0.0347685, -0.0682762, 0.403325, 0.561056, 0.0434021),
+"attribute_data": PackedByteArray("+eqtXKH9gor56qZcfHWtXKH9BRWh/aZc+er//6H9gor96///fHX//6H9//+e/P//fHVx4nx1ceKh/Wzi+epx4vnqceL56mzi+epdl/nqXZfx8W+X+eo6xfnqOsVU70TFfHU6xXx1OsVG+UTFfHVdl3x1XZeq9m+XAAB7XP7/gopS7V9cfHV7XP7/BRVJ+19c/v+CigAA//9a7ur//////3x1//9B+ur/fHWo4nx1qOJF+4/iAACo4gAAqOJV7Y/iAABflwAAX5dN9FyXAACNxQAAjcWu8YLFfHWNxXx1jcXs9oLFfHVfl3x1X5dN9FyX"),
+"format": 34896613399,
+"index_count": 108,
+"index_data": PackedByteArray("FgANABkAFgAQAA0ADwAJAAwADwAGAAkAGAATABUAGAAcABMAAAAbAAMAAAASABsANAAqAC0ANAA3ACoALgAoACUALgArACgANgAwADkANgAzADAAHgA6ADEAHgAhADoABAAfAAEABAAiAB8ADgA4ABoADgAsADgABwAnAAoABwAkACcAEQAmAAgAEQAvACYAGgA7AB0AGgA4ADsAFAA1ABcAFAAyADUAAgAyABQAAgAgADIAHQAjAAUAHQA7ACMAFwAvABEAFwA1AC8ACwAsAA4ACwApACwA"),
+"lods": [0.026102, PackedByteArray("EgAJABgAEgAGAAkAAAASABgAAAAYAAMAMAAoACUAMAA2ACgAHgA2ADAAHgAhADYABAAfAAEABAAiAB8ABwAnAAoABwAkACcAFAAmAAgAFAAyACYAAgAyABQAAgAgADIAGgAjAAUAGgA4ACMACwA4ABoACwApADgA")],
+"material": SubResource("StandardMaterial3D_w7iae"),
+"name": "blueprint",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("AACkAP////8AAKQA//9Z0QAApAD//1z+//+kAP///////6QA//9Z0f//pAD//1z+AAD//+gv//8AAP//6C+D1wAA///oL1z+/////+gv////////6C+D1//////oL1z+///X0WFm/////9fRYWb/////19FhZlz+AADX0WFm//8AANfRYWb//wAA19FhZlz+AADzW6wv//8AAPNbrC///wAA81usL1z+AADco84v//8AANyjzi///wAA3KPOL1z+///co84v/////9yjzi//////3KPOL1z+///zW6wv//////NbrC//////81usL1z+AAAAAN3Q4vgAAAAA3dBZ0QAAAADd0Fz+//8AAN3Q4vj//wAA3dBZ0f//AADd0Fz+AACo/0AAg9cAAKj/QABF/AAAqP9AAFz+//+o/0AAg9f//6j/QABF/P//qP9AAFz+///Y0YU2Qfz//9jRhTZF/P//2NGFNlz+AADY0YU2QfwAANjRhTZF/AAA2NGFNlz+AACgWwAA//8AAKBbAADi+AAAoFsAAFz+AAAHpAAA//8AAAekAABB/AAAB6QAAFz+//8HpAAA/////wekAABB/P//B6QAAFz+//+gWwAA/////6BbAADi+P//oFsAAFz+/39NiuVX5VfkQMmB/39NiuVX5VfKARo//3+ShQzU8ivkQMmB/3+ShQzU8ivKARo//3+Shf9/ZHrKARo//3+Shf9/ZHrkQMmB/39Niv9//X/kQMmB/3/9f/9/ZHrkQMmB/3/9f/9/ZHrKARo//39Niv9//X/KARo/AAD/f+VX5VfkQMmBAAD/f+VX5VfKARo/DNTyKwAA/3/kQMmBDNTyKwAA/3/KARo/////fwAA/3/KARo/////fwAA/3/kQMmB////fwAA/3/kQMmB////f////3/kQMmB////f////3/KARo/////fwAA/3/KARo/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_pywxh")
+
+[node name="Item" type="Node3D"]
+script = ExtResource("1_4uyiy")
+event = 3
+text_to_say = "You've got a blueprint!"
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_7gnde")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_2tsbw")
+id = 3
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="Плоскость" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 0.0226874, 0.999743, 0, -0.999743, 0.0226874, 0, 0, 0.203955)
+mesh = SubResource("ArrayMesh_akwpl")
+skeleton = NodePath("")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_tofdb")
