@@ -143,6 +143,9 @@ bind/14/name = &"l_foot.001"
 bind/14/bone = -1
 bind/14/pose = Transform3D(-0.998504, 0.0534721, 0.0114053, -0.0534755, -0.998569, -1.3411e-07, 0.011389, -0.00061004, 0.999935, -0.883824, 4.08076, 0.0100829)
 
+[sub_resource type="Animation" id="Animation_ignfu"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_w8v6i"]
 resource_name = "idle_loop"
 length = 0.001
@@ -362,9 +365,6 @@ tracks/14/path = NodePath("Armature/Skeleton3D:l_foot.001")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = PackedFloat32Array(0, 1, -0.14601, -0.0102398, -0.0209193, 0.989009, 1.2, 1, -0.14601, -0.0102398, -0.0209193, 0.989009, 1.23333, 1, -0.202517, -0.011964, -0.0203771, 0.978994, 1.26667, 1, -0.239829, -0.0130918, -0.0199782, 0.970521, 1.6, 1, -0.239829, -0.0130918, -0.0199782, 0.970521, 1.63333, 1, -0.221214, -0.0125302, -0.0201813, 0.974936, 1.66667, 1, -0.14601, -0.0102398, -0.0209193, 0.989009)
-
-[sub_resource type="Animation" id="Animation_ignfu"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ctlrl"]
 _data = {

@@ -2,6 +2,9 @@ extends Node3D
 
 @export var event : int = 0
 @export var text_to_say : String
+
+signal intecacted
+
 func _ready() -> void:
 	$Area3D.body_entered.connect(_on_body_enter)
 	
@@ -11,4 +14,5 @@ func _on_body_enter(body):
 	Session.get_browser().play_important_message(text_to_say)
 	await $AudioStreamPlayer3D.finished
 	Session.add_event(event)
+	intecacted.emit()
 	queue_free()

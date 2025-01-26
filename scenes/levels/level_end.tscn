@@ -1,35 +1,10 @@
-[gd_scene load_steps=92 format=4 uid="uid://wvvqegxjx5rh"]
+[gd_scene load_steps=26 format=4 uid="uid://c6g6v3wx2xx4r"]
 
-[ext_resource type="Script" path="res://scripts/browser.gd" id="1_v8pjd"]
-[ext_resource type="Texture2D" uid="uid://dmj02texqgj76" path="res://blender_adeleheart/enviroment/menu/human_human_texture.png" id="2_31yk2"]
-[ext_resource type="Script" path="res://scenes/browser_line.gd" id="2_d03vt"]
-[ext_resource type="Script" path="res://scripts/loading_background.gd" id="2_t4od5"]
-[ext_resource type="Script" path="res://scripts/start_button.gd" id="3_63344"]
-[ext_resource type="Texture2D" uid="uid://c4k3orimoxbvk" path="res://assets/imports/шторкаВерх.png" id="3_exf05"]
-[ext_resource type="Texture2D" uid="uid://kf7kign88q84" path="res://assets/imports/connect.png" id="4_6s52u"]
-[ext_resource type="Script" path="res://scripts/tool_button.gd" id="4_gke0k"]
-[ext_resource type="FontFile" uid="uid://dfm8acj5sgvk1" path="res://fonts/Nintendo-DS-BIOS.ttf" id="4_p5unb"]
-[ext_resource type="Texture2D" uid="uid://dpkch4leakkw2" path="res://assets/imports/шторка_низ1 (2).png" id="4_uddce"]
-[ext_resource type="Script" path="res://scripts/refresh_page_button.gd" id="5_fbk0t"]
-[ext_resource type="Script" path="res://resources/tool_resource.gd" id="5_wkb65"]
-[ext_resource type="AudioStream" uid="uid://b1whuxxrofjfe" path="res://music/sounds/rain.wav" id="6_avq85"]
-[ext_resource type="Script" path="res://scripts/message.gd" id="6_id0ia"]
-[ext_resource type="Texture2D" uid="uid://clsf6w7tpncil" path="res://assets/imports/курсоры (3).png" id="8_on8ve"]
-[ext_resource type="Texture2D" uid="uid://c680lwfa3y51o" path="res://assets/imports/диал.окна (2).png" id="11_sd8es"]
-[ext_resource type="Texture2D" uid="uid://doejfni7hrbns" path="res://assets/imports/песГолова.png" id="12_jngmd"]
-[ext_resource type="Texture2D" uid="uid://b1p5sdd5umkhy" path="res://assets/imports/пёсТело.png" id="13_kwkyy"]
-[ext_resource type="AudioStream" uid="uid://efrjpdxv2i8l" path="res://music/sounds/ui_click.wav" id="15_0mqse"]
-[ext_resource type="Script" path="res://scripts/spam.gd" id="15_ffxbg"]
-[ext_resource type="Texture2D" uid="uid://dqm4tlwm36rwm" path="res://assets/imports/рекламаКура.png" id="15_h34kp"]
-[ext_resource type="Texture2D" uid="uid://bsbxkjyl30m83" path="res://assets/imports/крестик.png" id="16_kk3nj"]
-[ext_resource type="Script" path="res://scripts/texture_button.gd" id="17_50t5p"]
-[ext_resource type="Texture2D" uid="uid://bca557ugm7r11" path="res://assets/imports/рекламаМашины.png" id="19_itd8a"]
-[ext_resource type="Texture2D" uid="uid://cwcyuvj1isghi" path="res://assets/imports/рекламаГоремыка.png" id="20_b3cpo"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="22_tqofj"]
-[ext_resource type="AudioStream" uid="uid://c0r3yvagrydh2" path="res://music/sounds/woof.wav" id="27_2q3x7"]
-[ext_resource type="Script" path="res://scenes/cheat_audio.gd" id="27_j5473"]
-[ext_resource type="AudioStream" uid="uid://db5w267f1ovqc" path="res://music/brown_noice.wav" id="29_gbq6u"]
-[ext_resource type="Script" path="res://scenes/main_player.gd" id="30_gbyh8"]
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_0ny85"]
+[ext_resource type="Script" path="res://scenes/items/end.gd" id="3_ei27u"]
+[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="4_0o0da"]
+[ext_resource type="Texture2D" uid="uid://dmj02texqgj76" path="res://blender_adeleheart/enviroment/menu/human_human_texture.png" id="4_fnbqb"]
+[ext_resource type="FontFile" uid="uid://dfm8acj5sgvk1" path="res://fonts/Nintendo-DS-BIOS.ttf" id="5_wv83f"]
 
 [sub_resource type="Shader" id="Shader_jm88j"]
 code = "shader_type spatial;
@@ -91,9 +66,9 @@ shader_parameter/affine_mapping = true
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.308
 shader_parameter/resolution = Vector2i(320, 240)
-shader_parameter/albedo = ExtResource("2_31yk2")
+shader_parameter/albedo = ExtResource("4_fnbqb")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1cq57"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6f7tw"]
 _surfaces = [{
 "aabb": AABB(-0.586986, -0.830244, -0.629392, 1.1737, 1.6029, 1.30251),
 "format": 34896613377,
@@ -108,7 +83,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_w2uad"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_r10bu"]
 resource_name = "human_Куб"
 _surfaces = [{
 "aabb": AABB(-0.586986, -0.830244, -0.629392, 1.1737, 1.6029, 1.30251),
@@ -125,7 +100,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("l0z2FvfOe+CXTPYW985t5ZdM9hb3zlb3XDe25/a/qOFcN7bn9r+l3Vw3tuf2v/H9l0z2FvB40O6XTPYW8Hhy6Vw3tuceNtHoXDe25x42qP5cN7bnHjYC62ez9hb3zmW3Z7P2FvfOe+Bns/YW985c/KLItuf2v7Hlosi25/a/WfmiyLbn9r+ot2ez9hbweJ7WZ7P2FvB4FueiyLbnHjYC66LItuceNpzUosi25x42TdnJI7d9N95X/skjt3033qf/ySO3fQwq6PbJI7d9DCo9+Mkjt30MKvvhNdy3fQwqK/g13Ld9DCq23zXct30MKvDwNdy3fTfeI/413Ld9N97m/+FDjQ/xppnj4UOND/Gmp+PrIpW/ldah9Osilb+V1pf/0ieM7wp75+fSJ4zvCnsI6O40OT1MUbr97jQ5PUxRyu7/f40PNna94v9/jO8RKDnm/3+M7xEo3OQQyzk9TFFE7hDLOT1MUe3YHbyND/Gm08UdvI0P8aYI6CzYjO8Ke1XkLNiM7wp7N8kQyzk9J9qa8xDLOT0n2lT//3+ND6vX2sf/f40Pq9fh/P9/jO8Dzk/9/3+M7wPOHsfuNDk9J9pd9e40OT0n2r396yKVv8UhdvnrIpW/xSEd8RPdlb/FIR36E92Vv8UhQ+MT3ZW/ldYL9hPdlb+V1sr9/3+3ff//3v/K/rd9IYTy+/9/t31ECD33/3+3fUQIW/c0Abd9IYTO+wAAW8AtfLL5/39bwAAAuvn//1vALXxl+P9/W8Ba+O/+/38AADatG9P/f///CnuO1v9/fjxf8+H+veZ+PAWWtfT/f348qzhk7UEZfjwFlj/zl0z2FvfOSeWXTPYW986x+5dM9hb3ztvzXDe25/a/DvCXTPYW8Hj03ZdM9hbweP//l0z2FvB4m+xns/YW987ryGez9hb3zt3xZ7P2FvfO6fWiyLbn9r///2ez9hbweFDgZ7P2FvB4+t1ns/YW8Hgb6qLItuceNsjWySO3fQwq/us13Ld9DCo85DXct30MKpn36yKVv5XW///rIpW/ldb//+silb+V1hLs0ieM7wp7xuzSJ4zvCnuA4P9/jO8RKP///3+M7xEoyeT/f4zvESh+3izYjO8Ke/DyLNiM7wp7fsn/f40Pq9cK1f9/jQ+r1////3+ND6vX////f4zvA87///9/jO8DzsXN6yKVv8UhPufrIpW/xSH98hPdlb/FIS/hE92Vv8UhPukT3ZW/xSGO6xPdlb+V1v//E92Vv5XWf+sT3ZW/ldZ67/9/t31ECNDv/3+3fUQI//9QWt5tnlzTa+veJOuY6YwmbuvIKBNpQaOdS/JZjkQDYMvlXUK5zJoms+LwPhlqmUogElDa5Za8YGqkJ5gLJcAUl8oIH8hTV0AAHRXB8L5KnYfGvkB6uoclRlrafd78n9qF1jLHBy2ldjFGjbYvCeSsZkMWMiiw6ksLAjzaaqX9fO5LOmj6Sy9ozva2JHFeWI5l5fIxTeXXMRlMf1b1NjhsDE/+TdzLczHhzX000hIItlNJ/jnaXedA/BqKz/a04pfpvkgd2Qke3FegoXAyYwViZ37NWZiBBqvg36MhnVxgdfvvEeBb96BTa033sVzSN4rFubtKUaTUiRwPFiH+f3R+cgTywQZE9kTJO+PE3UGyexL4PjxIxN89D72fhjyA7JHaVKdWmtQ1Kch/c3DvDObGk0kSSe1FY3RVWaxrD1DFg9HqS+sNgeYw7klrVMlYYFK0KOST6lahXHoAzTNiliN6B7D/hCVSVko7W5k6ngxbUPXCSSmETsjFWkNGOqa6Vk5z637au88U3Yx9jCN26lQ0Yd6jLry8CQpZvC8nrtNZOl229JQAx/wgJVYmazKFCjGdfz3een+QPPDeUCQm0mfEcVd6u4nU9HZeHVZByb12RzWiW1LKirXv7hiH5sgxvVStq1zm")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_1cq57")
+shadow_mesh = SubResource("ArrayMesh_6f7tw")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x51cc"]
 resource_name = "player_material"
@@ -135,9 +110,9 @@ shader_parameter/affine_mapping = true
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.308
 shader_parameter/resolution = Vector2i(320, 240)
-shader_parameter/albedo = ExtResource("2_31yk2")
+shader_parameter/albedo = ExtResource("4_fnbqb")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_nsrsc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xatxt"]
 _surfaces = [{
 "aabb": AABB(-0.757722, -1.17282, -0.802038, 1.51596, 2.18473, 1.63838),
 "format": 34896613377,
@@ -152,7 +127,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_x5son"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_nqrc6"]
 resource_name = "human_Куб_004"
 _surfaces = [{
 "aabb": AABB(-0.757722, -1.17282, -0.802038, 1.51596, 2.18473, 1.63838),
@@ -169,7 +144,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("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")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_nsrsc")
+shadow_mesh = SubResource("ArrayMesh_xatxt")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6xsud"]
 resource_name = "player_material"
@@ -179,9 +154,9 @@ shader_parameter/affine_mapping = true
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.308
 shader_parameter/resolution = Vector2i(320, 240)
-shader_parameter/albedo = ExtResource("2_31yk2")
+shader_parameter/albedo = ExtResource("4_fnbqb")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_b03hy"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8kr15"]
 _surfaces = [{
 "aabb": AABB(-1.68814, -0.053211, -1.29364, 2.04793, 0.106422, 1.83136),
 "format": 34359742465,
@@ -195,7 +170,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ithb8"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_um3gj"]
 resource_name = "human_Цилиндр_002"
 _surfaces = [{
 "aabb": AABB(-1.68814, -0.053211, -1.29364, 2.04793, 0.106422, 1.83136),
@@ -211,7 +186,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("uIbnPHKbVz1M5gQ/uIbnPHKbVz1M5gQ/BobnPKSbV71P5gQ/BobnPKSbV71P5gQ/ColiPXKbVz1SDAQ/ColiPXKbVz1SDAQ/rIhiPaSbV71UDAQ/rIhiPaSbV71UDAQ/1dOdPXKbVz2+sv8+1dOdPXKbVz2+sv8+1dOdPXKbVz2+sv8+qNOdPaSbV73Csv8+qNOdPaSbV73Csv8+qNOdPaSbV73Csv8+EJ+zPXKbVz302vI+EJ+zPXKbVz302vI+5J6zPaSbV7362vI+5J6zPaSbV7362vI+P8+sPXKbVz08AuU+P8+sPXKbVz08AuU+P8+sPXKbVz08AuU+Es+sPaSbV71CAuU+Es+sPaSbV71CAuU+Es+sPaSbV71CAuU+pTeLPXKbVz1q3tk+pTeLPXKbVz1q3tk+djeLPaSbV71u3tk+djeLPaSbV71u3tk+ALEvPXKbVz2ea9Q+ALEvPXKbVz2ea9Q+qrAvPaSbV72ia9Q+qrAvPaSbV72ia9Q+sNaBPHKbVz2QH9Y+sNaBPHKbVz2QH9Y+CNaBPKSbV72WH9Y+CNaBPKSbV72WH9Y+YJrBu3KbVz12hd4+YJrBu3KbVz12hd4+YJrBu3KbVz12hd4+QJ3Bu6SbV716hd4+QJ3Bu6SbV716hd4+QJ3Bu6SbV716hd4+cJOHvHKbVz0+Xes+cJOHvHKbVz0+Xes+KJSHvKSbV71CXes+KJSHvKSbV71CXes+cKhYvHKbVz32Nfk+cKhYvHKbVz32Nfk+cKhYvHKbVz32Nfk+2KlYvKSbV738Nfk+2KlYvKSbV738Nfk+2KlYvKSbV738Nfk+gFFQO3KbVz3lLAI/gFFQO3KbVz3lLAI/YExQO6SbV73nLAI/YExQO6SbV73nLAI/9Jy6PB/PWD2iVuA+9Jy6PB/PWD2iVuA+9Jy6PB/PWD2iVuA+IkvWvyLPWD0E0Uw+IkvWvyLPWD0E0Uw+IkvWvyLPWD0E0Uw+oE0QPB/PWD1BqAk/oE0QPB/PWD1BqAk/oE0QPB/PWD1BqAk/+hTYvyLPWD1kYpk++hTYvyLPWD1kYpk++hTYvyLPWD1kYpk+oJy6PFHPWL2oVuA+oJy6PFHPWL2oVuA+oJy6PFHPWL2oVuA+IUvWv07PWL0U0Uw+IUvWv07PWL0U0Uw+IUvWv07PWL0U0Uw+8EwQPFHPWL1DqAk/8EwQPFHPWL1DqAk/8EwQPFHPWL1DqAk/+hTYv07PWL1sYpk++hTYv07PWL1sYpk++hTYv07PWL1sYpk+kMY3vfeFRz1Oets+kMY3vfeFRz1Oets+kMY3vfeFRz1Oets+eqLNv/eFRz2kiVY+eqLNv/eFRz2kiVY+eqLNv/eFRz2kiVY+eaLNvymGR720iVY+eaLNvymGR720iVY+eaLNvymGR720iVY+sMY3vSmGR71Wets+sMY3vSmGR71Wets+sMY3vSmGR71Wets+2K5JvfeFRz2Wbes+2K5JvfeFRz2Wbes+2K5JvfeFRz2Wbes+vTHOv/eFRz00cHY+vTHOv/eFRz00cHY+vTHOv/eFRz00cHY+uzHOvymGR71EcHY+uzHOvymGR71EcHY+uzHOvymGR71EcHY+/K5JvSmGR72ebes+/K5JvSmGR72ebes+/K5JvSmGR72ebes+xr/tPZfzWT1aRek+xr/tPZfzWT1aRek+xr/tPZfzWT1aRek+KDa4PpTzWT1N9aO/KDa4PpTzWT1N9aO/KDa4PpTzWT1N9aO/3LvQPJfzWT2swuI+3LvQPJfzWT2swuI+3LvQPJfzWT2swuI+3LvQPJfzWT2swuI+9NGJPpTzWT34laW/9NGJPpTzWT34laW/9NGJPpTzWT34laW/9NGJPpTzWT34laW/sL/tPcnzWb1eRek+sL/tPcnzWb1eRek+sL/tPcnzWb1eRek+JDa4PszzWb1N9aO/JDa4PszzWb1N9aO/JDa4PszzWb1N9aO/eLvQPMnzWb2ywuI+eLvQPMnzWb2ywuI+eLvQPMnzWb2ywuI+eLvQPMnzWb2ywuI+7tGJPszzWb34laW/7tGJPszzWb34laW/7tGJPszzWb34laW/7tGJPszzWb34laW/9NGJPpTzWT34laW/9NGJPpTzWT34laW/9NGJPpTzWT34laW/0LvQPJnzWT2uwuI+0LvQPJnzWT2uwuI+0LvQPJnzWT2uwuI+bLvQPMvzWb20wuI+bLvQPMvzWb20wuI+bLvQPMvzWb20wuI+7tGJPszzWb34laW/7tGJPszzWb34laW/7tGJPszzWb34laW/RnCkPpTzWT3yu4C/RnCkPpTzWT3yu4C/IxhsPpTzWT2dXIK/IxhsPpTzWT2dXIK/IxhsPpTzWT2dXIK/GRhsPszzWb2cXIK/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//898P9/AIA98P9///8e+P9/AAA+cP+///898P9/AIAAAMCPPnD/v/9/AAA+cP+/PfD/f///Hvg+cP9//3/+//9/AAA+cP+/PnD/f/9//v8AAMCPPnD/v/9/AAA+cP+///898AKAAYAAAMCPPnD/v/9/AAA+cP+///898P5/AIA98P9///8e+P9///8+cP+///898P9/AIA98P9///8e+P9///8+cP+///898Pt/AYAAAMCPPnD/v/9/AAA+cP+///898P9/AIAAAMCPPnD/v/9/AAA+cP+///898P9/AIA98P9///8e+P9///8+cP+///898P9/AIA98P9///8e+P9///8+cP+///898P9/AIAAAMCPPnD/v/9///8+8P+/PfD/f/9///8+cP9/PfD/v/9///8+8P+///898AAA38c98P9//3////9///8+8P+/5Oj/f////z+A45WQ////Pz5w/3898P+//3//f////z//f///PvD/v///PfAAAN/HR+v/f////z//fwAAAADfxz3w/3//f/7/PnD/fz3w/7//fwAAAADfx///PfAAAB64PfD/f/9/////fwAAAADfxzC/zkD///8/5Oj/f////z8+cP9/PfD/v/9//3////8//////////7//fwAAAADfx///PfAAAB64/3//f////z9H6/9/////PwAAwI//f///5Oj/f////z+A45WQ////PwAAwI//f/7/ML/OQP///z/k6P9/////PwAAwI//f/7//3//f////z//////////vwAAwI//f////3///z7w/7898P9//3////9///8+8P+/gOOVkP///z9H6/9/////P/////////+//38AAAAA38cwv85A////P/9/AAAAAN/HPfD/f/9///+A45WQ////P0fr/3////8/AADAj/9//v//////////vzC/zkD///8/AADAj/9//v8Ec2ILaApvzEYt/3//f/7/AADAjwGA/v8Ec2ILaApwzAAAoL//f/7/AADAjwGA/v8Ec5z0aAqOswAAoL//f/7/AADAj/9//v8Ec5z0aAqOs0Yt/3//f/7/AADAj/9//v9geFH5DQZ3tQRzYgtoCm/MAABf0p8t/79GLf9//3/+/2B4UfkNBne1BHNiC2gKcMwLQP9/CsD/vwAAoL//f/7/YHitBg0GhsoEc5z0aAqOswtA/38KwP+/AACgv/9//v9geK0GDQaGygRznPRoCo6zAABf0p8t/79GLf9//3/+/2B4UfkNBne1AABf0p8t/78AAMCP/3///2B4UfkNBne1C0D/fwrA/78AAMCP/3/+/2B4rQYNBobKC0D/fwrA/78AAMCP/3/+/2B4rQYNBobKAABf0p8t/78AAMCP/3///+To/3////8/PnD/fz3w/7//f/9/////P/9//3////8///898AAA38c98P9//3/+/z5w/3898P+///898AAAHrg98P9//3///+To/3////8/AADAj/9//v//fwAAAADfx4hA/3+HwP+/AADAj/9/AID/f///PvD/v4hA/3+HwP+/AADAj/9/AIA98P9//3///wAAoL//f/7/AADAj/9//v9GLf9//3/+/wAAwI//f/7/C0D/fwrA/78AAKC//3/+/wAAX9KfLf+/Ri3/f/9//v8LQP9/CsD/vwAAwI//f/7/AABf0p8t/78AAMCP/3////9//3////8//3///z7w/7+IQP9/h8D/vwAAwI//f////3//f////z//f/9/////P/9/AAAAAN/HiED/f4fA/78AAMCP/3////9//3////8//3//f////z//fwAAAADgxwAA5dIZLf+/AADAj/9/////f///PfD/vwAA5dIZLf+/AADAj/9///8AAMCP/3/+//9/AAAAAODHAADl0hkt/78AAMCP/38AgP9///898P+/AADl0hkt/78AAMCP/38AgA==")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_b03hy")
+shadow_mesh = SubResource("ArrayMesh_8kr15")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c8igb"]
 resource_name = "player_material"
@@ -221,9 +196,9 @@ shader_parameter/affine_mapping = true
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.308
 shader_parameter/resolution = Vector2i(320, 240)
-shader_parameter/albedo = ExtResource("2_31yk2")
+shader_parameter/albedo = ExtResource("4_fnbqb")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_tdjsw"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_e4ftm"]
 resource_name = "human_Куб_001"
 _surfaces = [{
 "aabb": AABB(-1.65082, -2.10462, -0.7347, 3.30164, 6.24268, 1.50193),
@@ -243,7 +218,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="Skin" id="Skin_1s475"]
+[sub_resource type="Skin" id="Skin_ldqg8"]
 resource_name = "Skin"
 bind_count = 30
 bind/0/name = &"basin"
@@ -345,9 +320,9 @@ shader_parameter/affine_mapping = true
 shader_parameter/alpha_scissor = 0.5
 shader_parameter/jitter = 0.308
 shader_parameter/resolution = Vector2i(320, 240)
-shader_parameter/albedo = ExtResource("2_31yk2")
+shader_parameter/albedo = ExtResource("4_fnbqb")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_mjbn2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mv6s7"]
 _surfaces = [{
 "aabb": AABB(-1.94786, 0.172215, -1.14851, 3.89572, 1e-05, 3.89572),
 "format": 34896613377,
@@ -361,7 +336,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ebnt4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_v01br"]
 resource_name = "human_Окружность"
 _surfaces = [{
 "aabb": AABB(-1.94786, 0.172215, -1.14851, 3.89572, 1e-05, 3.89572),
@@ -377,7 +352,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/38AAAAAD9MGZwAAdQIP0wNPAAC+CQ/T4jgAAJIVD9N9JQAAfSUP05IVAADiOA/TvgkAAANPD9N1AgAABmcP0wAAAAD/fw/TdQIAAPiYD9O+CQAA+7AP05IVAAAcxw/TfSUAAIHaD9PiOAAAbOoP0wNPAABA9g/TBmcAAIn9D9P/fwAA//8P0/iYAACJ/Q/T+7AAAED2D9McxwAAbOoP04HaAACB2g/TbOoAABzHD9NA9gAA+7AP04n9AAD4mA/T//8AAP9/D9OJ/QAABmcP00D2AAADTw/TbOoAAOI4D9OB2gAAfSUP0xzHAACSFQ/T+7AAAL4JD9P4mAAAdQIP04GtPqmBrT6pga0+qYGtPqmBrT6pga0+qYGtPqmBrT6pga0+qYGtPqmBrT6pgK0+qYGtPqmArT6pga0+qYCtPqmBrT6pga0+qYGtPqmArT6pga0+qYCtPqmBrT6pga0+qYGtPqmBrT6pga0+qYCtPqmBrT6pgK0+qYGtPqmArT6p")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_mjbn2")
+shadow_mesh = SubResource("ArrayMesh_mv6s7")
 
 [sub_resource type="Animation" id="Animation_vjc3j"]
 length = 0.001
@@ -732,252 +707,30 @@ _data = {
 "pose": SubResource("Animation_bntei")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e6c1h"]
-atlas = ExtResource("4_6s52u")
-region = Rect2(0, 145, 229, 69)
+[node name="Level2" type="Node3D" node_paths=PackedStringArray("access_poits")]
+script = ExtResource("1_0ny85")
+website_path = "http://world/payout"
+access_poits = [NodePath("AccessPoint")]
+need_camera = false
+need_player = false
+change_environment_on_load = true
+color_first = Color(0.873298, 0.873298, 0.873298, 1)
+color_two = Color(0.568973, 0.568973, 0.568973, 1)
+color_three = Color(0.393086, 0.393086, 0.393085, 1)
+event_on_load = 100
+can_reload = false
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7kmlw"]
-atlas = ExtResource("4_6s52u")
-region = Rect2(0, 0, 229, 69)
+[node name="AccessPoint" parent="." instance=ExtResource("4_0o0da")]
+transform = Transform3D(0.999451, 0.00263659, -0.0330135, -0.00305806, 0.999915, -0.0127226, 0.0329771, 0.0128166, 0.999374, -8.83401, 0.647983, -3.79561)
+visible = false
+id = 0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eynal"]
-atlas = ExtResource("4_6s52u")
-region = Rect2(0, 73, 229, 69)
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 1, 0)
+current = true
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axuqu"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l0cnf"]
-load_path = "res://.godot/imported/инструментосы (2).png-25228786b42a4709857bfecce64902b6.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1edds"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(23, 48, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w4p0c"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(23, 0, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_euv2u"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(23, 24, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yol11"]
-atlas = ExtResource("8_on8ve")
-region = Rect2(192, 0, 64, 0)
-
-[sub_resource type="Resource" id="Resource_uwcpo"]
-script = ExtResource("5_wkb65")
-tool_type = 0
-mouse_texture = SubResource("AtlasTexture_yol11")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2loay"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(0, 48, 23, 22)
-margin = Rect2(1, 0, 0, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3qllu"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(0, 0, 23, 22)
-margin = Rect2(1, 0, 0, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_60b1s"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(0, 24, 23, 22)
-margin = Rect2(1, 0, 0, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_awfiq"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(0, 0, 23, 22)
-margin = Rect2(1, 0, 0, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k624s"]
-atlas = ExtResource("8_on8ve")
-region = Rect2(127, 0, 64, 0)
-
-[sub_resource type="Resource" id="Resource_wfpbo"]
-script = ExtResource("5_wkb65")
-tool_type = 1
-mouse_texture = SubResource("AtlasTexture_k624s")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4mgf8"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(47, 48, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_svucw"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(47, 0, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0jgfk"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(47, 24, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ig8uh"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(47, 0, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0x55l"]
-atlas = ExtResource("8_on8ve")
-region = Rect2(63, 0, 64, 0)
-
-[sub_resource type="Resource" id="Resource_pssm8"]
-script = ExtResource("5_wkb65")
-tool_type = 5
-mouse_texture = SubResource("AtlasTexture_0x55l")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ugao"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(95, 48, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_srj3e"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(95, 0, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ncbmv"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(95, 24, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g1rjt"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(95, 0, 23, 22)
-
-[sub_resource type="Resource" id="Resource_pfcnl"]
-script = ExtResource("5_wkb65")
-tool_type = 3
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_upsfl"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(119, 48, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l14fd"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(119, 0, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sknl1"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(119, 24, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pb1vd"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(119, 0, 23, 22)
-
-[sub_resource type="Animation" id="Animation_0dh64"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1075, 537)]
-}
-
-[sub_resource type="Animation" id="Animation_i0xk3"]
-resource_name = "play_message"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1075, 556), Vector2(1135, 537)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ionj1"]
-_data = {
-"RESET": SubResource("Animation_0dh64"),
-"play_message": SubResource("Animation_i0xk3")
-}
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7eqxe"]
-atlas = ExtResource("11_sd8es")
-region = Rect2(111, 0, 107, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2b0y1"]
-atlas = ExtResource("12_jngmd")
-region = Rect2(0, 0, 50, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gphmt"]
-atlas = ExtResource("13_kwkyy")
-region = Rect2(-1.425, 1, 66.315, 40.65)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s6ham"]
-atlas = ExtResource("12_jngmd")
-region = Rect2(63, 0, 50, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xim8g"]
-atlas = ExtResource("16_kk3nj")
-region = Rect2(0, 48, 22, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_03ihy"]
-atlas = ExtResource("16_kk3nj")
-region = Rect2(0, 0, 22, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwl8g"]
-atlas = ExtResource("16_kk3nj")
-region = Rect2(0, 24, 22, 22)
-
-[node name="Browser" type="Node" node_paths=PackedStringArray("browser_line", "message", "important_message")]
-script = ExtResource("1_v8pjd")
-browser_line = NodePath("BrowserUI/Bar/LineEdit")
-message = NodePath("BrowserUI/Messages/Message")
-important_message = NodePath("BrowserUI/Messages/ImportantMessage")
-metadata/_edit_vertical_guides_ = [801.0]
+[node name="Node" type="Node" parent="."]
+script = ExtResource("3_ei27u")
 
 [node name="human" type="Node3D" parent="."]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -0.867171, -1.22984, 0)
@@ -1040,14 +793,14 @@ bones/7/parent = 6
 bones/7/rest = Transform3D(-0.724209, 0.68958, -2.32977e-07, -0.68958, -0.724209, -1.58738e-07, -2.78187e-07, 4.5697e-08, 1, 5.96047e-08, 0.952855, 1.42109e-14)
 bones/7/enabled = true
 bones/7/position = Vector3(5.96047e-08, 0.952855, 1.42109e-14)
-bones/7/rotation = Quaternion(-0.0111838, 0.32033, 0.879509, -0.351751)
+bones/7/rotation = Quaternion(-0.0111838, 0.32033, 0.879508, -0.351751)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "l_d_arm"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.982319, 0.187216, 8.18066e-08, -0.187216, 0.982319, -2.04918e-08, -8.41965e-08, 4.81394e-09, 1, 1.19209e-07, 0.510807, 4.9738e-14)
 bones/8/enabled = true
 bones/8/position = Vector3(1.19209e-07, 0.510807, 4.9738e-14)
-bones/8/rotation = Quaternion(0.213017, -0.00436765, -0.118275, 0.969854)
+bones/8/rotation = Quaternion(0.213017, -0.00436766, -0.118275, 0.969853)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "l_hand"
 bones/9/parent = 8
@@ -1224,7 +977,7 @@ bone_name = "head_2"
 bone_idx = 4
 
 [node name="head_2" type="MeshInstance3D" parent="human/Armature/Skeleton3D/head_2"]
-mesh = SubResource("ArrayMesh_w2uad")
+mesh = SubResource("ArrayMesh_r10bu")
 skeleton = NodePath("")
 
 [node name="hood" type="BoneAttachment3D" parent="human/Armature/Skeleton3D"]
@@ -1233,25 +986,25 @@ bone_name = "hood"
 bone_idx = 5
 
 [node name="hood" type="MeshInstance3D" parent="human/Armature/Skeleton3D/hood"]
-mesh = SubResource("ArrayMesh_x5son")
+mesh = SubResource("ArrayMesh_nqrc6")
 skeleton = NodePath("")
 
 [node name="laptop" type="BoneAttachment3D" parent="human/Armature/Skeleton3D"]
-transform = Transform3D(2.11596e-06, 20.0577, 1.81794e-06, -1, 4.00543e-05, 1.13249e-06, 1.19209e-06, -3.71933e-05, 1, 0.00433421, 1.32754, 2.00996)
+transform = Transform3D(2.6226e-06, 20.0577, 1.72853e-06, -1, 5.14984e-05, 2.17557e-06, 2.20537e-06, -3.50475e-05, 1, 0.00433528, 1.32754, 2.00996)
 bone_name = "laptop"
 bone_idx = 12
 
 [node name="laptop" type="MeshInstance3D" parent="human/Armature/Skeleton3D/laptop"]
-mesh = SubResource("ArrayMesh_ithb8")
+mesh = SubResource("ArrayMesh_um3gj")
 skeleton = NodePath("")
 
 [node name="body" type="MeshInstance3D" parent="human/Armature/Skeleton3D"]
-mesh = SubResource("ArrayMesh_tdjsw")
-skin = SubResource("Skin_1s475")
+mesh = SubResource("ArrayMesh_e4ftm")
+skin = SubResource("Skin_ldqg8")
 
 [node name="floor" type="MeshInstance3D" parent="human"]
 transform = Transform3D(1.33516, 0, -2.33447e-07, 0, 1.33516, 0, 2.33447e-07, 0, 1.33516, 0, -0.0962047, 0)
-mesh = SubResource("ArrayMesh_ebnt4")
+mesh = SubResource("ArrayMesh_v01br")
 skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="human"]
@@ -1285,691 +1038,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_p5unb")
+theme_override_fonts/font = ExtResource("5_wv83f")
 theme_override_font_sizes/font_size = 50
-text = "Earth, the year 2824.
+text = "Paycheck earned : $200
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Button" type="TextureButton" parent="human/Control"]
-layout_mode = 0
-offset_left = 693.0
-offset_top = 599.0
-offset_right = 925.0
-offset_bottom = 668.0
-texture_normal = SubResource("AtlasTexture_e6c1h")
-texture_pressed = SubResource("AtlasTexture_7kmlw")
-texture_hover = SubResource("AtlasTexture_eynal")
-script = ExtResource("3_63344")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="human/Control/Button"]
-stream = ExtResource("6_avq85")
-volume_db = -14.0
-
-[node name="Browser3D" type="Node3D" parent="."]
-
-[node name="BrowserUI" type="CanvasLayer" parent="."]
-
-[node name="Background" type="Control" parent="BrowserUI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="LoadingBackground" type="ColorRect" parent="BrowserUI/Background"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.629675, 0.629675, 0.629675, 1)
-script = ExtResource("2_t4od5")
-
-[node name="ColorRect" type="TextureRect" parent="BrowserUI/Background"]
-z_index = 99
-layout_mode = 0
-offset_right = 1602.0
-offset_bottom = 85.0
-texture = ExtResource("3_exf05")
-
-[node name="ColorRect2" type="TextureRect" parent="BrowserUI/Background"]
-z_index = 99
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -85.0
-offset_right = 1602.0
-grow_vertical = 0
-texture = ExtResource("4_uddce")
-
-[node name="Bar" type="Control" parent="BrowserUI"]
-z_index = 102
-layout_mode = 3
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 84.0
-grow_horizontal = 2
-
-[node name="LineEdit" type="LineEdit" parent="BrowserUI/Bar"]
-layout_mode = 0
-offset_left = 488.0
-offset_top = 16.0
-offset_right = 1199.0
-offset_bottom = 64.0
-theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("4_p5unb")
-theme_override_font_sizes/font_size = 34
-theme_override_styles/normal = SubResource("StyleBoxEmpty_axuqu")
-placeholder_text = "Enter website..."
-context_menu_enabled = false
-script = ExtResource("2_d03vt")
-
-[node name="Tool" type="Control" parent="BrowserUI"]
-z_index = 100
-layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -84.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 1
-
-[node name="ZoomPlus" type="TextureButton" parent="BrowserUI/Tool"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = -0.012
-anchor_right = 1.0
-anchor_bottom = -0.012
-offset_left = -404.0
-offset_top = 10.008
-offset_right = -334.0
-offset_bottom = 81.008
-texture_normal = SubResource("AtlasTexture_1edds")
-texture_pressed = SubResource("AtlasTexture_w4p0c")
-texture_hover = SubResource("AtlasTexture_euv2u")
-texture_focused = SubResource("AtlasTexture_w4p0c")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("4_gke0k")
-tool = SubResource("Resource_uwcpo")
-
-[node name="ZoomMinus" type="TextureButton" parent="BrowserUI/Tool"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = -0.012
-anchor_right = 1.0
-anchor_bottom = -0.012
-offset_left = -330.0
-offset_top = 10.008
-offset_right = -260.0
-offset_bottom = 81.008
-texture_normal = SubResource("AtlasTexture_2loay")
-texture_pressed = SubResource("AtlasTexture_3qllu")
-texture_hover = SubResource("AtlasTexture_60b1s")
-texture_focused = SubResource("AtlasTexture_awfiq")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("4_gke0k")
-tool = SubResource("Resource_wfpbo")
-
-[node name="Mouse" type="TextureButton" parent="BrowserUI/Tool"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = -0.012
-anchor_right = 1.0
-anchor_bottom = -0.012
-offset_left = -256.0
-offset_top = 10.008
-offset_right = -186.0
-offset_bottom = 81.008
-texture_normal = SubResource("AtlasTexture_4mgf8")
-texture_pressed = SubResource("AtlasTexture_svucw")
-texture_hover = SubResource("AtlasTexture_0jgfk")
-texture_focused = SubResource("AtlasTexture_ig8uh")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("4_gke0k")
-tool = SubResource("Resource_pssm8")
-set_default = true
-
-[node name="Help" type="TextureButton" parent="BrowserUI/Tool"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = -0.012
-anchor_right = 1.0
-anchor_bottom = -0.012
-offset_left = -182.0
-offset_top = 10.008
-offset_right = -112.0
-offset_bottom = 81.008
-texture_normal = SubResource("AtlasTexture_5ugao")
-texture_pressed = SubResource("AtlasTexture_srj3e")
-texture_hover = SubResource("AtlasTexture_ncbmv")
-texture_focused = SubResource("AtlasTexture_g1rjt")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("4_gke0k")
-tool = SubResource("Resource_pfcnl")
-need_release_focus = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BrowserUI/Tool/Help"]
-stream = ExtResource("27_2q3x7")
-
-[node name="RefreshPage" type="TextureButton" parent="BrowserUI/Tool"]
-z_index = 101
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = -0.012
-anchor_right = 1.0
-anchor_bottom = -0.012
-offset_left = -1269.0
-offset_top = -811.992
-offset_right = -1199.0
-offset_bottom = -740.992
-texture_normal = SubResource("AtlasTexture_upsfl")
-texture_pressed = SubResource("AtlasTexture_l14fd")
-texture_hover = SubResource("AtlasTexture_sknl1")
-texture_focused = SubResource("AtlasTexture_pb1vd")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("5_fbk0t")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BrowserUI/Tool"]
-stream = ExtResource("15_0mqse")
-
-[node name="Messages" type="Control" parent="BrowserUI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Message" type="Control" parent="BrowserUI/Messages" node_paths=PackedStringArray("label", "animation_player", "timer", "important_message")]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -525.0
-offset_top = -363.0
-offset_right = -107.0
-offset_bottom = -126.0
-grow_horizontal = 0
-grow_vertical = 0
-script = ExtResource("6_id0ia")
-label = NodePath("Label")
-animation_player = NodePath("AnimationPlayer")
-timer = NodePath("Label/Timer")
-important_message = NodePath("../ImportantMessage")
-timer_time = 5.0
-
-[node name="Label" type="Label" parent="BrowserUI/Messages/Message"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 71.0
-offset_top = 8.0
-offset_bottom = -9.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_p5unb")
-theme_override_font_sizes/font_size = 40
-text = "CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-clip_text = true
-
-[node name="Panel" type="Panel" parent="BrowserUI/Messages/Message/Label"]
-visible = false
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Timer" type="Timer" parent="BrowserUI/Messages/Message/Label"]
-wait_time = 5.0
-one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BrowserUI/Messages/Message"]
-libraries = {
-"": SubResource("AnimationLibrary_ionj1")
-}
-
-[node name="TextureRect" type="TextureRect" parent="BrowserUI/Messages/Message"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_7eqxe")
-
-[node name="TextureRect2" type="TextureRect" parent="BrowserUI/Messages/Message"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -159.0
-offset_top = -11.0667
-offset_right = -378.0
-offset_bottom = 2.93335
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_2b0y1")
-
-[node name="TextureRect3" type="TextureRect" parent="BrowserUI/Messages/Message/TextureRect2"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -68.0
-offset_top = 216.0
-offset_right = 30.0
-offset_bottom = 118.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_gphmt")
-stretch_mode = 4
-
-[node name="ImportantMessage" type="Control" parent="BrowserUI/Messages" node_paths=PackedStringArray("label", "animation_player", "timer")]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -525.0
-offset_top = -363.0
-offset_right = -107.0
-offset_bottom = -126.0
-grow_horizontal = 0
-grow_vertical = 0
-script = ExtResource("6_id0ia")
-label = NodePath("Label")
-animation_player = NodePath("AnimationPlayer")
-timer = NodePath("Label/Timer")
-timer_time = 10.0
-
-[node name="Label" type="Label" parent="BrowserUI/Messages/ImportantMessage"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 71.0
-offset_top = 8.0
-offset_bottom = -9.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_p5unb")
-theme_override_font_sizes/font_size = 40
-text = "CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!CAN'T DO THAT!"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-clip_text = true
-
-[node name="Panel" type="Panel" parent="BrowserUI/Messages/ImportantMessage/Label"]
-visible = false
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Timer" type="Timer" parent="BrowserUI/Messages/ImportantMessage/Label"]
-wait_time = 10.0
-one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BrowserUI/Messages/ImportantMessage"]
-libraries = {
-"": SubResource("AnimationLibrary_ionj1")
-}
-
-[node name="TextureRect" type="TextureRect" parent="BrowserUI/Messages/ImportantMessage"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_7eqxe")
-
-[node name="TextureRect2" type="TextureRect" parent="BrowserUI/Messages/ImportantMessage"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -159.0
-offset_top = -11.0667
-offset_right = -378.0
-offset_bottom = 2.93335
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_s6ham")
-
-[node name="TextureRect3" type="TextureRect" parent="BrowserUI/Messages/ImportantMessage/TextureRect2"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -69.0
-offset_top = 216.0
-offset_right = 30.0
-offset_bottom = 118.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_gphmt")
-stretch_mode = 4
-
-[node name="Spam" type="Control" parent="BrowserUI"]
-z_index = 110
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("15_ffxbg")
-
-[node name="Ad" type="Control" parent="BrowserUI/Spam"]
-visible = false
-anchors_preset = 0
-offset_left = 179.0
-offset_top = 176.0
-offset_right = 486.0
-offset_bottom = 345.0
-mouse_filter = 1
-
-[node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("15_h34kp")
-expand_mode = 3
-
-[node name="Panel" type="Panel" parent="BrowserUI/Spam/Ad"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -5.0
-offset_top = -4.0
-offset_right = 5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureButton" type="TextureButton" parent="BrowserUI/Spam/Ad"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-offset_bottom = 17.0
-grow_horizontal = 0
-texture_normal = SubResource("AtlasTexture_xim8g")
-texture_pressed = SubResource("AtlasTexture_03ihy")
-texture_hover = SubResource("AtlasTexture_mwl8g")
-stretch_mode = 0
-script = ExtResource("17_50t5p")
-
-[node name="Ad2" type="Control" parent="BrowserUI/Spam"]
-visible = false
-anchors_preset = 0
-offset_left = 1133.0
-offset_top = 200.0
-offset_right = 1440.0
-offset_bottom = 369.0
-mouse_filter = 1
-
-[node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("19_itd8a")
-expand_mode = 3
-
-[node name="Panel" type="Panel" parent="BrowserUI/Spam/Ad2"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -5.0
-offset_top = -4.0
-offset_right = 5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureButton" type="TextureButton" parent="BrowserUI/Spam/Ad2"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-offset_bottom = 17.0
-grow_horizontal = 0
-texture_normal = SubResource("AtlasTexture_xim8g")
-texture_pressed = SubResource("AtlasTexture_03ihy")
-texture_hover = SubResource("AtlasTexture_mwl8g")
-stretch_mode = 0
-script = ExtResource("17_50t5p")
-
-[node name="Ad3" type="Control" parent="BrowserUI/Spam"]
-visible = false
-anchors_preset = 0
-offset_left = 421.0
-offset_top = 546.0
-offset_right = 728.0
-offset_bottom = 715.0
-mouse_filter = 1
-
-[node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("20_b3cpo")
-expand_mode = 3
-
-[node name="Panel" type="Panel" parent="BrowserUI/Spam/Ad3"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -5.0
-offset_top = -4.0
-offset_right = 5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureButton" type="TextureButton" parent="BrowserUI/Spam/Ad3"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-offset_bottom = 17.0
-grow_horizontal = 0
-texture_normal = SubResource("AtlasTexture_xim8g")
-texture_pressed = SubResource("AtlasTexture_03ihy")
-texture_hover = SubResource("AtlasTexture_mwl8g")
-stretch_mode = 0
-script = ExtResource("17_50t5p")
-
-[node name="Ad4" type="Control" parent="BrowserUI/Spam"]
-visible = false
-anchors_preset = 0
-offset_left = 993.0
-offset_top = 496.0
-offset_right = 1300.0
-offset_bottom = 665.0
-mouse_filter = 1
-
-[node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("20_b3cpo")
-expand_mode = 3
-
-[node name="Panel" type="Panel" parent="BrowserUI/Spam/Ad4"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -5.0
-offset_top = -4.0
-offset_right = 5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureButton" type="TextureButton" parent="BrowserUI/Spam/Ad4"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-offset_bottom = 17.0
-grow_horizontal = 0
-texture_normal = SubResource("AtlasTexture_xim8g")
-texture_pressed = SubResource("AtlasTexture_03ihy")
-texture_hover = SubResource("AtlasTexture_mwl8g")
-stretch_mode = 0
-script = ExtResource("17_50t5p")
-
-[node name="Ad5" type="Control" parent="BrowserUI/Spam"]
-visible = false
-anchors_preset = 0
-offset_left = 665.0
-offset_top = 276.0
-offset_right = 972.0
-offset_bottom = 445.0
-mouse_filter = 1
-
-[node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad5"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("15_h34kp")
-expand_mode = 3
-
-[node name="Panel" type="Panel" parent="BrowserUI/Spam/Ad5"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -5.0
-offset_top = -4.0
-offset_right = 5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureButton" type="TextureButton" parent="BrowserUI/Spam/Ad5"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-offset_bottom = 17.0
-grow_horizontal = 0
-texture_normal = SubResource("AtlasTexture_xim8g")
-texture_pressed = SubResource("AtlasTexture_03ihy")
-texture_hover = SubResource("AtlasTexture_mwl8g")
-stretch_mode = 0
-script = ExtResource("17_50t5p")
-
-[node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.78152, 0.62388, 0, -0.62388, 0.78152, 0, 8.44, 10)
-script = ExtResource("22_tqofj")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("27_2q3x7")
-script = ExtResource("27_j5473")
-
-[node name="MainPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("29_gbq6u")
-volume_db = -15.0
-script = ExtResource("30_gbyh8")
-
-[connection signal="pressed" from="BrowserUI/Tool/Help" to="BrowserUI/Tool/Help/AudioStreamPlayer" method="play"]
-[connection signal="timeout" from="BrowserUI/Messages/Message/Label/Timer" to="BrowserUI/Messages/Message" method="stop_message"]
-[connection signal="timeout" from="BrowserUI/Messages/ImportantMessage/Label/Timer" to="BrowserUI/Messages/ImportantMessage" method="stop_message"]
-[connection signal="finished" from="MainPlayer" to="MainPlayer" method="_on_finished"]

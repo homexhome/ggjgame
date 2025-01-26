@@ -1,16 +1,15 @@
-[gd_scene load_steps=26 format=3 uid="uid://b67ny5rpuh3jv"]
+[gd_scene load_steps=23 format=3 uid="uid://b67ny5rpuh3jv"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_0lboy"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="2_elr50"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="3_b1ty1"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="4_2lrtg"]
-[ext_resource type="Texture2D" uid="uid://dxcc3psrfg6r4" path="res://assets/imports/Light/texture_10.png" id="5_fo6eo"]
-[ext_resource type="Texture2D" uid="uid://c78yr6x1ifser" path="res://assets/imports/Dark/texture_01.png" id="6_plqrj"]
 [ext_resource type="PackedScene" uid="uid://dmti64qangmbb" path="res://scenes/scalable_object.tscn" id="7_vw557"]
 [ext_resource type="Script" path="res://scripts/fish_path_follow_3d.gd" id="8_yjio3"]
 [ext_resource type="PackedScene" uid="uid://bta7nxuh6c0sl" path="res://scenes/fish.tscn" id="9_2ajjt"]
+[ext_resource type="Script" path="res://resources/node_2.gd" id="10_5q3ee"]
 [ext_resource type="PackedScene" uid="uid://vw064nrftrc8" path="res://scenes/teleport_point.tscn" id="10_bimfm"]
-[ext_resource type="Script" path="res://scripts/to_delete.gd" id="11_0xnpa"]
+[ext_resource type="Script" path="res://scripts/node_2.gd" id="11_42q7t"]
 [ext_resource type="PackedScene" uid="uid://1lvifrvk5sc5" path="res://scenes/items/photo.tscn" id="11_sgg7b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vj8mx"]
@@ -39,13 +38,6 @@ size = Vector3(1, 6.37793, 14.2746)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yj88"]
 albedo_texture = ExtResource("4_2lrtg")
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_senfk"]
-albedo_texture = ExtResource("5_fo6eo")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0133c"]
-albedo_texture = ExtResource("6_plqrj")
 uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofw7s"]
@@ -180,13 +172,6 @@ use_collision = true
 size = Vector3(15, 1, 3)
 material = SubResource("StandardMaterial3D_2yj88")
 
-[node name="Quest_Item" type="CSGBox3D" parent="Environment/Terrain"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.90557, 1.85755, -14.8026)
-material_override = SubResource("StandardMaterial3D_senfk")
-use_collision = true
-size = Vector3(0.3, 0.3, 0.3)
-material = SubResource("StandardMaterial3D_0133c")
-
 [node name="Wall12" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -16)
 use_collision = true
@@ -238,11 +223,17 @@ script = ExtResource("8_yjio3")
 [node name="Fish" parent="Environment/Fishes/Path3D3/PathFollow3D" instance=ExtResource("9_2ajjt")]
 
 [node name="TeleportPoint" parent="." instance=ExtResource("10_bimfm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.90326, 1.9408, -15.707)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.52383, 1.9408, -14.6136)
+website_to = "http://world/payout"
 
-[node name="Node" type="Node" parent="TeleportPoint"]
-script = ExtResource("11_0xnpa")
+[node name="Node2" type="Node" parent="TeleportPoint"]
+script = ExtResource("10_5q3ee")
 id = 5
 
 [node name="Item" parent="." instance=ExtResource("11_sgg7b")]
-transform = Transform3D(1, 0, 0, 0, 0.517176, -0.855879, 0, 0.855879, 0.517176, -9.89311, 2.17811, -14.8361)
+transform = Transform3D(1, 0, 0, 0, 0.517176, -0.855879, 0, 0.855879, 0.517176, -10.0526, 1.88957, -16.1044)
+
+[node name="Node2" type="Node" parent="Item"]
+script = ExtResource("11_42q7t")
+
+[connection signal="intecacted" from="Item" to="Item/Node2" method="_load_end"]
