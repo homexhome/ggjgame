@@ -21,6 +21,7 @@ func _ready() -> void:
 	material_bad_hover = preload("res://resources/bad_hover.tres")
 	if area.mouse_exited.is_connected(_on_area_3d_mouse_exited) == false:
 		area.mouse_exited.connect(_on_area_3d_mouse_exited)
+	collision.shape = collision.shape.duplicate()
 
 func increase_object_scale(_state : STATE):
 	if scale_state == _state: return

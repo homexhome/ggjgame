@@ -7,6 +7,7 @@ var all_levels : Dictionary
 @onready var camera_scene = preload("res://scenes/camera.tscn")
 @onready var browser_scene = preload("res://scenes/browser.tscn")
 
+
 var loading : bool = false
 
 var loaded_scenes : Array
@@ -35,12 +36,18 @@ func load_level(path : String, place_id_for_player : int = 0):
 		var level = all_levels[path].duplicate()
 		Session.get_world().add_child(level)
 		await get_tree().process_frame
-		var camera = camera_scene.instantiate()
-		level.add_child(camera)
-		await get_tree().process_frame
-		var player = player_scene.instantiate()
-		level.add_child(player)
-		player.global_position = level.get_access_point_position(place_id_for_player)
+
+		var camera = null
+		if level.need_camera:
+			camera = camera_scene.instantiate()
+			level.add_child(camera)
+			await get_tree().process_frame
+
+		var player = null
+		if level.need_player:
+			player = player_scene.instantiate()
+			level.add_child(player)
+			player.global_position = level.get_access_point_position(place_id_for_player)
 		loaded_scenes.append_array([level,camera,player])
 		loaded = true
 		Session.get_browser().set_line_text(level.website_path)

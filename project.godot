@@ -29,6 +29,10 @@ shapes/collision/shape_color=Color(0, 0.6, 0.701961, 0.921569)
 window/size/viewport_width=1600
 window/size/viewport_height=900
 
+[global_group]
+
+bake=""
+
 [input]
 
 left={

@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/refresh_page_button.gd" id="5_fbk0t"]
 [ext_resource type="Script" path="res://resources/tool_resource.gd" id="5_wkb65"]
 [ext_resource type="Script" path="res://scripts/message.gd" id="6_id0ia"]
-[ext_resource type="Texture2D" uid="uid://b8b2m05xvbrdq" path="res://assets/imports/курсоры (2).png" id="9_iuram"]
+[ext_resource type="Texture2D" uid="uid://clsf6w7tpncil" path="res://assets/imports/курсоры (3).png" id="8_on8ve"]
 [ext_resource type="Texture2D" uid="uid://c680lwfa3y51o" path="res://assets/imports/диал.окна (2).png" id="11_sd8es"]
 [ext_resource type="Texture2D" uid="uid://doejfni7hrbns" path="res://assets/imports/песГолова.png" id="12_jngmd"]
 [ext_resource type="Texture2D" uid="uid://b1p5sdd5umkhy" path="res://assets/imports/пёсТело.png" id="13_kwkyy"]
@@ -33,8 +33,8 @@ atlas = SubResource("CompressedTexture2D_l0cnf")
 region = Rect2(23, 24, 23, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yol11"]
-atlas = ExtResource("9_iuram")
-region = Rect2(22, 0, 24, 0)
+atlas = ExtResource("8_on8ve")
+region = Rect2(192, 0, 64, 0)
 
 [sub_resource type="Resource" id="Resource_uwcpo"]
 script = ExtResource("5_wkb65")
@@ -62,8 +62,8 @@ region = Rect2(0, 0, 23, 22)
 margin = Rect2(1, 0, 0, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k624s"]
-atlas = ExtResource("9_iuram")
-region = Rect2(-2, 0, 24, 0)
+atlas = ExtResource("8_on8ve")
+region = Rect2(127, 0, 64, 0)
 
 [sub_resource type="Resource" id="Resource_wfpbo"]
 script = ExtResource("5_wkb65")
@@ -87,8 +87,8 @@ atlas = SubResource("CompressedTexture2D_l0cnf")
 region = Rect2(47, 0, 23, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0x55l"]
-atlas = ExtResource("9_iuram")
-region = Rect2(46, 0, 24, 0)
+atlas = ExtResource("8_on8ve")
+region = Rect2(63, 0, 64, 0)
 
 [sub_resource type="Resource" id="Resource_pssm8"]
 script = ExtResource("5_wkb65")

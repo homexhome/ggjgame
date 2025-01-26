@@ -4,6 +4,9 @@ class_name Level
 @export var website_path : String
 @export var access_poits : Array[AccessPoint]
 
+@export var need_camera : bool = true
+@export var need_player : bool = true
+
 func _ready() -> void:
 	Loader.loading_ended.connect(set_browser_line_text)
 	Session.set_up_level(self)

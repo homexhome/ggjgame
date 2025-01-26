@@ -8,6 +8,8 @@ var browser : Browser
 
 var current_level : Level
 
+var current_follower : Follower
+
 var camera_initialized: bool = false
 var world_initialized : bool = false
 
@@ -19,6 +21,8 @@ var force_datamosh:float = 0.0
 var active_tool : Tool
 
 var custom_info_area
+
+var all_events : Dictionary
 
 signal info_signal
 
@@ -95,3 +99,16 @@ func set_custom_info_area(area):
 	custom_info_area = area
 	if custom_info_area != null:
 		browser.play_important_message(custom_info_area.message)
+
+func set_current_follower(follower):
+	current_follower = follower
+
+func get_current_follower() -> Follower:
+	return current_follower
+
+func add_event(id : int):
+	if all_events.has(id) == false:
+		all_events[id] = 0
+
+func check_event(id : int):
+	return all_events.has(id)
