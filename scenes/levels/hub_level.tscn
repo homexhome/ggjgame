@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://cf8prbpwa0ymh"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_8fmxb"]
-[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="3_1sbfo"]
+[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="3_1sbfo"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="4_gmnf3"]
 [ext_resource type="Material" uid="uid://ruabjqh3378x" path="res://resources/base_object_scaler.tres" id="5_g2v3r"]
 [ext_resource type="PackedScene" uid="uid://3fcqnc8iona" path="res://scenes/overlay_node.tscn" id="6_7u351"]
@@ -85,7 +85,7 @@ geometry_source_group_name = &"bake"
 material = ExtResource("11_ec52a")
 size = Vector2(0.01, 0.01)
 
-[node name="Level2" type="Node3D" node_paths=PackedStringArray("access_poits")]
+[node name="Level3" type="Node3D" node_paths=PackedStringArray("access_poits")]
 script = ExtResource("1_8fmxb")
 website_path = "http://awell.world/hub"
 access_poits = [NodePath("AccessPoint")]

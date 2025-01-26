@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://cv8lv3gtw6117"]
+[gd_scene load_steps=16 format=4 uid="uid://cv8lv3gtw6117"]
 
 [ext_resource type="Script" path="res://scripts/follower.gd" id="1_lb231"]
 [ext_resource type="Texture2D" uid="uid://blmbubcflb6qe" path="res://blender_adeleheart/guardian/guardian_guardian_texture.png" id="2_to2a5"]
 [ext_resource type="Script" path="res://scripts/catcher_area.gd" id="3_ua58p"]
+[ext_resource type="AudioStream" uid="uid://cps0wet7g7nqe" path="res://music/sounds/guardian_step.wav" id="4_5ntvl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w6nlu"]
 radius = 0.05
@@ -537,5 +538,9 @@ script = ExtResource("3_ua58p")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772908, 0.00603247)
 shape = SubResource("CapsuleShape3D_5elk6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_5ntvl")
+volume_db = -5.0
 
 [connection signal="timeout" from="Timer" to="." method="show_ad"]

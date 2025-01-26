@@ -32,6 +32,7 @@ func _ready() -> void:
 	if Session.get_player() == null: return
 	nav_agent.target_position = Session.get_player().global_position
 	initialized = true
+	$AudioStreamPlayer3D.play()
 	
 func _physics_process(delta: float) -> void:
 	if !initialized: return
