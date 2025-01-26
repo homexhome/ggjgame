@@ -76,5 +76,5 @@ func load_all_levels():
 	var _all_levels = DirAccess.get_files_at("res://scenes/levels/")
 	for path in _all_levels:
 		path = "res://scenes/levels/" + path
-		var level = load(path).instantiate()
+		var level = load(path.trim_suffix(".remap")).instantiate()
 		all_levels[level.website_path] = level
