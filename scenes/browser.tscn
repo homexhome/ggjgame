@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://wvvqegxjx5rh"]
+[gd_scene load_steps=50 format=3 uid="uid://wvvqegxjx5rh"]
 
 [ext_resource type="Script" path="res://scripts/browser.gd" id="1_v8pjd"]
 [ext_resource type="Script" path="res://scenes/browser_line.gd" id="2_d03vt"]
@@ -7,11 +7,13 @@
 [ext_resource type="Script" path="res://scripts/tool_button.gd" id="4_gke0k"]
 [ext_resource type="FontFile" uid="uid://dfm8acj5sgvk1" path="res://fonts/Nintendo-DS-BIOS.ttf" id="4_p5unb"]
 [ext_resource type="Texture2D" uid="uid://dpkch4leakkw2" path="res://assets/imports/шторка_низ1 (2).png" id="4_uddce"]
+[ext_resource type="Script" path="res://scripts/refresh_page_button.gd" id="5_fbk0t"]
 [ext_resource type="Script" path="res://resources/tool_resource.gd" id="5_wkb65"]
 [ext_resource type="Script" path="res://scripts/message.gd" id="6_id0ia"]
 [ext_resource type="Texture2D" uid="uid://b8b2m05xvbrdq" path="res://assets/imports/курсоры (2).png" id="9_iuram"]
 [ext_resource type="Texture2D" uid="uid://c680lwfa3y51o" path="res://assets/imports/диал.окна (2).png" id="11_sd8es"]
 [ext_resource type="Texture2D" uid="uid://doejfni7hrbns" path="res://assets/imports/песГолова.png" id="12_jngmd"]
+[ext_resource type="Texture2D" uid="uid://b1p5sdd5umkhy" path="res://assets/imports/пёсТело.png" id="13_kwkyy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axuqu"]
 
@@ -113,6 +115,22 @@ region = Rect2(95, 0, 23, 22)
 script = ExtResource("5_wkb65")
 tool_type = 3
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_upsfl"]
+atlas = SubResource("CompressedTexture2D_l0cnf")
+region = Rect2(119, 48, 23, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l14fd"]
+atlas = SubResource("CompressedTexture2D_l0cnf")
+region = Rect2(119, 0, 23, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sknl1"]
+atlas = SubResource("CompressedTexture2D_l0cnf")
+region = Rect2(119, 24, 23, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb1vd"]
+atlas = SubResource("CompressedTexture2D_l0cnf")
+region = Rect2(119, 0, 23, 22)
+
 [sub_resource type="Animation" id="Animation_0dh64"]
 length = 0.001
 tracks/0/type = "value"
@@ -205,6 +223,10 @@ region = Rect2(111, 0, 107, 48)
 atlas = ExtResource("12_jngmd")
 region = Rect2(0, 0, 50, 63)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gphmt"]
+atlas = ExtResource("13_kwkyy")
+region = Rect2(-1.425, 1, 66.315, 40.65)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6ham"]
 atlas = ExtResource("12_jngmd")
 region = Rect2(63, 0, 50, 63)
@@ -240,12 +262,14 @@ color = Color(0.629675, 0.629675, 0.629675, 1)
 script = ExtResource("2_t4od5")
 
 [node name="ColorRect" type="TextureRect" parent="BrowserUI/Background"]
+z_index = 99
 layout_mode = 0
 offset_right = 1602.0
 offset_bottom = 85.0
 texture = ExtResource("3_exf05")
 
 [node name="ColorRect2" type="TextureRect" parent="BrowserUI/Background"]
+z_index = 99
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -256,6 +280,7 @@ grow_vertical = 0
 texture = ExtResource("4_uddce")
 
 [node name="Bar" type="Control" parent="BrowserUI"]
+z_index = 102
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
@@ -283,6 +308,7 @@ context_menu_enabled = false
 script = ExtResource("2_d03vt")
 
 [node name="Tool" type="Control" parent="BrowserUI"]
+z_index = 100
 layout_mode = 3
 anchors_preset = 12
 anchor_top = 1.0
@@ -374,6 +400,26 @@ stretch_mode = 0
 script = ExtResource("4_gke0k")
 tool = SubResource("Resource_pfcnl")
 need_release_focus = true
+
+[node name="RefreshPage" type="TextureButton" parent="BrowserUI/Tool"]
+z_index = 101
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -0.012
+anchor_right = 1.0
+anchor_bottom = -0.012
+offset_left = -1269.0
+offset_top = -811.992
+offset_right = -1199.0
+offset_bottom = -740.992
+texture_normal = SubResource("AtlasTexture_upsfl")
+texture_pressed = SubResource("AtlasTexture_l14fd")
+texture_hover = SubResource("AtlasTexture_sknl1")
+texture_focused = SubResource("AtlasTexture_pb1vd")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_fbk0t")
 
 [node name="Messages" type="Control" parent="BrowserUI"]
 layout_mode = 3
@@ -469,6 +515,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_2b0y1")
 
+[node name="TextureRect3" type="TextureRect" parent="BrowserUI/Messages/Message/TextureRect2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = 216.0
+offset_right = 30.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_gphmt")
+stretch_mode = 4
+
 [node name="ImportantMessage" type="Control" parent="BrowserUI/Messages" node_paths=PackedStringArray("label", "animation_player", "timer")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -552,6 +613,21 @@ offset_bottom = 2.93335
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_s6ham")
+
+[node name="TextureRect3" type="TextureRect" parent="BrowserUI/Messages/ImportantMessage/TextureRect2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -69.0
+offset_top = 216.0
+offset_right = 30.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_gphmt")
+stretch_mode = 4
 
 [connection signal="timeout" from="BrowserUI/Messages/Message/Label/Timer" to="BrowserUI/Messages/Message" method="stop_message"]
 [connection signal="timeout" from="BrowserUI/Messages/ImportantMessage/Label/Timer" to="BrowserUI/Messages/ImportantMessage" method="stop_message"]

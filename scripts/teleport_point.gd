@@ -30,7 +30,7 @@ func _on_area_3d_input_event(_camera: Node, _event: InputEvent, _event_position:
 		return
 	if Input.is_action_just_pressed("left_click"):
 		if Session.get_tool_type() != Tool.TYPE.MOUSE:
-			Session.get_browser().play_message("Can't use that")
+			Session.get_browser().play_message("Can't use that tool here!")
 			return
 		active = false
 		Loader.load_level(website_to,access_point_id_to)

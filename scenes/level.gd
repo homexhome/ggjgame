@@ -6,6 +6,7 @@ class_name Level
 
 func _ready() -> void:
 	Loader.loading_ended.connect(set_browser_line_text)
+	Session.set_up_level(self)
 
 func set_browser_line_text():
 	Session.get_browser().set_line_text(website_path)

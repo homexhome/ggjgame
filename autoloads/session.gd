@@ -6,6 +6,8 @@ var player : Player
 var world : World
 var browser : Browser
 
+var current_level : Level
+
 var camera_initialized: bool = false
 var world_initialized : bool = false
 
@@ -46,6 +48,11 @@ func set_up_browser(_browser):
 func get_browser() -> Browser:
 	return browser
 
+func set_up_level(level):
+	current_level = level
+
+func get_current_level() -> Level:
+	return current_level
 
 func array_to_vector3(array: Array) -> Vector3:
 	return Vector3(array[0], array[1], array[2])

@@ -122,8 +122,17 @@ shape = SubResource("BoxShape3D_bsi81")
 [node name="OverlayNode" parent="Walls/ScalableObject" instance=ExtResource("6_7u351")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.607972, 0.793959, 0, -0.793959, 0.607972, -8.98671, 2.89812, -1.77102)
+transform = Transform3D(0.89279, 0.357657, -0.273875, 0, 0.607972, 0.793959, 0.450472, -0.708839, 0.542791, -13.0405, 2.89812, -1.77102)
 light_energy = 0.556
+directional_shadow_mode = 0
+directional_shadow_fade_start = 0.306
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.663417, -0.59408, 0.454915, -1.33036e-08, 0.607972, 0.793959, -0.74825, -0.526726, 0.403339, -1.58833, 2.89812, -6.63076)
+light_energy = 0.556
+directional_shadow_mode = 0
+directional_shadow_fade_start = 0.306
+sky_mode = 1
 
 [node name="ObjectsToScale" type="Node3D" parent="."]
 
