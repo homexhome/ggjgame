@@ -117,7 +117,7 @@ rotation_edit_mode = 1
 texture = ExtResource("2_lkkkg")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(-0.195192, -0.117245, -0.171402, 0.156092, 0.0723157, -0.227224, 0.136968, -0.249498, 0.0146859, 0, 0, 0)
+transform = Transform3D(-0.195192, -0.117245, -0.171402, 0.156092, 0.0723158, -0.227224, 0.136968, -0.249498, 0.0146859, 0, 0, 0)
 rotation_edit_mode = 1
 texture = ExtResource("2_lkkkg")
 

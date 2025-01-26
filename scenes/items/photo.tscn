@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=4 uid="uid://1lvifrvk5sc5"]
+
+[ext_resource type="Script" path="res://scenes/items/scarf.gd" id="1_qkqia"]
+[ext_resource type="Script" path="res://scripts/to_delete.gd" id="2_hrn6o"]
+[ext_resource type="Texture2D" uid="uid://3ykujfhgmuvh" path="res://blender_adeleheart/main_items/main_items_main_items_texture.png" id="3_2a6vg"]
+[ext_resource type="AudioStream" uid="uid://deigejxewe6e5" path="res://music/sounds/pickup.wav" id="4_0csmy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7gnde"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tdrf"]
+resource_name = "main_items"
+cull_mode = 2
+albedo_texture = ExtResource("3_2a6vg")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_go33o"]
+_surfaces = [{
+"aabb": AABB(-0.148293, -0.19985, -0.0244786, 0.296327, 0.402963, 0.0488335),
+"format": 34896613377,
+"index_count": 90,
+"index_data": PackedByteArray("AAADAAEAAAACAAMABAAHAAUABAAGAAcABgALAAcABgAKAAsACgAJAAsACgAIAAkABQAMAAQABQANAAwABgAIAAoABgAEAAgACwAFAAcACwAJAAUADAATAA8ADAAQABMABAAPAAgABAAMAA8ACQANAAUACQAOAA0ACAAOAAkACAAPAA4AEwARABIAEwAQABEADQAQAAwADQARABAADgARAA0ADgASABEADwASAA4ADwATABIA"),
+"name": "main_items",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("oA13DrSoAABR6IwI9aoAAMsYFO0KVAAAfPMp50pWAAAAAP////8AAP///////wAAAAD//wAAAAD/////AAAAAAAAAAD//wAA//8AAP//AAAAAAAAAAAAAP//AAAAAAAA5Q0Z8v//AAAZ8hny//8AABny5Q3//wAA5Q3lDf//AADlDRnyHgIAABnyGfIeAgAAGfLlDR4CAADlDeUNHgIAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m4kqc"]
+resource_name = "main_items_Плоскость_002"
+_surfaces = [{
+"aabb": AABB(-0.148293, -0.19985, -0.0244786, 0.296327, 0.402963, 0.0488335),
+"attribute_data": PackedByteArray("Pobndxth53c+hl6rG2FeqwO60q1i6siMpvNL1PiQ0q0g75BPpvPu+VOcIvvf78iM2vlL1JfAIvsh6JBP2vnu+QMklz0DugJ2Yup7XwMkXBb4kAJ2IO/aFXoqlz1TnNDJ3+97X3oqXBaXwNDJIejaFci3yqpJ8qzG3/V2iTKTyqqG8PpVSfJsqTKTCnmG8HslgviulMi3Cnnf9aZqgvhlb5LBivu48XaJpvesxsObivsQ9/pVpvdsqcObH8gQ93slWP+ulJLBH8i48aZqWP9lbw=="),
+"format": 34896613399,
+"index_count": 90,
+"index_data": PackedByteArray("AAADAAEAAAACAAMABgAPAAkABgAMAA8ACgAaAA0ACgAXABoAFgATABkAFgAQABMABwAcAAQABwAfABwACwASABgACwAFABIAGwAIAA4AGwAVAAgAHgAyACYAHgApADIABAAlABEABAAcACUAFAAfAAcAFAAiAB8AEQAiABQAEQAlACIAMQArAC4AMQAoACsAIQAqAB0AIQAtACoAIwAsACAAIwAvACwAJwAwACQAJwAzADAA"),
+"material": SubResource("StandardMaterial3D_1tdrf"),
+"name": "main_items",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("oA13DrSofv5R6IwI9ap+/ssYFO0KVH7+fPMp50pWfv4AAP////+H9gAA/////73jAAD/////veP///////+H9v///////73j////////lbEAAP//AACT4QAA//8AAJbxAAD//wAAlvH/////AACT4f////8AAJbx/////wAAQNwAAAAA//+94wAAAAD//4f2AAAAAP//veP//wAA//+Vsf//AAD//4f2//8AAP//veMAAAAAAACW8QAAAAAAAJPhAAAAAAAAlvH//wAAAABA3P//AAAAAJPh//8AAAAAlvHlDRny//8B/uUNGfL//3Wk5Q0Z8v//z+AZ8hny//8B/hnyGfL//8/gGfIZ8v//z+AZ8uUN//8B/hny5Q3//8/gGfLlDf//z+DlDeUN//8B/uUN5Q3//8/g5Q3lDf//daTlDRnyHgKH9uUNGfIeAr3j5Q0Z8h4ClrEZ8hnyHgKH9hnyGfIeAr3jGfIZ8h4CveMZ8uUNHgKH9hny5Q0eAr3jGfLlDR4CvePlDeUNHgKH9uUN5Q0eAr3j5Q3lDR4ClrEe/Q0AHv0NAB79DQAe/Q0AgmibnibwQCYm8EAmmx58Fz+m148yxvEXXvSwp43kQUKN5EFCTdhfdEHCcZtnsY0gv1kncGPhgui/WSdwDmgyRnyXY2HYD77ZvT2NZLEnn4u9PY1kcV9nMaALTlhxG729AI84cMFvyVgDCTvqOPD98Dtq+3Y7avt2/nDGj/v2xBX79sQVxg8BD8OVA4nI2D0QfJdjYdgPvtkOaDJGYuGC6L5ZJ3C+WSdwgmibnibwQCYm8EAmnB58F0Cm148xxvEX")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_go33o")
+
+[node name="Item" type="Node3D"]
+script = ExtResource("1_qkqia")
+event = 4
+text_to_say = "You've got a photo!"
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_7gnde")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_hrn6o")
+id = 4
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="Photo" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 0.029265, 0.999572, 0, -0.999572, 0.029265, 0, 0.00643492, 0)
+mesh = SubResource("ArrayMesh_m4kqc")
+skeleton = NodePath("")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_0csmy")

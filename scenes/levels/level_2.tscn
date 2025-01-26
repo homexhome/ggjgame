@@ -96,7 +96,7 @@ size = Vector3(0.2, 0.2, 0.2)
 [node name="Level" type="Node3D" node_paths=PackedStringArray("access_poits")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0261402, -0.0106106, -0.00465226)
 script = ExtResource("1_fg7g1")
-website_path = "www.verygoodgame.com/level_2"
+website_path = "http://awell.world/blueprint "
 access_poits = [NodePath("AccessPoint"), null]
 
 [node name="AccessPoint" parent="." instance=ExtResource("2_lm0y4")]
@@ -326,6 +326,7 @@ script = ExtResource("8_rfgm6")
 
 [node name="TeleportPoint" parent="." instance=ExtResource("10_bl80a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63059, 1.9408, -8.21823)
+website_to = "http://awell.world/doublethought"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_u7uol")
