@@ -1,10 +1,12 @@
-[gd_scene load_steps=81 format=4 uid="uid://wvvqegxjx5rh"]
+[gd_scene load_steps=86 format=4 uid="uid://wvvqegxjx5rh"]
 
 [ext_resource type="Script" path="res://scripts/browser.gd" id="1_v8pjd"]
 [ext_resource type="Texture2D" uid="uid://dmj02texqgj76" path="res://blender_adeleheart/enviroment/menu/human_human_texture.png" id="2_31yk2"]
 [ext_resource type="Script" path="res://scenes/browser_line.gd" id="2_d03vt"]
 [ext_resource type="Script" path="res://scripts/loading_background.gd" id="2_t4od5"]
+[ext_resource type="Script" path="res://scripts/start_button.gd" id="3_63344"]
 [ext_resource type="Texture2D" uid="uid://c4k3orimoxbvk" path="res://assets/imports/шторкаВерх.png" id="3_exf05"]
+[ext_resource type="Texture2D" uid="uid://kf7kign88q84" path="res://assets/imports/connect.png" id="4_6s52u"]
 [ext_resource type="Script" path="res://scripts/tool_button.gd" id="4_gke0k"]
 [ext_resource type="FontFile" uid="uid://dfm8acj5sgvk1" path="res://fonts/Nintendo-DS-BIOS.ttf" id="4_p5unb"]
 [ext_resource type="Texture2D" uid="uid://dpkch4leakkw2" path="res://assets/imports/шторка_низ1 (2).png" id="4_uddce"]
@@ -724,6 +726,18 @@ _data = {
 "pose": SubResource("Animation_bntei")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6c1h"]
+atlas = ExtResource("4_6s52u")
+region = Rect2(0, 145, 229, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kmlw"]
+atlas = ExtResource("4_6s52u")
+region = Rect2(0, 0, 229, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eynal"]
+atlas = ExtResource("4_6s52u")
+region = Rect2(0, 73, 229, 69)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axuqu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l0cnf"]
@@ -957,6 +971,7 @@ script = ExtResource("1_v8pjd")
 browser_line = NodePath("BrowserUI/Bar/LineEdit")
 message = NodePath("BrowserUI/Messages/Message")
 important_message = NodePath("BrowserUI/Messages/ImportantMessage")
+metadata/_edit_vertical_guides_ = [801.0]
 
 [node name="human" type="Node3D" parent="."]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -0.867171, -1.22984, 0)
@@ -1240,6 +1255,47 @@ libraries = {
 
 [node name="OmniLight3D" type="OmniLight3D" parent="human"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.307928, 2.74128, 1.72536)
+
+[node name="Control" type="Control" parent="human"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="human/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 388.0
+offset_top = 140.0
+offset_right = 1233.0
+offset_bottom = 733.0
+
+[node name="Label" type="Label" parent="human/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p5unb")
+theme_override_font_sizes/font_size = 50
+text = "Earth, the year 2824.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="TextureButton" parent="human/Control"]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 599.0
+offset_right = 925.0
+offset_bottom = 668.0
+texture_normal = SubResource("AtlasTexture_e6c1h")
+texture_pressed = SubResource("AtlasTexture_7kmlw")
+texture_hover = SubResource("AtlasTexture_eynal")
+script = ExtResource("3_63344")
 
 [node name="Browser3D" type="Node3D" parent="."]
 
@@ -1641,7 +1697,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("15_ffxbg")
 
 [node name="Ad" type="Control" parent="BrowserUI/Spam"]

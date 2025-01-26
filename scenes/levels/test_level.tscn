@@ -32,7 +32,7 @@ size = Vector3(1, 1, 4)
 
 [node name="Level" type="Node3D" node_paths=PackedStringArray("access_poits")]
 script = ExtResource("1_p6kgu")
-website_path = "www.verygoodgame.com/redroom"
+website_path = "http://world/redroom"
 access_poits = [NodePath("AccessPoint")]
 need_camera = false
 need_player = false
@@ -216,3 +216,7 @@ turn_off = true
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("7_tihan")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node"]

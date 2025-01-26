@@ -8,6 +8,8 @@ class_name Browser
 func _ready() -> void:
 	Session.set_up_browser(self)
 	$BrowserUI.hide()
+	Session.get_world().get_node("WorldEnvironment").environment.background_color = Color.BLACK
+	
 
 func get_browser_line_status():
 	var result : bool = false
