@@ -220,3 +220,5 @@ script = ExtResource("7_tihan")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

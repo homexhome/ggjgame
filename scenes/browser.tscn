@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=4 uid="uid://wvvqegxjx5rh"]
+[gd_scene load_steps=91 format=4 uid="uid://wvvqegxjx5rh"]
 
 [ext_resource type="Script" path="res://scripts/browser.gd" id="1_v8pjd"]
 [ext_resource type="Texture2D" uid="uid://dmj02texqgj76" path="res://blender_adeleheart/enviroment/menu/human_human_texture.png" id="2_31yk2"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" path="res://scripts/camera.gd" id="22_tqofj"]
 [ext_resource type="AudioStream" uid="uid://c0r3yvagrydh2" path="res://music/sounds/woof.wav" id="27_2q3x7"]
 [ext_resource type="Script" path="res://scenes/cheat_audio.gd" id="27_j5473"]
+[ext_resource type="AudioStream" uid="uid://db5w267f1ovqc" path="res://music/brown_noice.wav" id="29_gbq6u"]
 
 [sub_resource type="Shader" id="Shader_jm88j"]
 code = "shader_type spatial;
@@ -1963,6 +1964,8 @@ stream = ExtResource("27_2q3x7")
 script = ExtResource("27_j5473")
 
 [node name="MainPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_gbq6u")
+volume_db = -15.0
 
 [connection signal="pressed" from="BrowserUI/Tool/Help" to="BrowserUI/Tool/Help/AudioStreamPlayer" method="play"]
 [connection signal="timeout" from="BrowserUI/Messages/Message/Label/Timer" to="BrowserUI/Messages/Message" method="stop_message"]
