@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://blmbubcflb6qe" path="res://blender_adeleheart/guardian/guardian_guardian_texture.png" id="2_to2a5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w6nlu"]
-margin = 0.519
 radius = 0.05
 height = 1.0
 
@@ -375,6 +374,8 @@ speed = 0.8
 nav_agent = NodePath("NavigationAgent3D")
 light = NodePath("OmniLight3D")
 animator = NodePath("guardian/AnimationPlayer")
+MAX_STEP_UP = 0.495
+MAX_STEP_DOWN = -0.495
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

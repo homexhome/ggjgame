@@ -114,4 +114,3 @@ func add_event(id : int):
 
 func check_event(id : int):
 	return all_events.has(id)
-

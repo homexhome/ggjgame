@@ -1,7 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://do62h21ndg55u"]
+[gd_scene load_steps=34 format=3 uid="uid://cvgvdl3b8bue5"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_fg7g1"]
-[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="2_lm0y4"]
+[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="2_lm0y4"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="3_5r2ab"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="4_rhf7v"]
 [ext_resource type="Texture2D" uid="uid://dxcc3psrfg6r4" path="res://assets/imports/Light/texture_10.png" id="5_olbqb"]
@@ -13,16 +13,16 @@
 [ext_resource type="Script" path="res://scripts/follower_spawn.gd" id="11_ypfgs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vj8mx"]
-size = Vector3(5.38786, 1, 3.0131)
+size = Vector3(5.38786, 0.0527344, 3.0131)
 
 [sub_resource type="BoxMesh" id="BoxMesh_b6rqu"]
 size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_13niw"]
-size = Vector3(3.11848, 1, 4.56901)
+size = Vector3(3.11848, 1.68457, 4.56901)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ur0k"]
-size = Vector3(2.1516, 1, 2.26287)
+size = Vector3(2.1516, 0.106445, 2.26287)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eytbf"]
 size = Vector3(1.92155, 1, 1.33015)
@@ -79,9 +79,9 @@ _data = {
 }
 point_count = 17
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_jmepx"]
-vertices = PackedVector3Array(-10.6252, 1, -0.668066, -9.12524, 1, -0.668066, -8.82524, 1, -4.26807, -10.6252, 1, -5.16807, -13.0252, 1, -0.668066, -12.4252, 1, -0.668066, -12.1252, 1, -9.36807, -13.0252, 1, -9.66807, -6.42524, 1, -5.16807, -6.72524, 1, -3.96807, -4.02524, 1, -1.56807, -3.12524, 1, -0.668066, -3.12524, 1, -9.66807, -4.02524, 1, -9.36807, -6.42524, 1, -1.56807, -6.72524, 1, -0.668066, -10.0252, 4.75, -8.16807, -10.0252, 4.75, -6.36807, -8.52524, 4.75, -6.36807, -8.52524, 5, -8.16807)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(9, 2, 8), PackedInt32Array(8, 2, 3), PackedInt32Array(13, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(15, 9, 14), PackedInt32Array(14, 9, 8), PackedInt32Array(6, 7, 13), PackedInt32Array(13, 7, 12), PackedInt32Array(14, 10, 15), PackedInt32Array(15, 10, 11), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17)]
+[sub_resource type="NavigationMesh" id="NavigationMesh_u7uol"]
+vertices = PackedVector3Array(-6.40867, 4, -9.15, -6.40867, 4, -7.35, -3.10867, 4, -7.35, -3.10867, 4, -9.15, -6.70867, 1, -5.25, -6.70867, 1, -5.85, -7.30867, 1, -5.85, -7.00867, 1, -4.65, -9.10867, 1, -4.35, -7.60867, 1, -6.45, -11.2087, 1, -6.45, -11.2087, 1, -3.15, -9.10867, 1, -2.85, -8.80867, 1, -1.05, -12.4087, 1, -2.85, -12.4087, 1, 0.150001, -3.40867, 1, -4.95, -3.10867, 1, -5.85, -3.70867, 1, -1.35, -3.10867, 1, 0.150001, -4.60867, 4, -4.05, -5.80867, 4, -4.05, -6.10867, 4, -3.45, -4.60867, 4, -2.55, -7.90867, 4, -2.25, -7.90867, 4, -3.45, -5.50867, 1, -3.75, -5.50867, 1, -2.85, -4.90867, 1, -2.85, -4.90867, 1, -3.75, -7.60867, 1, -3.15, -7.60867, 1, -2.55, -7.00867, 1, -2.55, -7.00867, 1, -3.15)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(6, 7, 9), PackedInt32Array(9, 7, 8), PackedInt32Array(8, 12, 11), PackedInt32Array(11, 12, 14), PackedInt32Array(14, 12, 13), PackedInt32Array(14, 13, 15), PackedInt32Array(4, 5, 16), PackedInt32Array(16, 5, 17), PackedInt32Array(16, 17, 18), PackedInt32Array(18, 17, 19), PackedInt32Array(18, 19, 13), PackedInt32Array(13, 19, 15), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(25, 22, 24), PackedInt32Array(24, 22, 23), PackedInt32Array(29, 28, 26), PackedInt32Array(26, 28, 27), PackedInt32Array(33, 32, 30), PackedInt32Array(30, 32, 31)]
 geometry_source_geometry_mode = 2
 geometry_source_group_name = &"bake"
 cell_size = 0.3
@@ -97,7 +97,7 @@ size = Vector3(0.2, 0.2, 0.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0261402, -0.0106106, -0.00465226)
 script = ExtResource("1_fg7g1")
 website_path = "www.verygoodgame.com/level_2"
-access_poits = [NodePath("AccessPoint"), NodePath("")]
+access_poits = [NodePath("AccessPoint"), null]
 
 [node name="AccessPoint" parent="." instance=ExtResource("2_lm0y4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5406, 0.573416, -0.439483)
@@ -110,15 +110,11 @@ monitorable = false
 script = ExtResource("3_5r2ab")
 
 [node name="Collision" type="CollisionShape3D" parent="CameraPlacer"]
-transform = Transform3D(0.999949, 0, 0, 0, 1, 0, 0, 0, 0.999949, -0.0636873, 0.5, 0.829551)
+transform = Transform3D(0.999949, 0, 0, 0, 1, 0, 0, 0, 0.999949, -0.0636873, 0.0263672, 0.829551)
 shape = SubResource("BoxShape3D_vj8mx")
 
 [node name="CameraPlace" type="MeshInstance3D" parent="CameraPlacer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435, 2.5, 4)
-mesh = SubResource("BoxMesh_b6rqu")
-
-[node name="CameraPlace2" type="MeshInstance3D" parent="CameraPlacer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435, 2.5, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.605292, 2.5, 2.84705)
 mesh = SubResource("BoxMesh_b6rqu")
 
 [node name="CameraPlacer6" type="Area3D" parent="."]
@@ -142,11 +138,11 @@ monitorable = false
 script = ExtResource("3_5r2ab")
 
 [node name="Collision" type="CollisionShape3D" parent="CameraPlacer5"]
-transform = Transform3D(0.999972, 0, -1.65775e-07, 0, 1, 0, 1.65775e-07, 0, 0.999972, 1.37468, 0.5, -0.46528)
+transform = Transform3D(0.999974, 0, -1.47149e-07, 0, 1, 0, 1.47149e-07, 0, 0.999974, 1.37468, 0.157715, -0.465281)
 shape = SubResource("BoxShape3D_13niw")
 
 [node name="CameraPlace" type="MeshInstance3D" parent="CameraPlacer5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24, 2.2, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25089, 2.2, 1.60496)
 mesh = SubResource("BoxMesh_b6rqu")
 
 [node name="CameraPlacer2" type="Area3D" parent="."]
@@ -156,7 +152,7 @@ monitorable = false
 script = ExtResource("3_5r2ab")
 
 [node name="Collision" type="CollisionShape3D" parent="CameraPlacer2"]
-transform = Transform3D(0.707091, 0, 0.707091, 0, 1, 0, -0.707091, 0, 0.707091, -0.989591, 0.5, -0.948526)
+transform = Transform3D(0.707091, 0, 0.707091, 0, 1, 0, -0.707091, 0, 0.707091, -0.989591, 0.0532227, -0.948526)
 shape = SubResource("BoxShape3D_2ur0k")
 
 [node name="Collision2" type="CollisionShape3D" parent="CameraPlacer2"]
@@ -174,7 +170,7 @@ monitorable = false
 script = ExtResource("3_5r2ab")
 
 [node name="Collision" type="CollisionShape3D" parent="CameraPlacer3"]
-transform = Transform3D(0.707091, 0, 0.707091, 0, 1, 0, -0.707091, 0, 0.707091, 0.33366, 0.5, 0.446663)
+transform = Transform3D(0.707091, 0, 0.707091, 0, 1, 0, -0.707091, 0, 0.707091, 0.333661, 0.0713098, 0.446663)
 shape = SubResource("BoxShape3D_2ur0k")
 
 [node name="CameraPlace" type="MeshInstance3D" parent="CameraPlacer3"]
@@ -188,7 +184,7 @@ monitorable = false
 script = ExtResource("3_5r2ab")
 
 [node name="Collision" type="CollisionShape3D" parent="CameraPlacer4"]
-transform = Transform3D(0.707091, 0, 0.707091, 0, 1, 0, -0.707091, 0, 0.707091, 0.288197, 0.505299, 0.616331)
+transform = Transform3D(0.707091, 0, 0.707091, 0, 1, 0, -0.707091, 0, 0.707091, 0.288197, 0.505299, 0.61633)
 shape = SubResource("BoxShape3D_itxnb")
 
 [node name="CameraPlace" type="MeshInstance3D" parent="CameraPlacer4"]
@@ -228,9 +224,9 @@ light_indirect_energy = 0.51
 [node name="Terrain" type="Node3D" parent="Environment"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.00867, 0, -3.13838)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.68988, 0, -3.13838)
 use_collision = true
-size = Vector3(7.5, 1, 10)
+size = Vector3(7.5, 1, 10.6376)
 material = SubResource("StandardMaterial3D_2yj88")
 
 [node name="Quest_Item" type="CSGBox3D" parent="Environment/Terrain"]
@@ -248,27 +244,27 @@ size = Vector3(0.3, 0.3, 0.3)
 material = SubResource("StandardMaterial3D_gaco4")
 
 [node name="Wall11" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 2, -3.125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 2, -3.20569)
 use_collision = true
-size = Vector3(2, 3, 2.25)
+size = Vector3(2, 3, 2.41138)
 material = SubResource("StandardMaterial3D_ofw7s")
 
 [node name="Wall13" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -8.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75659, 2.5, -8.25)
 use_collision = true
-size = Vector3(4, 2, 3)
+size = Vector3(4.48682, 2, 3)
 material = SubResource("StandardMaterial3D_ofw7s")
 
 [node name="Wall12" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 2, -3.125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 2, -2.90009)
 use_collision = true
-size = Vector3(2, 3, 2.25)
+size = Vector3(2, 3, 2.00745)
 material = SubResource("StandardMaterial3D_ofw7s")
 
 [node name="Wall5" type="CSGBox3D" parent="Environment/Terrain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -8.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64838, 1, -8.25)
 use_collision = true
-size = Vector3(10, 1.4, 3)
+size = Vector3(10.7032, 1.4, 3)
 material = SubResource("StandardMaterial3D_2bixl")
 
 [node name="Obstacles" type="Node3D" parent="Environment"]
@@ -282,48 +278,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 1, -5.25)
 [node name="ScalableObject5" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_seidj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 1, -4.25)
 
-[node name="ScalableObject10" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_seidj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.75, 1, -1.25)
+[node name="ScalableObject10" parent="Environment/Obstacles" instance=ExtResource("7_seidj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.75087, 0.717263, -1.23863)
 
-[node name="ScalableObject11" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_seidj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 1, -6.1)
+[node name="ScalableObject11" parent="Environment/Obstacles" instance=ExtResource("7_seidj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0.699811, -6.1)
 
-[node name="ScalableObject13" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_seidj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 1, -5)
+[node name="ScalableObject13" parent="Environment/Obstacles" instance=ExtResource("7_seidj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0.701635, -5.01975)
 material_good_hover = SubResource("StandardMaterial3D_v5bj4")
 material_bad_hover = SubResource("StandardMaterial3D_cmrrs")
 
-[node name="ScalableObject12" parent="Environment/Obstacles" groups=["bake"] instance=ExtResource("7_seidj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.75, 1, 0)
+[node name="ScalableObject12" parent="Environment/Obstacles" instance=ExtResource("7_seidj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.75, 0.711088, 0)
 
 [node name="Fishes" type="Node3D" parent="Environment"]
 
 [node name="Path3D" type="Path3D" parent="Environment/Fishes"]
-transform = Transform3D(0.998567, -0.0535211, 0, 0.0535211, 0.998567, 0, 0, 0, 1, 0.290007, 2.08741, 1.6285)
+transform = Transform3D(1.42795, -0.0765352, 0, 0.0765352, 1.42795, 0, 0, 0, 1.43, 4.55474, -1.33327, 6.20549)
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569996, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998366, -1.945, 0, 0)
 script = ExtResource("8_rfgm6")
 
 [node name="Fish" parent="Environment/Fishes/Path3D/PathFollow3D" instance=ExtResource("9_2jnkp")]
 
 [node name="Path3D2" type="Path3D" parent="Environment/Fishes"]
-transform = Transform3D(-0.751268, 0.0402664, -0.658768, 0.0535211, 0.998567, 0, 0.657824, -0.035258, -0.752346, -18.8951, 5.03698, -4.90782)
+transform = Transform3D(-1.10436, 0.0591916, -0.968389, 0.078676, 1.46789, -1.21131e-08, 0.967001, -0.0518292, -1.10595, -21.7356, 5.03698, -4.3587)
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D2"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569996, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998366, -1.945, 0, 0)
 script = ExtResource("8_rfgm6")
 
 [node name="Fish" parent="Environment/Fishes/Path3D2/PathFollow3D" instance=ExtResource("9_2jnkp")]
 
 [node name="Path3D3" type="Path3D" parent="Environment/Fishes"]
-transform = Transform3D(0.0487275, -0.00261169, -0.998809, 0.0535211, 0.998567, -2.80271e-09, 0.997378, -0.0534573, 0.0487974, -14.3239, 1.53686, 4.57978)
+transform = Transform3D(0.065782, -0.00352578, -1.34839, 0.0722534, 1.34807, -2.03455e-09, 1.34646, -0.0721674, 0.0658764, -14.5658, 4.23883, 7.51408)
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D3"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569996, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998366, -1.945, 0, 0)
 script = ExtResource("8_rfgm6")
 
 [node name="Fish" parent="Environment/Fishes/Path3D3/PathFollow3D" instance=ExtResource("9_2jnkp")]
@@ -332,7 +328,7 @@ script = ExtResource("8_rfgm6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63059, 1.9408, -8.21823)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_jmepx")
+navigation_mesh = SubResource("NavigationMesh_u7uol")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.81103, 0.547114, -9.0485)
