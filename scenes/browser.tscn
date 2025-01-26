@@ -1,11 +1,10 @@
-[gd_scene load_steps=92 format=4 uid="uid://wvvqegxjx5rh"]
+[gd_scene load_steps=91 format=4 uid="uid://wvvqegxjx5rh"]
 
 [ext_resource type="Script" path="res://scripts/browser.gd" id="1_v8pjd"]
 [ext_resource type="Texture2D" uid="uid://dmj02texqgj76" path="res://blender_adeleheart/enviroment/menu/human_human_texture.png" id="2_31yk2"]
 [ext_resource type="Script" path="res://scenes/browser_line.gd" id="2_d03vt"]
 [ext_resource type="Script" path="res://scripts/loading_background.gd" id="2_t4od5"]
 [ext_resource type="Script" path="res://scripts/start_button.gd" id="3_63344"]
-[ext_resource type="Texture2D" uid="uid://c4k3orimoxbvk" path="res://assets/imports/шторкаВерх.png" id="3_exf05"]
 [ext_resource type="Texture2D" uid="uid://kf7kign88q84" path="res://assets/imports/connect.png" id="4_6s52u"]
 [ext_resource type="Script" path="res://scripts/tool_button.gd" id="4_gke0k"]
 [ext_resource type="FontFile" uid="uid://dfm8acj5sgvk1" path="res://fonts/Nintendo-DS-BIOS.ttf" id="4_p5unb"]
@@ -744,8 +743,6 @@ region = Rect2(0, 0, 229, 69)
 atlas = ExtResource("4_6s52u")
 region = Rect2(0, 73, 229, 69)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axuqu"]
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l0cnf"]
 load_path = "res://.godot/imported/инструментосы (2).png-25228786b42a4709857bfecce64902b6.ctex"
 
@@ -844,22 +841,6 @@ region = Rect2(95, 0, 23, 22)
 script = ExtResource("5_wkb65")
 tool_type = 3
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_upsfl"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(119, 48, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l14fd"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(119, 0, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sknl1"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(119, 24, 23, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pb1vd"]
-atlas = SubResource("CompressedTexture2D_l0cnf")
-region = Rect2(119, 0, 23, 22)
-
 [sub_resource type="Animation" id="Animation_0dh64"]
 length = 0.001
 tracks/0/type = "value"
@@ -885,18 +866,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1075, 537)]
 }
 
 [sub_resource type="Animation" id="Animation_i0xk3"]
@@ -924,18 +893,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1075, 556), Vector2(1135, 537)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ionj1"]
@@ -972,9 +929,33 @@ region = Rect2(0, 0, 22, 22)
 atlas = ExtResource("16_kk3nj")
 region = Rect2(0, 24, 22, 22)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yh7br"]
+bg_color = Color(0, 0.478277, 0.478277, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upsfl"]
+atlas = SubResource("CompressedTexture2D_l0cnf")
+region = Rect2(119, 48, 23, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l14fd"]
+atlas = SubResource("CompressedTexture2D_l0cnf")
+region = Rect2(119, 0, 23, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sknl1"]
+atlas = SubResource("CompressedTexture2D_l0cnf")
+region = Rect2(119, 24, 23, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb1vd"]
+atlas = SubResource("CompressedTexture2D_l0cnf")
+region = Rect2(119, 0, 23, 22)
+
 [node name="Browser" type="Node" node_paths=PackedStringArray("browser_line", "message", "important_message")]
 script = ExtResource("1_v8pjd")
-browser_line = NodePath("BrowserUI/Bar/LineEdit")
+browser_line = NodePath("BrowserUI/Control/LineEdit")
 message = NodePath("BrowserUI/Messages/Message")
 important_message = NodePath("BrowserUI/Messages/ImportantMessage")
 metadata/_edit_vertical_guides_ = [801.0]
@@ -1040,14 +1021,14 @@ bones/7/parent = 6
 bones/7/rest = Transform3D(-0.724209, 0.68958, -2.32977e-07, -0.68958, -0.724209, -1.58738e-07, -2.78187e-07, 4.5697e-08, 1, 5.96047e-08, 0.952855, 1.42109e-14)
 bones/7/enabled = true
 bones/7/position = Vector3(5.96047e-08, 0.952855, 1.42109e-14)
-bones/7/rotation = Quaternion(-0.0111838, 0.32033, 0.879509, -0.351751)
+bones/7/rotation = Quaternion(-0.0111838, 0.32033, 0.879508, -0.351751)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "l_d_arm"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.982319, 0.187216, 8.18066e-08, -0.187216, 0.982319, -2.04918e-08, -8.41965e-08, 4.81394e-09, 1, 1.19209e-07, 0.510807, 4.9738e-14)
 bones/8/enabled = true
 bones/8/position = Vector3(1.19209e-07, 0.510807, 4.9738e-14)
-bones/8/rotation = Quaternion(0.213017, -0.00436765, -0.118275, 0.969854)
+bones/8/rotation = Quaternion(0.213017, -0.00436766, -0.118275, 0.969853)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "l_hand"
 bones/9/parent = 8
@@ -1237,7 +1218,7 @@ mesh = SubResource("ArrayMesh_x5son")
 skeleton = NodePath("")
 
 [node name="laptop" type="BoneAttachment3D" parent="human/Armature/Skeleton3D"]
-transform = Transform3D(2.11596e-06, 20.0577, 1.81794e-06, -1, 4.00543e-05, 1.13249e-06, 1.19209e-06, -3.71933e-05, 1, 0.00433421, 1.32754, 2.00996)
+transform = Transform3D(2.6226e-06, 20.0577, 1.72853e-06, -1, 5.14984e-05, 2.17557e-06, 2.20537e-06, -3.50475e-05, 1, 0.00433528, 1.32754, 2.00996)
 bone_name = "laptop"
 bone_idx = 12
 
@@ -1269,35 +1250,57 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="human/Control"]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 388.0
-offset_top = 140.0
-offset_right = 1233.0
-offset_bottom = 733.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 85.0
+offset_right = -198.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="human/Control/TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = 4.0
+offset_right = 154.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/line_spacing = 26
 theme_override_fonts/font = ExtResource("4_p5unb")
-theme_override_font_sizes/font_size = 50
-text = "Earth, the year 2824.
-"
+theme_override_font_sizes/font_size = 40
+text = "In the 22nd century mankind has found a way to leave a memory of itself on the history - digitalization of Internet personhood, at the expense of spending the resources of the body.
+Our hero, a descendant of people who refused the new method of preserving themselves
+In that time, the world has died and begun to rebuild. 
+In the data centers with scanned people left a lot of forgotten knowledge.
+He is the one who is mining this most useful data."
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Button" type="TextureButton" parent="human/Control"]
-layout_mode = 0
-offset_left = 693.0
-offset_top = 599.0
-offset_right = 925.0
-offset_bottom = 668.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.498
+anchor_top = 0.5
+anchor_right = 0.498
+anchor_bottom = 0.5
+offset_left = -116.44
+offset_top = 172.0
+offset_right = 115.56
+offset_bottom = 241.0
+grow_horizontal = 0
+grow_vertical = 0
 texture_normal = SubResource("AtlasTexture_e6c1h")
 texture_pressed = SubResource("AtlasTexture_7kmlw")
 texture_hover = SubResource("AtlasTexture_eynal")
@@ -1310,6 +1313,7 @@ volume_db = -14.0
 [node name="Browser3D" type="Node3D" parent="."]
 
 [node name="BrowserUI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
 [node name="Background" type="Control" parent="BrowserUI"]
 layout_mode = 3
@@ -1318,7 +1322,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="LoadingBackground" type="ColorRect" parent="BrowserUI/Background"]
 visible = false
@@ -1333,73 +1337,76 @@ script = ExtResource("2_t4od5")
 
 [node name="ColorRect" type="TextureRect" parent="BrowserUI/Background"]
 z_index = 99
-layout_mode = 0
-offset_right = 1602.0
-offset_bottom = 85.0
-texture = ExtResource("3_exf05")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 87.0
+grow_horizontal = 2
+texture = ExtResource("4_uddce")
+
+[node name="ColorRect3" type="TextureRect" parent="BrowserUI/Background"]
+visible = false
+z_index = 99
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -718.0
+offset_bottom = -629.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_uddce")
+flip_h = true
 
 [node name="ColorRect2" type="TextureRect" parent="BrowserUI/Background"]
 z_index = 99
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 12
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -85.0
-offset_right = 1602.0
+offset_top = -89.0
+grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("4_uddce")
 
 [node name="Bar" type="Control" parent="BrowserUI"]
 z_index = 102
 layout_mode = 3
-anchors_preset = 10
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-offset_bottom = 84.0
-grow_horizontal = 2
-
-[node name="LineEdit" type="LineEdit" parent="BrowserUI/Bar"]
-layout_mode = 0
-offset_left = 488.0
-offset_top = 16.0
-offset_right = 1199.0
-offset_bottom = 64.0
-theme_override_colors/caret_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("4_p5unb")
-theme_override_font_sizes/font_size = 34
-theme_override_styles/normal = SubResource("StyleBoxEmpty_axuqu")
-placeholder_text = "Enter website..."
-context_menu_enabled = false
-script = ExtResource("2_d03vt")
+anchor_bottom = 1.0
+offset_left = -1236.0
+offset_top = -723.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+mouse_filter = 2
 
 [node name="Tool" type="Control" parent="BrowserUI"]
 z_index = 100
 layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -84.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 mouse_filter = 1
 
 [node name="ZoomPlus" type="TextureButton" parent="BrowserUI/Tool"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
-anchor_top = -0.012
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = -0.012
+anchor_bottom = 1.0
 offset_left = -404.0
-offset_top = 10.008
+offset_top = -75.0
 offset_right = -334.0
-offset_bottom = 81.008
+offset_bottom = -4.0
 texture_normal = SubResource("AtlasTexture_1edds")
 texture_pressed = SubResource("AtlasTexture_w4p0c")
 texture_hover = SubResource("AtlasTexture_euv2u")
@@ -1413,13 +1420,13 @@ tool = SubResource("Resource_uwcpo")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
-anchor_top = -0.012
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = -0.012
+anchor_bottom = 1.0
 offset_left = -330.0
-offset_top = 10.008
+offset_top = -75.0
 offset_right = -260.0
-offset_bottom = 81.008
+offset_bottom = -4.0
 texture_normal = SubResource("AtlasTexture_2loay")
 texture_pressed = SubResource("AtlasTexture_3qllu")
 texture_hover = SubResource("AtlasTexture_60b1s")
@@ -1433,13 +1440,13 @@ tool = SubResource("Resource_wfpbo")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
-anchor_top = -0.012
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = -0.012
+anchor_bottom = 1.0
 offset_left = -256.0
-offset_top = 10.008
+offset_top = -75.0
 offset_right = -186.0
-offset_bottom = 81.008
+offset_bottom = -4.0
 texture_normal = SubResource("AtlasTexture_4mgf8")
 texture_pressed = SubResource("AtlasTexture_svucw")
 texture_hover = SubResource("AtlasTexture_0jgfk")
@@ -1454,13 +1461,13 @@ set_default = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
-anchor_top = -0.012
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = -0.012
+anchor_bottom = 1.0
 offset_left = -182.0
-offset_top = 10.008
+offset_top = -75.0
 offset_right = -112.0
-offset_bottom = 81.008
+offset_bottom = -4.0
 texture_normal = SubResource("AtlasTexture_5ugao")
 texture_pressed = SubResource("AtlasTexture_srj3e")
 texture_hover = SubResource("AtlasTexture_ncbmv")
@@ -1473,26 +1480,6 @@ need_release_focus = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BrowserUI/Tool/Help"]
 stream = ExtResource("27_2q3x7")
-
-[node name="RefreshPage" type="TextureButton" parent="BrowserUI/Tool"]
-z_index = 101
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = -0.012
-anchor_right = 1.0
-anchor_bottom = -0.012
-offset_left = -1269.0
-offset_top = -811.992
-offset_right = -1199.0
-offset_bottom = -740.992
-texture_normal = SubResource("AtlasTexture_upsfl")
-texture_pressed = SubResource("AtlasTexture_l14fd")
-texture_hover = SubResource("AtlasTexture_sknl1")
-texture_focused = SubResource("AtlasTexture_pb1vd")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("5_fbk0t")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BrowserUI/Tool"]
 stream = ExtResource("15_0mqse")
@@ -1509,17 +1496,15 @@ mouse_filter = 2
 [node name="Message" type="Control" parent="BrowserUI/Messages" node_paths=PackedStringArray("label", "animation_player", "timer", "important_message")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -525.0
-offset_top = -363.0
-offset_right = -107.0
+offset_left = 819.0
+offset_top = 357.0
+offset_right = -43.0
 offset_bottom = -126.0
-grow_horizontal = 0
-grow_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("6_id0ia")
 label = NodePath("Label")
 animation_player = NodePath("AnimationPlayer")
@@ -1532,9 +1517,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 71.0
-offset_top = 8.0
-offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1583,10 +1565,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -159.0
-offset_top = -11.0667
-offset_right = -378.0
-offset_bottom = 2.93335
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_2b0y1")
@@ -1594,15 +1572,17 @@ texture = SubResource("AtlasTexture_2b0y1")
 [node name="TextureRect3" type="TextureRect" parent="BrowserUI/Messages/Message/TextureRect2"]
 show_behind_parent = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -68.0
-offset_top = 216.0
-offset_right = 30.0
-offset_bottom = 118.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = 3.437
+anchor_top = 1.47
+anchor_right = 3.437
+anchor_bottom = 1.47
+offset_left = -751.963
+offset_top = -152.97
+offset_right = -454.963
+offset_bottom = 0.0299683
+grow_horizontal = 0
+grow_vertical = 0
 texture = SubResource("AtlasTexture_gphmt")
 stretch_mode = 4
 
@@ -1614,9 +1594,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -525.0
+offset_left = -461.0
 offset_top = -363.0
-offset_right = -107.0
+offset_right = -43.0
 offset_bottom = -126.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -1669,39 +1649,49 @@ libraries = {
 [node name="TextureRect" type="TextureRect" parent="BrowserUI/Messages/ImportantMessage"]
 show_behind_parent = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = 1.251
+anchor_top = 1.532
+anchor_right = 1.251
+anchor_bottom = 1.532
+offset_left = -522.918
+offset_top = -363.084
+offset_right = -104.918
+offset_bottom = -126.084
+grow_horizontal = 0
+grow_vertical = 0
 texture = SubResource("AtlasTexture_7eqxe")
 
 [node name="TextureRect2" type="TextureRect" parent="BrowserUI/Messages/ImportantMessage"]
 show_behind_parent = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -159.0
-offset_top = -11.0667
-offset_right = -378.0
-offset_bottom = 2.93335
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = 1.254
+anchor_top = 1.519
+anchor_right = 1.254
+anchor_bottom = 1.519
+offset_left = -683.172
+offset_top = -371.07
+offset_right = -484.172
+offset_bottom = -120.07
+grow_horizontal = 0
+grow_vertical = 0
 texture = SubResource("AtlasTexture_s6ham")
 
 [node name="TextureRect3" type="TextureRect" parent="BrowserUI/Messages/ImportantMessage/TextureRect2"]
 show_behind_parent = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -69.0
-offset_top = 216.0
-offset_right = 30.0
-offset_bottom = 118.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = -3.004
+anchor_top = -1.384
+anchor_right = 3.427
+anchor_bottom = 1.47
+offset_left = 528.796
+offset_top = 563.384
+offset_right = -452.973
+offset_bottom = 0.0299683
+grow_horizontal = 0
+grow_vertical = 0
 texture = SubResource("AtlasTexture_gphmt")
 stretch_mode = 4
 
@@ -1767,10 +1757,10 @@ script = ExtResource("17_50t5p")
 [node name="Ad2" type="Control" parent="BrowserUI/Spam"]
 visible = false
 anchors_preset = 0
-offset_left = 1133.0
-offset_top = 200.0
-offset_right = 1440.0
-offset_bottom = 369.0
+offset_left = 925.0
+offset_top = 119.0
+offset_right = 1232.0
+offset_bottom = 288.0
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad2"]
@@ -1815,10 +1805,10 @@ script = ExtResource("17_50t5p")
 [node name="Ad3" type="Control" parent="BrowserUI/Spam"]
 visible = false
 anchors_preset = 0
-offset_left = 421.0
-offset_top = 546.0
-offset_right = 728.0
-offset_bottom = 715.0
+offset_left = 263.0
+offset_top = 434.0
+offset_right = 570.0
+offset_bottom = 603.0
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad3"]
@@ -1863,10 +1853,10 @@ script = ExtResource("17_50t5p")
 [node name="Ad4" type="Control" parent="BrowserUI/Spam"]
 visible = false
 anchors_preset = 0
-offset_left = 993.0
-offset_top = 496.0
-offset_right = 1300.0
-offset_bottom = 665.0
+offset_left = 929.0
+offset_top = 441.0
+offset_right = 1236.0
+offset_bottom = 610.0
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad4"]
@@ -1955,6 +1945,56 @@ texture_pressed = SubResource("AtlasTexture_03ihy")
 texture_hover = SubResource("AtlasTexture_mwl8g")
 stretch_mode = 0
 script = ExtResource("17_50t5p")
+
+[node name="Control" type="Control" parent="BrowserUI"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="LineEdit" type="LineEdit" parent="BrowserUI/Control"]
+z_index = 111
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -354.0
+offset_top = 23.0
+offset_right = 428.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("4_p5unb")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_yh7br")
+placeholder_text = "Enter website..."
+context_menu_enabled = false
+script = ExtResource("2_d03vt")
+
+[node name="RefreshPage" type="TextureButton" parent="BrowserUI/Control/LineEdit"]
+z_index = 101
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -39.0
+offset_right = -32.0
+offset_bottom = 32.0
+texture_normal = SubResource("AtlasTexture_upsfl")
+texture_pressed = SubResource("AtlasTexture_l14fd")
+texture_hover = SubResource("AtlasTexture_sknl1")
+texture_focused = SubResource("AtlasTexture_pb1vd")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_fbk0t")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.78152, 0.62388, 0, -0.62388, 0.78152, 0, 8.44, 10)

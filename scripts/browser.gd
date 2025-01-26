@@ -22,7 +22,7 @@ func set_line_text(text : String):
 	browser_line.text = text
 
 func play_message(string : String):
-	message.play_message(string)
+	important_message.play_message(string)
 
 func play_important_message(string : String, custom_time : float = 0.0):
 	important_message.play_message(string, custom_time)
