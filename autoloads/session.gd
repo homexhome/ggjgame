@@ -6,6 +6,10 @@ var player : Player
 var world : World
 var browser : Browser
 
+var current_level : Level
+
+var current_follower : Follower
+
 var camera_initialized: bool = false
 var world_initialized : bool = false
 
@@ -13,6 +17,15 @@ var refresh_frame : bool = false
 
 var datamosh_mount: float = 0.0
 var force_datamosh:float = 0.0
+
+var active_tool : Tool
+
+var custom_info_area
+
+var all_events : Dictionary
+
+signal info_signal
+
 
 func set_up_player(node):
 	player = node
@@ -39,6 +52,11 @@ func set_up_browser(_browser):
 func get_browser() -> Browser:
 	return browser
 
+func set_up_level(level):
+	current_level = level
+
+func get_current_level() -> Level:
+	return current_level
 
 func array_to_vector3(array: Array) -> Vector3:
 	return Vector3(array[0], array[1], array[2])
@@ -60,3 +78,37 @@ func pi_2_pi(theta):
 
 func get_datamosh_amount() -> float:
 	return max(datamosh_mount, force_datamosh)
+
+func set_tool(_tool : Tool):
+	active_tool = _tool
+	if active_tool.tool_type == Tool.TYPE.INFO:
+		info_signal.emit()
+		if custom_info_area != null:
+			browser.play_important_message(custom_info_area.message)
+		else:
+			browser.play_important_message("Use your tools!", 3.0)
+	if _tool.mouse_texture != null:
+		Input.set_custom_mouse_cursor(_tool.mouse_texture)
+
+func get_tool_type() -> Tool.TYPE:
+	if active_tool == null:
+		return Tool.TYPE.MOUSE
+	return active_tool.tool_type
+
+func set_custom_info_area(area):
+	custom_info_area = area
+	if custom_info_area != null:
+		browser.play_important_message(custom_info_area.message)
+
+func set_current_follower(follower):
+	current_follower = follower
+
+func get_current_follower() -> Follower:
+	return current_follower
+
+func add_event(id : int):
+	if all_events.has(id) == false:
+		all_events[id] = 0
+
+func check_event(id : int):
+	return all_events.has(id)
