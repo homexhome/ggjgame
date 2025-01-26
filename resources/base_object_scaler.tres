@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ruabjqh3378x"]
 
-[ext_resource type="Texture2D" uid="uid://c78yr6x1ifser" path="res://assets/imports/Dark/texture_01.png" id="1_0qoqv"]
+[ext_resource type="Texture2D" uid="uid://ddek1kfmwtyla" path="res://assets/imports/блок (2).png" id="1_db8hn"]
 
 [sub_resource type="Shader" id="Shader_g6tuy"]
 code = "shader_type spatial;
@@ -61,4 +61,4 @@ shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.0
 shader_parameter/jitter = 0.0
 shader_parameter/resolution = Vector2i(320, 240)
-shader_parameter/albedo = ExtResource("1_0qoqv")
+shader_parameter/albedo = ExtResource("1_db8hn")

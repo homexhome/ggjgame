@@ -1,15 +1,16 @@
-[gd_scene load_steps=29 format=3 uid="uid://cf8prbpwa0ymh"]
+[gd_scene load_steps=30 format=3 uid="uid://cf8prbpwa0ymh"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_8fmxb"]
-[ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="2_36yio"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="3_1sbfo"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="4_gmnf3"]
 [ext_resource type="Material" uid="uid://ruabjqh3378x" path="res://resources/base_object_scaler.tres" id="5_g2v3r"]
 [ext_resource type="PackedScene" uid="uid://3fcqnc8iona" path="res://scenes/overlay_node.tscn" id="6_7u351"]
+[ext_resource type="Script" path="res://scripts/to_delete.gd" id="6_8b2m1"]
 [ext_resource type="Script" path="res://scripts/scalable_object.gd" id="6_jalqs"]
 [ext_resource type="PackedScene" uid="uid://vw064nrftrc8" path="res://scenes/teleport_point.tscn" id="7_s78cf"]
 [ext_resource type="PackedScene" uid="uid://bta7nxuh6c0sl" path="res://scenes/fish.tscn" id="8_4g87q"]
 [ext_resource type="Script" path="res://scripts/fish_path_follow_3d.gd" id="8_mbqem"]
+[ext_resource type="Texture2D" uid="uid://xaeeqtijrbes" path="res://assets/imports/пол много.png" id="10_sxbm5"]
 [ext_resource type="Material" uid="uid://60adtidk21ma" path="res://resources/bad_hover.tres" id="11_ec52a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1t4e"]
@@ -68,8 +69,8 @@ _data = {
 point_count = 17
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yj88"]
-albedo_texture = ExtResource("2_36yio")
-uv1_scale = Vector3(10, 10, 10)
+albedo_texture = ExtResource("10_sxbm5")
+uv1_scale = Vector3(5.225, 5.225, 5.225)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_63i2l"]
 vertices = PackedVector3Array(-12.0006, 3.75, -12.0037, -12.0006, 3.75, -6.75366, -9.5006, 3.75, -6.75366, -9.5006, 3.75, -12.0037, -8.5006, 2.25, -12.0037, -8.5006, 2.25, -9.00366, -4.0006, 2.25, -9.00366, -4.0006, 2.25, -12.0037, -11.7506, 1, -11.7537, -11.7506, 1, -11.2537, -11.0006, 1, -11.0037, -9.7506, 1, -11.2537, -9.7506, 1, -11.7537, -4.0006, 1, -8.00366, -8.5006, 1, -8.00366, -8.7506, 1, -5.75366, -12.0006, 1, -5.75366, -12.0006, 1, -1.00366, -4.0006, 1, -1.00366)
@@ -152,6 +153,10 @@ shape = SubResource("BoxShape3D_ntx26")
 
 [node name="OverlayNode" parent="ObjectsToScale/ScalableObject2" instance=ExtResource("6_7u351")]
 
+[node name="Node" type="Node" parent="ObjectsToScale/ScalableObject2"]
+script = ExtResource("6_8b2m1")
+id = 100
+
 [node name="ScalableObject3" type="CSGBox3D" parent="ObjectsToScale"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73733, 0.948981, -7.51867)
 use_collision = true
@@ -168,6 +173,10 @@ shape = SubResource("BoxShape3D_tc46w")
 
 [node name="OverlayNode" parent="ObjectsToScale/ScalableObject3" instance=ExtResource("6_7u351")]
 
+[node name="Node" type="Node" parent="ObjectsToScale/ScalableObject3"]
+script = ExtResource("6_8b2m1")
+id = 100
+
 [node name="ScalableObject4" type="CSGBox3D" parent="ObjectsToScale"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73733, 0.948981, -8.57123)
 use_collision = true
@@ -183,6 +192,10 @@ priority = 1
 shape = SubResource("BoxShape3D_pa07v")
 
 [node name="OverlayNode" parent="ObjectsToScale/ScalableObject4" instance=ExtResource("6_7u351")]
+
+[node name="Node" type="Node" parent="ObjectsToScale/ScalableObject4"]
+script = ExtResource("6_8b2m1")
+id = 100
 
 [node name="CameraPlacers" type="Node3D" parent="."]
 
@@ -250,6 +263,10 @@ website_to = "www.verygoodgame.com/level_1"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32419, 2.44061, -11.0164)
 website_to = "www.verygoodgame.com/level_1"
 
+[node name="Node" type="Node" parent="Teleports/TeleportPoint2"]
+script = ExtResource("6_8b2m1")
+id = 100
+
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="Fishes" type="Node3D" parent="Environment"]
@@ -259,7 +276,7 @@ transform = Transform3D(0.998567, -0.0535211, 0, 0.0535211, 0.998567, 0, 0, 0, 1
 curve = SubResource("Curve3D_vxncg")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998368, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_mbqem")
 
 [node name="Fish" parent="Environment/Fishes/Path3D/PathFollow3D" instance=ExtResource("8_4g87q")]
