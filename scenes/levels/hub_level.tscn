@@ -138,7 +138,7 @@ sky_mode = 1
 [node name="ObjectsToScale" type="Node3D" parent="."]
 
 [node name="ScalableObject2" type="CSGBox3D" parent="ObjectsToScale"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73733, 0.948981, -6.47631)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.52362, 0.948981, -5.96229)
 use_collision = true
 material = ExtResource("5_g2v3r")
 script = ExtResource("6_jalqs")
@@ -158,7 +158,7 @@ script = ExtResource("6_8b2m1")
 id = 100
 
 [node name="ScalableObject3" type="CSGBox3D" parent="ObjectsToScale"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73733, 0.948981, -7.51867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.52362, 0.948981, -7.00465)
 use_collision = true
 material = ExtResource("5_g2v3r")
 script = ExtResource("6_jalqs")
@@ -178,7 +178,7 @@ script = ExtResource("6_8b2m1")
 id = 100
 
 [node name="ScalableObject4" type="CSGBox3D" parent="ObjectsToScale"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73733, 0.948981, -8.57123)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.52362, 0.948981, -8.05721)
 use_collision = true
 material = ExtResource("5_g2v3r")
 script = ExtResource("6_jalqs")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://vw064nrftrc8"]
 
 [ext_resource type="Script" path="res://scripts/teleport_point.gd" id="1_24cu3"]
-[ext_resource type="Texture2D" uid="uid://bvpie8ewprju3" path="res://icon.svg" id="2_ht60m"]
+[ext_resource type="Texture2D" uid="uid://de36g3ldx6wbi" path="res://blender_adeleheart/enviroment/portal/portal_portal_texture.png" id="2_lkkkg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kc0aw"]
 
@@ -107,19 +107,19 @@ visible = false
 mesh = SubResource("SphereMesh_fr8xv")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.375, 0, 0, 0)
+transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 0, 0, 0)
 rotation_edit_mode = 1
-texture = ExtResource("2_ht60m")
+texture = ExtResource("2_lkkkg")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(-0.0656985, 0.221677, -0.295242, -0.0420626, 0.293433, 0.229679, 0.366796, 0.0733552, -0.0265434, 0, 0, 0)
 rotation_edit_mode = 1
-texture = ExtResource("2_ht60m")
+texture = ExtResource("2_lkkkg")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(-0.256832, -0.154269, -0.225529, 0.205384, 0.095152, -0.298979, 0.180221, -0.328286, 0.0193236, 0, 0, 0)
+transform = Transform3D(-0.195192, -0.117245, -0.171402, 0.156092, 0.0723157, -0.227224, 0.136968, -0.249498, 0.0146859, 0, 0, 0)
 rotation_edit_mode = 1
-texture = ExtResource("2_ht60m")
+texture = ExtResource("2_lkkkg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -5,4 +5,5 @@ func _ready() -> void:
 
 func _on_pressed():
 	if Session.get_current_level() != null:
-		Loader.load_level(Session.get_current_level().website_path)
+		if Session.get_current_level().can_reload:
+			Loader.load_level(Session.get_current_level().website_path)
