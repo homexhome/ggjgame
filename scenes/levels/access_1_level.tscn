@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_wcjwt"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="2_w4s03"]
-[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="3_gfkuv"]
+[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="3_gfkuv"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="4_7un43"]
 [ext_resource type="PackedScene" uid="uid://vw064nrftrc8" path="res://scenes/teleport_point.tscn" id="6_hythh"]
 
@@ -29,7 +29,7 @@ size = Vector3(2, 1, 5.84821)
 [sub_resource type="BoxShape3D" id="BoxShape3D_rcocn"]
 size = Vector3(1, 1, 4)
 
-[node name="Level" type="Node3D" node_paths=PackedStringArray("access_poits")]
+[node name="Level3" type="Node3D" node_paths=PackedStringArray("access_poits")]
 script = ExtResource("1_wcjwt")
 website_path = "1"
 access_poits = [NodePath("AccessPoint")]

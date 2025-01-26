@@ -1,7 +1,7 @@
-[gd_scene load_steps=44 format=4 uid="uid://bcapll2vqvrcu"]
+[gd_scene load_steps=46 format=4 uid="uid://bcapll2vqvrcu"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_ooi14"]
-[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="2_dyo1a"]
+[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="2_dyo1a"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="3_x7wqg"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="4_cd7y2"]
 [ext_resource type="PackedScene" uid="uid://54flo02akx83" path="res://scenes/items/scotch.tscn" id="5_gv1l6"]
@@ -37,7 +37,10 @@ size = Vector3(6, 1, 4)
 size = Vector3(5, 1, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aidth"]
-size = Vector3(4, 1, 6)
+size = Vector3(3.73413, 1, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b2q0r"]
+size = Vector3(7.46948, 1, 5.10449)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8dadc"]
 size = Vector3(16.9856, 5.99329, 1.05537)
@@ -46,7 +49,10 @@ size = Vector3(16.9856, 5.99329, 1.05537)
 size = Vector3(17.0617, 5.40991, 1.05537)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rcocn"]
-size = Vector3(0.453125, 4.29056, 10.6117)
+size = Vector3(0.453125, 3.95778, 10.6117)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mg7o6"]
+size = Vector3(0.453125, 4.9032, 3.63117)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ovpc"]
 size = Vector3(0.453125, 5.67152, 4.16488)
@@ -241,20 +247,6 @@ shape = SubResource("BoxShape3D_xt5du")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435, 2.5, 4)
 mesh = SubResource("BoxMesh_b6rqu")
 
-[node name="CameraPlacer4" type="Area3D" parent="."]
-transform = Transform3D(-0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, -0.173648, -7.75166, 2.0745, -6.55678)
-collision_layer = 0
-monitorable = false
-script = ExtResource("3_x7wqg")
-
-[node name="Collision" type="CollisionShape3D" parent="CameraPlacer4"]
-transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, 0.512042, -1.12625, -2.35642)
-shape = SubResource("BoxShape3D_aidth")
-
-[node name="CameraPlace" type="MeshInstance3D" parent="CameraPlacer4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.737833, 1.7, 1.20735)
-mesh = SubResource("BoxMesh_b6rqu")
-
 [node name="CameraPlacer5" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -7)
 collision_layer = 0
@@ -262,10 +254,24 @@ monitorable = false
 script = ExtResource("3_x7wqg")
 
 [node name="Collision" type="CollisionShape3D" parent="CameraPlacer5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.352211, -1.12625, -0.276041)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399452, -1.12625, 0.112397)
 shape = SubResource("BoxShape3D_aidth")
 
 [node name="CameraPlace" type="MeshInstance3D" parent="CameraPlacer5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331337, 1.7, -0.75117)
+mesh = SubResource("BoxMesh_b6rqu")
+
+[node name="CameraPlacer9" type="Area3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.5, 2.175, -5.4)
+collision_layer = 0
+monitorable = false
+script = ExtResource("3_x7wqg")
+
+[node name="Collision" type="CollisionShape3D" parent="CameraPlacer9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.366417, -0.366132, 4.05759)
+shape = SubResource("BoxShape3D_b2q0r")
+
+[node name="CameraPlace" type="MeshInstance3D" parent="CameraPlacer9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.331337, 1.7, -0.75117)
 mesh = SubResource("BoxMesh_b6rqu")
 
@@ -280,8 +286,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4975, 0.55072, -14.4034)
 shape = SubResource("BoxShape3D_n1l8p")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91195, -0.340873, -4.50114)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91195, -0.507263, -4.50114)
 shape = SubResource("BoxShape3D_rcocn")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91195, -0.0345518, -7.94612)
+shape = SubResource("BoxShape3D_mg7o6")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91195, 0.389029, -11.7878)
@@ -422,7 +432,7 @@ transform = Transform3D(0.998567, -0.0535211, 0, 0.0535211, 0.998567, 0, 0, 0, 1
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_a2ae5")
 
 [node name="Fish" parent="Environment/Fishes/Path3D/PathFollow3D" instance=ExtResource("9_scebk")]
@@ -432,7 +442,7 @@ transform = Transform3D(-0.751268, 0.0402664, -0.658768, 0.0535211, 0.998567, 0,
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D2"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_a2ae5")
 
 [node name="Fish" parent="Environment/Fishes/Path3D2/PathFollow3D" instance=ExtResource("9_scebk")]
@@ -442,7 +452,7 @@ transform = Transform3D(0.0487275, -0.00261169, -0.998809, 0.0535211, 0.998567, 
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D3"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_a2ae5")
 
 [node name="Fish" parent="Environment/Fishes/Path3D3/PathFollow3D" instance=ExtResource("9_scebk")]
