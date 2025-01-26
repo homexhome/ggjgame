@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://wvvqegxjx5rh"]
+[gd_scene load_steps=59 format=3 uid="uid://wvvqegxjx5rh"]
 
 [ext_resource type="Script" path="res://scripts/browser.gd" id="1_v8pjd"]
 [ext_resource type="Script" path="res://scenes/browser_line.gd" id="2_d03vt"]
@@ -14,6 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://c680lwfa3y51o" path="res://assets/imports/диал.окна (2).png" id="11_sd8es"]
 [ext_resource type="Texture2D" uid="uid://doejfni7hrbns" path="res://assets/imports/песГолова.png" id="12_jngmd"]
 [ext_resource type="Texture2D" uid="uid://b1p5sdd5umkhy" path="res://assets/imports/пёсТело.png" id="13_kwkyy"]
+[ext_resource type="Script" path="res://scripts/spam.gd" id="15_ffxbg"]
+[ext_resource type="Texture2D" uid="uid://dqm4tlwm36rwm" path="res://assets/imports/рекламаКура.png" id="15_h34kp"]
+[ext_resource type="Texture2D" uid="uid://bsbxkjyl30m83" path="res://assets/imports/крестик.png" id="16_kk3nj"]
+[ext_resource type="Script" path="res://scripts/texture_button.gd" id="17_50t5p"]
+[ext_resource type="Texture2D" uid="uid://bca557ugm7r11" path="res://assets/imports/рекламаМашины.png" id="19_itd8a"]
+[ext_resource type="Texture2D" uid="uid://cwcyuvj1isghi" path="res://assets/imports/рекламаГоремыка.png" id="20_b3cpo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axuqu"]
 
@@ -230,6 +236,18 @@ region = Rect2(-1.425, 1, 66.315, 40.65)
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6ham"]
 atlas = ExtResource("12_jngmd")
 region = Rect2(63, 0, 50, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xim8g"]
+atlas = ExtResource("16_kk3nj")
+region = Rect2(0, 48, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03ihy"]
+atlas = ExtResource("16_kk3nj")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwl8g"]
+atlas = ExtResource("16_kk3nj")
+region = Rect2(0, 24, 22, 22)
 
 [node name="Browser" type="Node" node_paths=PackedStringArray("browser_line", "message", "important_message")]
 script = ExtResource("1_v8pjd")
@@ -628,6 +646,252 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_gphmt")
 stretch_mode = 4
+
+[node name="Spam" type="Control" parent="BrowserUI"]
+z_index = 110
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("15_ffxbg")
+
+[node name="Ad" type="Control" parent="BrowserUI/Spam"]
+visible = false
+anchors_preset = 0
+offset_left = 179.0
+offset_top = 176.0
+offset_right = 486.0
+offset_bottom = 345.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_h34kp")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="BrowserUI/Spam/Ad"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="BrowserUI/Spam/Ad"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_xim8g")
+texture_pressed = SubResource("AtlasTexture_03ihy")
+texture_hover = SubResource("AtlasTexture_mwl8g")
+stretch_mode = 0
+script = ExtResource("17_50t5p")
+
+[node name="Ad2" type="Control" parent="BrowserUI/Spam"]
+visible = false
+anchors_preset = 0
+offset_left = 1133.0
+offset_top = 200.0
+offset_right = 1440.0
+offset_bottom = 369.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_itd8a")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="BrowserUI/Spam/Ad2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="BrowserUI/Spam/Ad2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_xim8g")
+texture_pressed = SubResource("AtlasTexture_03ihy")
+texture_hover = SubResource("AtlasTexture_mwl8g")
+stretch_mode = 0
+script = ExtResource("17_50t5p")
+
+[node name="Ad3" type="Control" parent="BrowserUI/Spam"]
+visible = false
+anchors_preset = 0
+offset_left = 421.0
+offset_top = 546.0
+offset_right = 728.0
+offset_bottom = 715.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_b3cpo")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="BrowserUI/Spam/Ad3"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="BrowserUI/Spam/Ad3"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_xim8g")
+texture_pressed = SubResource("AtlasTexture_03ihy")
+texture_hover = SubResource("AtlasTexture_mwl8g")
+stretch_mode = 0
+script = ExtResource("17_50t5p")
+
+[node name="Ad4" type="Control" parent="BrowserUI/Spam"]
+visible = false
+anchors_preset = 0
+offset_left = 993.0
+offset_top = 496.0
+offset_right = 1300.0
+offset_bottom = 665.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_b3cpo")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="BrowserUI/Spam/Ad4"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="BrowserUI/Spam/Ad4"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_xim8g")
+texture_pressed = SubResource("AtlasTexture_03ihy")
+texture_hover = SubResource("AtlasTexture_mwl8g")
+stretch_mode = 0
+script = ExtResource("17_50t5p")
+
+[node name="Ad5" type="Control" parent="BrowserUI/Spam"]
+visible = false
+anchors_preset = 0
+offset_left = 665.0
+offset_top = 276.0
+offset_right = 972.0
+offset_bottom = 445.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="BrowserUI/Spam/Ad5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_h34kp")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="BrowserUI/Spam/Ad5"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="BrowserUI/Spam/Ad5"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_xim8g")
+texture_pressed = SubResource("AtlasTexture_03ihy")
+texture_hover = SubResource("AtlasTexture_mwl8g")
+stretch_mode = 0
+script = ExtResource("17_50t5p")
 
 [connection signal="timeout" from="BrowserUI/Messages/Message/Label/Timer" to="BrowserUI/Messages/Message" method="stop_message"]
 [connection signal="timeout" from="BrowserUI/Messages/ImportantMessage/Label/Timer" to="BrowserUI/Messages/ImportantMessage" method="stop_message"]

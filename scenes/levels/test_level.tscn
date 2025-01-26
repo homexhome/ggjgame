@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3ak65ell3d02"]
+[gd_scene load_steps=14 format=3 uid="uid://d3ak65ell3d02"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_p6kgu"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="2_c0sn5"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="3_1f85x"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="4_6o1du"]
 [ext_resource type="PackedScene" uid="uid://brpch4odq03sh" path="res://blender_adeleheart/enviroment/fish/fish.glb" id="5_ewbmd"]
+[ext_resource type="PackedScene" uid="uid://cv8lv3gtw6117" path="res://scripts/follower.tscn" id="6_fne6j"]
+[ext_resource type="Script" path="res://scenes/last_loading_level.gd" id="7_tihan"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yj88"]
 albedo_texture = ExtResource("2_c0sn5")
@@ -187,3 +189,30 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -13.9996, 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.781, 0.855, -2.444)
 current = true
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.73, 0, 1.10227e-07, 0, 0.73, 0, -1.10227e-07, 0, -0.73, -7.5587, 0.461141, -4.93016)
+turn_off = true
+
+[node name="CharacterBody3D2" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.579148, 0, -0.444396, 0, 0.73, 0, 0.444396, 0, -0.579148, -10.2361, 0.461141, -4.93016)
+turn_off = true
+
+[node name="CharacterBody3D3" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.73, 0, 1.10227e-07, 0, 0.73, 0, -1.10227e-07, 0, -0.73, -9.66418, 0.461141, -5.36925)
+turn_off = true
+
+[node name="CharacterBody3D4" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.73, 0, 1.10227e-07, 0, 0.73, 0, -1.10227e-07, 0, -0.73, -8.33022, 0.461141, -5.36925)
+turn_off = true
+
+[node name="CharacterBody3D5" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.300034, 0, -0.665492, 0, 0.73, 0, 0.665492, 0, -0.300034, -10.284, 0.461, -3.99)
+turn_off = true
+
+[node name="CharacterBody3D6" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.456427, 0, 0.569714, 0, 0.73, 0, -0.569714, 0, -0.456427, -7.499, 0.461, -3.75)
+turn_off = true
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("7_tihan")

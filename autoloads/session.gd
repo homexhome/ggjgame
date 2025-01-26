@@ -25,6 +25,8 @@ var custom_info_area
 var all_events : Dictionary
 var current_environment : WorldEnvironment
 
+var current_spam
+
 signal info_signal
 
 
@@ -115,3 +117,13 @@ func add_event(id : int):
 func check_event(id : int):
 	return all_events.has(id)
 
+func set_current_spam(spam):
+	current_spam = spam
+
+func show_ad():
+	if current_spam != null:
+		current_spam.show_random_ad()
+
+func clear_ads():
+	if current_spam != null:
+		current_spam.hide_ads()

@@ -15,6 +15,8 @@ class_name Level
 @export var event_on_load : int = -1
 @export var can_reload : bool = true
 
+@export var loading_another_level_node : Node
+
 func _ready() -> void:
 	Loader.loading_ended.connect(set_browser_line_text)
 	Session.set_up_level(self)
