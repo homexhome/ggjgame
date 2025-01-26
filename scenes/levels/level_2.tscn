@@ -97,7 +97,7 @@ size = Vector3(0.2, 0.2, 0.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0261402, -0.0106106, -0.00465226)
 script = ExtResource("1_fg7g1")
 website_path = "www.verygoodgame.com/level_2"
-access_poits = [NodePath("AccessPoint"), NodePath("")]
+access_poits = [NodePath("AccessPoint"), null]
 
 [node name="AccessPoint" parent="." instance=ExtResource("2_lm0y4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5406, 0.573416, -0.439483)
