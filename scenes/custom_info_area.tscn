@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://i1ogo3obal3i"]
+
+[ext_resource type="Script" path="res://scripts/custom_info_area.gd" id="1_tuxie"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7n0xw"]
+
+[node name="CustomInfoArea" type="Area3D"]
+script = ExtResource("1_tuxie")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7n0xw")

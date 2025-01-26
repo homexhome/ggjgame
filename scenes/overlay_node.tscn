@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://3fcqnc8iona"]
+
+[ext_resource type="Script" path="res://scripts/overlay_node.gd" id="1_4547o"]
+
+[node name="OverlayNode" type="Node"]
+script = ExtResource("1_4547o")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
