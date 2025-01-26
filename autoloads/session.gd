@@ -84,13 +84,18 @@ func get_datamosh_amount() -> float:
 	return max(datamosh_mount, force_datamosh)
 
 func set_tool(_tool : Tool):
+	var count = 0
 	active_tool = _tool
 	if active_tool.tool_type == Tool.TYPE.INFO:
 		info_signal.emit()
 		if custom_info_area != null:
 			browser.play_important_message(custom_info_area.message)
 		else:
-			browser.play_important_message("Use your tools!", 3.0)
+			if count == 0:
+				browser.play_important_message("Use your tools!", 3.0)
+				count +=1
+			if count:
+				pass
 	if _tool.mouse_texture != null:
 		Input.set_custom_mouse_cursor(_tool.mouse_texture)
 

@@ -299,7 +299,7 @@ transform = Transform3D(1.42795, -0.0765352, 0, 0.0765352, 1.42795, 0, 0, 0, 1.4
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D"]
-transform = Transform3D(0.998371, 0.00017364, 0.0569996, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998366, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569996, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998365, -1.945, 0, 0)
 script = ExtResource("8_rfgm6")
 
 [node name="Fish" parent="Environment/Fishes/Path3D/PathFollow3D" instance=ExtResource("9_2jnkp")]
@@ -309,7 +309,7 @@ transform = Transform3D(-1.10436, 0.0591916, -0.968389, 0.078676, 1.46789, -1.21
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D2"]
-transform = Transform3D(0.998371, 0.00017364, 0.0569996, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998366, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569996, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998365, -1.945, 0, 0)
 script = ExtResource("8_rfgm6")
 
 [node name="Fish" parent="Environment/Fishes/Path3D2/PathFollow3D" instance=ExtResource("9_2jnkp")]
@@ -319,7 +319,7 @@ transform = Transform3D(0.065782, -0.00352578, -1.34839, 0.0722534, 1.34807, -2.
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D3"]
-transform = Transform3D(0.998371, 0.00017364, 0.0569996, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998366, -1.945, 0, 0)
+transform = Transform3D(0.998371, 0.00017364, 0.0569996, 1.45519e-11, 0.999992, -0.0030463, -0.0569999, 0.00304135, 0.998365, -1.945, 0, 0)
 script = ExtResource("8_rfgm6")
 
 [node name="Fish" parent="Environment/Fishes/Path3D3/PathFollow3D" instance=ExtResource("9_2jnkp")]
