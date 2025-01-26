@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bla8y2lefs8il"]
+[gd_scene load_steps=5 format=3 uid="uid://bla8y2lefs8il"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_nr2mp"]
 [ext_resource type="Script" path="res://scenes/test_scenes/test_level_loader.gd" id="2_lwgvp"]
+[ext_resource type="Script" path="res://scripts/world_environment.gd" id="3_epcpj"]
 
 [sub_resource type="Environment" id="Environment_iji23"]
 background_mode = 1
@@ -17,3 +18,4 @@ script = ExtResource("2_lwgvp")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iji23")
+script = ExtResource("3_epcpj")
