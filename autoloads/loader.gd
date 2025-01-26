@@ -7,6 +7,7 @@ var all_levels : Dictionary
 @onready var camera_scene = preload("res://scenes/camera.tscn")
 @onready var browser_scene = preload("res://scenes/browser.tscn")
 
+@export var event_on_load : int = -1
 
 var loading : bool = false
 
@@ -48,6 +49,10 @@ func load_level(path : String, place_id_for_player : int = 0):
 			player = player_scene.instantiate()
 			level.add_child(player)
 			player.global_position = level.get_access_point_position(place_id_for_player)
+
+		if level.event_on_load != -1:
+			Session.add_event(level.event_on_load)
+
 		loaded_scenes.append_array([level,camera,player])
 		loaded = true
 		Session.get_browser().set_line_text(level.website_path)

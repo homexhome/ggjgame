@@ -1,8 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://b0p7hss0binm3"]
+[gd_scene load_steps=35 format=3 uid="uid://b0p7hss0binm3"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_pyfsg"]
-[ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="2_kiqbg"]
 [ext_resource type="Texture2D" uid="uid://c78yr6x1ifser" path="res://assets/imports/Dark/texture_01.png" id="3_cb6wm"]
+[ext_resource type="Texture2D" uid="uid://xaeeqtijrbes" path="res://assets/imports/пол много.png" id="4_4eopd"]
 [ext_resource type="Texture2D" uid="uid://dxcc3psrfg6r4" path="res://assets/imports/Light/texture_10.png" id="4_b2dwg"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="5_b2lh3"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="6_327uf"]
@@ -58,7 +58,7 @@ size = Vector3(0.453125, 5.83722, 10.8988)
 size = Vector3(1, 6.37793, 11.0673)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yj88"]
-albedo_texture = ExtResource("2_kiqbg")
+albedo_texture = ExtResource("4_4eopd")
 uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_senfk"]
@@ -72,22 +72,6 @@ uv1_scale = Vector3(10, 10, 10)
 albedo_texture = ExtResource("3_cb6wm")
 uv1_scale = Vector3(10, 10, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3240"]
-albedo_texture = ExtResource("2_kiqbg")
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofw7s"]
-albedo_texture = ExtResource("2_kiqbg")
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_665vc"]
-albedo_texture = ExtResource("2_kiqbg")
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bixl"]
-albedo_texture = ExtResource("2_kiqbg")
-uv1_scale = Vector3(10, 10, 10)
-
 [sub_resource type="Curve3D" id="Curve3D_kh216"]
 bake_interval = 115.54
 _data = {
@@ -97,11 +81,12 @@ _data = {
 point_count = 17
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_jmepx"]
-vertices = PackedVector3Array(-10.6252, 1, -0.668066, -9.12524, 1, -0.668066, -8.82524, 1, -4.26807, -10.6252, 1, -5.16807, -13.0252, 1, -0.668066, -12.4252, 1, -0.668066, -12.1252, 1, -9.36807, -13.0252, 1, -9.66807, -6.42524, 1, -5.16807, -6.72524, 1, -3.96807, -4.02524, 1, -1.56807, -3.12524, 1, -0.668066, -3.12524, 1, -9.66807, -4.02524, 1, -9.36807, -6.42524, 1, -1.56807, -6.72524, 1, -0.668066, -10.0252, 4.75, -8.16807, -10.0252, 4.75, -6.36807, -8.52524, 4.75, -6.36807, -8.52524, 5, -8.16807)
+vertices = PackedVector3Array(-10.6253, 1, -0.668079, -9.12527, 1, -0.668079, -8.82527, 1, -4.26808, -10.6253, 1, -5.16808, -13.0253, 1, -0.668079, -12.4253, 1, -0.668079, -12.1253, 1, -9.36808, -13.0253, 1, -9.66808, -6.42527, 1, -5.16808, -6.72527, 1, -3.96808, -4.02527, 1, -1.56808, -3.12527, 1, -0.668079, -3.12527, 1, -9.66808, -4.02527, 1, -9.36808, -6.42527, 1, -1.56808, -6.72527, 1, -0.668079, -10.0253, 4.75, -8.16808, -10.0253, 4.75, -6.36808, -8.52527, 4.75, -6.36808, -8.52527, 5, -8.16808)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(9, 2, 8), PackedInt32Array(8, 2, 3), PackedInt32Array(13, 12, 10), PackedInt32Array(10, 12, 11), PackedInt32Array(15, 9, 14), PackedInt32Array(14, 9, 8), PackedInt32Array(6, 7, 13), PackedInt32Array(13, 7, 12), PackedInt32Array(14, 10, 15), PackedInt32Array(15, 10, 11), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17)]
 geometry_source_geometry_mode = 2
 geometry_source_group_name = &"bake"
 cell_size = 0.3
+agent_radius = 0.6
 edge_max_error = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jq06c"]
@@ -318,22 +303,22 @@ size = Vector3(0.1, 4, 0.995117)
 material = SubResource("StandardMaterial3D_2yj88")
 
 [node name="Wall9" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.25, 2.5, -6)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.26715, 2.5, -6.06246)
 use_collision = true
-size = Vector3(0.1, 4, 2.5)
+size = Vector3(0.224927, 4, 2.4657)
 material = SubResource("StandardMaterial3D_2yj88")
 
 [node name="Wall10" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75, 2.5, -7.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75, 2.5, -7.55093)
 use_collision = true
-size = Vector3(0.1, 4, 1.5)
+size = Vector3(0.201855, 4, 1.5)
 material = SubResource("StandardMaterial3D_2yj88")
 
 [node name="Wall3" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 2.5, -8.5)
 use_collision = true
 size = Vector3(0.1, 4, 5)
-material = SubResource("StandardMaterial3D_r3240")
+material = SubResource("StandardMaterial3D_2yj88")
 
 [node name="Wall2" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 2.5, -4.28591)
@@ -345,31 +330,31 @@ material = SubResource("StandardMaterial3D_2yj88")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55, 2.5, -8)
 use_collision = true
 size = Vector3(0.1, 4, 1)
-material = SubResource("StandardMaterial3D_ofw7s")
+material = SubResource("StandardMaterial3D_2yj88")
 
 [node name="Wall7" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5501, 2.5, -7.23096)
 use_collision = true
 size = Vector3(0.1, 4, 2.5)
-material = SubResource("StandardMaterial3D_ofw7s")
+material = SubResource("StandardMaterial3D_2yj88")
 
 [node name="Wall11" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0626, 2.5, -6.74146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15552, 2.5, -6.74146)
 use_collision = true
-size = Vector3(0.1, 4, 1.5)
-material = SubResource("StandardMaterial3D_ofw7s")
+size = Vector3(0.28584, 4, 1.5)
+material = SubResource("StandardMaterial3D_2yj88")
 
 [node name="Wall8" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.48236, 2.5, -7.98486)
 use_collision = true
 size = Vector3(0.1, 4, 1)
-material = SubResource("StandardMaterial3D_665vc")
+material = SubResource("StandardMaterial3D_2yj88")
 
 [node name="Wall5" type="CSGBox3D" parent="Environment/Terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60115, 2.5, -7.98963)
 use_collision = true
 size = Vector3(0.606299, 4, 1)
-material = SubResource("StandardMaterial3D_2bixl")
+material = SubResource("StandardMaterial3D_2yj88")
 
 [node name="Obstacles" type="Node3D" parent="Environment"]
 
@@ -410,7 +395,7 @@ transform = Transform3D(0.998567, -0.0535211, 0, 0.0535211, 0.998567, 0, 0, 0, 1
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_m66td")
 
 [node name="Fish" parent="Environment/Fishes/Path3D/PathFollow3D" instance=ExtResource("9_ftj0x")]
@@ -420,7 +405,7 @@ transform = Transform3D(-0.751268, 0.0402664, -0.658768, 0.0535211, 0.998567, 0,
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D2"]
-transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.057, 0.00304135, 0.998367, -1.945, 0, 0)
+transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_m66td")
 
 [node name="Fish" parent="Environment/Fishes/Path3D2/PathFollow3D" instance=ExtResource("9_ftj0x")]
