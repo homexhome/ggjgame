@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d3ak65ell3d02"]
+[gd_scene load_steps=26 format=3 uid="uid://d3ak65ell3d02"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_p6kgu"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="2_c0sn5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://brpch4odq03sh" path="res://blender_adeleheart/enviroment/fish/fish.glb" id="5_ewbmd"]
 [ext_resource type="PackedScene" uid="uid://cv8lv3gtw6117" path="res://scripts/follower.tscn" id="6_fne6j"]
 [ext_resource type="Script" path="res://scenes/last_loading_level.gd" id="7_tihan"]
+[ext_resource type="AudioStream" uid="uid://c0r3yvagrydh2" path="res://music/sounds/woof.wav" id="9_xxowo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqitx"]
 albedo_texture = ExtResource("2_f5j2l")
@@ -58,12 +59,19 @@ size = Vector3(2, 1, 5.84821)
 [sub_resource type="BoxShape3D" id="BoxShape3D_rcocn"]
 size = Vector3(1, 1, 4)
 
-[node name="Level" type="Node3D" node_paths=PackedStringArray("access_poits")]
+[node name="Level" type="Node3D" node_paths=PackedStringArray("access_poits", "loading_another_level_node")]
 script = ExtResource("1_p6kgu")
 website_path = "http://world/redroom"
 access_poits = [NodePath("AccessPoint")]
 need_camera = false
 need_player = false
+change_environment_on_load = true
+color_first = Color(0.873298, 0.873298, 0.873298, 1)
+color_two = Color(0.568973, 0.568973, 0.568973, 1)
+color_three = Color(0.393086, 0.393086, 0.393085, 1)
+event_on_load = 100
+can_reload = false
+loading_another_level_node = NodePath("Node")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.79823, 0, -4.14305)
@@ -257,5 +265,7 @@ script = ExtResource("7_tihan")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("9_xxowo")
+volume_db = 24.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

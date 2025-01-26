@@ -87,7 +87,7 @@ size = Vector2(0.01, 0.01)
 
 [node name="Level" type="Node3D" node_paths=PackedStringArray("access_poits")]
 script = ExtResource("1_8fmxb")
-website_path = "http://awell.world/passion"
+website_path = "http://awell.world/hub"
 access_poits = [NodePath("AccessPoint")]
 
 [node name="AccessPoint" parent="." instance=ExtResource("3_1sbfo")]
@@ -259,11 +259,11 @@ mesh = SubResource("BoxMesh_b6rqu")
 
 [node name="TeleportPoint" parent="Teleports" instance=ExtResource("7_s78cf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7983, 1.28165, -8.87753)
-website_to = "www.veryghttp://awell.world/passionoodgame.com/level_1"
+website_to = "http://awell.world/passion"
 
 [node name="TeleportPoint2" parent="Teleports" instance=ExtResource("7_s78cf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32419, 2.44061, -11.0164)
-website_to = "www.veryhttp://awell.world/passiongoodgame.com/level_1"
+website_to = "http://awell.world/passion"
 access_point_id_to = 1
 
 [node name="Node" type="Node" parent="Teleports/TeleportPoint2"]

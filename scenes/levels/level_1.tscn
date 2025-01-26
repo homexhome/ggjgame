@@ -1,9 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://b0p7hss0binm3"]
+[gd_scene load_steps=31 format=3 uid="uid://b0p7hss0binm3"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_pyfsg"]
-[ext_resource type="Texture2D" uid="uid://c78yr6x1ifser" path="res://assets/imports/Dark/texture_01.png" id="3_cb6wm"]
 [ext_resource type="Texture2D" uid="uid://xaeeqtijrbes" path="res://assets/imports/пол много.png" id="4_4eopd"]
-[ext_resource type="Texture2D" uid="uid://dxcc3psrfg6r4" path="res://assets/imports/Light/texture_10.png" id="4_b2dwg"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="5_b2lh3"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="6_327uf"]
 [ext_resource type="Script" path="res://scripts/fish_path_follow_3d.gd" id="8_m66td"]
@@ -11,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bta7nxuh6c0sl" path="res://scenes/fish.tscn" id="9_ftj0x"]
 [ext_resource type="PackedScene" uid="uid://vw064nrftrc8" path="res://scenes/teleport_point.tscn" id="9_nl5n4"]
 [ext_resource type="Script" path="res://scripts/follower_spawn.gd" id="10_kqq3p"]
+[ext_resource type="PackedScene" uid="uid://b6rpxkw48b26m" path="res://scenes/items/scarf.tscn" id="10_pf345"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ur0k"]
 size = Vector3(1, 1, 9.5957)
@@ -59,17 +58,6 @@ size = Vector3(1, 6.37793, 11.0673)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yj88"]
 albedo_texture = ExtResource("4_4eopd")
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_senfk"]
-albedo_texture = ExtResource("4_b2dwg")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0133c"]
-albedo_texture = ExtResource("3_cb6wm")
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gaco4"]
-albedo_texture = ExtResource("3_cb6wm")
 uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="Curve3D" id="Curve3D_kh216"]
@@ -272,7 +260,7 @@ light_indirect_energy = 0.51
 [node name="Terrain" type="Node3D" parent="Environment"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.00867, 0, -5.13403)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.00382, 0.00332379, -5.1313)
 use_collision = true
 size = Vector3(10.2681, 1, 11.2332)
 material = SubResource("StandardMaterial3D_2yj88")
@@ -282,20 +270,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.322
 use_collision = true
 size = Vector3(2.5509, 0.0333252, 2.55127)
 material = SubResource("StandardMaterial3D_2yj88")
-
-[node name="Quest_Item" type="CSGBox3D" parent="Environment/Terrain"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.82003, 0.648926, -6.49075)
-material_override = SubResource("StandardMaterial3D_senfk")
-use_collision = true
-size = Vector3(0.3, 0.3, 0.3)
-material = SubResource("StandardMaterial3D_0133c")
-
-[node name="Skin_For_Player" type="CSGBox3D" parent="Environment/Terrain"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.82003, 0.648926, -7.01352)
-material_override = SubResource("StandardMaterial3D_senfk")
-use_collision = true
-size = Vector3(0.3, 0.3, 0.3)
-material = SubResource("StandardMaterial3D_gaco4")
 
 [node name="Wall" type="CSGBox3D" parent="Environment/Terrain" groups=["bake"]]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9976, 2.5, -8.5)
@@ -473,3 +447,6 @@ light_color = Color(1, 0.287307, 0.225237, 1)
 light_energy = 4.071
 spot_range = 5.23518
 spot_angle = 13.1211
+
+[node name="Item" parent="." instance=ExtResource("10_pf345")]
+transform = Transform3D(0.0546539, 0, 0.998505, 0, 1, 0, -0.998505, 0, 0.0546539, -8.66837, 0.682227, -8.00243)
