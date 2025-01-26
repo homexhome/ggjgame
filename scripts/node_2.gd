@@ -1,4 +1,4 @@
 extends Node
 
 func _load_end():
-	Loader.load_level("http://world/lost")
+	Loader.load_level("http://world/payout")
