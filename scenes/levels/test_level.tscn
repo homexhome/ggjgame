@@ -1,14 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://d3ak65ell3d02"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_p6kgu"]
-[ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="2_c0sn5"]
+[ext_resource type="Material" uid="uid://b8fbmss5ylspk" path="res://basic_level.tres" id="2_frhrq"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="3_1f85x"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="4_6o1du"]
 [ext_resource type="PackedScene" uid="uid://brpch4odq03sh" path="res://blender_adeleheart/enviroment/fish/fish.glb" id="5_ewbmd"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yj88"]
-albedo_texture = ExtResource("2_c0sn5")
-uv1_scale = Vector3(10, 10, 10)
+[ext_resource type="PackedScene" uid="uid://cv8lv3gtw6117" path="res://scripts/follower.tscn" id="6_fne6j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cmkps"]
 size = Vector3(3.80653, 0.442383, 3.7735)
@@ -34,62 +31,66 @@ website_path = "www.verygoodgame.com/redroom"
 access_poits = [NodePath("AccessPoint")]
 need_camera = false
 need_player = false
+color_first = Color(0.787759, 0.787759, 0.787759, 1)
+color_two = Color(0.537011, 0.537011, 0.537011, 1)
+color_three = Color(0.230315, 0.230315, 0.230315, 1)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.79823, 0, -4.14305)
 use_collision = true
 size = Vector3(4, 1, 4)
-material = SubResource("StandardMaterial3D_2yj88")
+material = ExtResource("2_frhrq")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.83542, 1.83313, -3.86794)
 use_collision = true
 size = Vector3(4, 0.130127, 4)
-material = SubResource("StandardMaterial3D_2yj88")
+material = ExtResource("2_frhrq")
 
 [node name="wallwall1" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.999995, 0, -0.00310675, 0, 1, 0, 0.00310675, 0, -0.999995, -6.83804, 0.787429, -4.03873)
 use_collision = true
 size = Vector3(0.104004, 1, 4.36368)
-material = SubResource("StandardMaterial3D_2yj88")
+material = ExtResource("2_frhrq")
 
 [node name="wallwall3" type="CSGBox3D" parent="."]
 transform = Transform3D(0.0031068, 0, -0.999995, 0, 1, 0, 0.999995, 0, 0.0031068, -8.83804, 0.787429, -6.03873)
 use_collision = true
 size = Vector3(0.104004, 1, 4.36368)
-material = SubResource("StandardMaterial3D_2yj88")
+material = ExtResource("2_frhrq")
 
 [node name="wallwall2" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.999995, 0, -0.00310675, 0, 1, 0, 0.00310675, 0, -0.999995, -10.8355, 0.771563, -4.09948)
 use_collision = true
 size = Vector3(0.104004, 1, 4.36368)
-material = SubResource("StandardMaterial3D_2yj88")
+material = ExtResource("2_frhrq")
 
 [node name="roofwall1" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.928287, -0.371854, -0.00288397, -0.371852, 0.928291, -0.00115526, 0.00310675, 0, -0.999995, -6.98247, 1.46419, -4.04731)
 use_collision = true
 size = Vector3(0.104004, 0.747009, 4.36368)
-material = SubResource("StandardMaterial3D_2yj88")
+material = ExtResource("2_frhrq")
 
 [node name="roofwall3" type="CSGBox3D" parent="."]
 transform = Transform3D(0.00310679, 3.25887e-08, -0.999995, -0.563091, 0.826393, -0.0017494, 0.826389, 0.563093, 0.00256744, -8.96303, 1.56472, -5.88241)
 use_collision = true
 size = Vector3(0.104004, 0.747009, 4.36368)
-material = SubResource("StandardMaterial3D_2yj88")
+material = ExtResource("2_frhrq")
 
 [node name="roofwall2" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.82919, 0.558961, -0.0025761, 0.558959, 0.829194, 0.00173655, 0.00310675, 0, -0.999995, -10.6358, 1.57435, -4.10201)
 use_collision = true
 size = Vector3(0.104004, 0.747009, 4.36368)
-material = SubResource("StandardMaterial3D_2yj88")
+material = ExtResource("2_frhrq")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.02084, 2.38419e-07, -1.64274)
 use_collision = true
-material = SubResource("StandardMaterial3D_2yj88")
+material = ExtResource("2_frhrq")
 
 [node name="AccessPoint" parent="." instance=ExtResource("3_1f85x")]
 transform = Transform3D(0.999451, 0.00263659, -0.0330135, -0.00305806, 0.999915, -0.0127226, 0.0329771, 0.0128166, 0.999374, -8.83401, 0.647983, -3.79561)
+visible = false
 id = 0
 
 [node name="CameraPlacer" type="Area3D" parent="."]
@@ -104,6 +105,7 @@ shape = SubResource("BoxShape3D_cmkps")
 
 [node name="CameraPlace" type="MeshInstance3D" parent="CameraPlacer"]
 transform = Transform3D(0.999659, 0.0261246, 0, -0.0261246, 0.999659, 0, 0, 0, 1, 0.223092, 0.0619794, -0.852756)
+visible = false
 mesh = SubResource("BoxMesh_b6rqu")
 
 [node name="Walls" type="StaticBody3D" parent="."]
@@ -138,10 +140,12 @@ shape = SubResource("BoxShape3D_rcocn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.607972, 0.793959, 0, -0.793959, 0.607972, -8.98671, 2.89812, -3.12634)
-light_energy = 0.556
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.889
 
 [node name="SpotLight3D" type="SpotLight3D" parent="DirectionalLight3D"]
 transform = Transform3D(0.934457, -0.0929166, -0.343739, -0.139305, 0.793014, -0.593062, 0.327696, 0.602076, 0.728094, -0.835372, -2.27322, -0.561991)
+light_color = Color(1, 0, 0, 1)
 light_energy = 2.939
 light_indirect_energy = 1.162
 light_volumetric_fog_energy = 3.586
@@ -150,6 +154,7 @@ spot_angle = 19.634
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="DirectionalLight3D"]
 transform = Transform3D(0.90291, -0.245024, 0.353154, 0.41822, 0.69047, -0.590206, -0.0992283, 0.680598, 0.725906, 1.12446, -2.30448, -0.602816)
+light_color = Color(1, 0, 0, 1)
 light_energy = 2.939
 light_indirect_energy = 1.162
 light_volumetric_fog_energy = 3.586
@@ -157,14 +162,17 @@ spot_angle = 9.21466
 
 [node name="CournerSpot" type="SpotLight3D" parent="DirectionalLight3D"]
 transform = Transform3D(1, 0, 0, 0, -0.761674, -0.64796, 0, 0.64796, -0.761674, -1.7429, 0.722946, -3.66921)
+light_color = Color(1, 0, 0, 1)
 spot_angle = 22.3639
 
 [node name="CournerSpot3" type="SpotLight3D" parent="DirectionalLight3D"]
 transform = Transform3D(1, 0, 0, 0, -0.761674, -0.64796, 0, 0.64796, -0.761674, 2.04233, 0.722946, -3.66921)
+light_color = Color(1, 0, 0, 1)
 spot_angle = 22.3639
 
 [node name="WallSpot" type="SpotLight3D" parent="DirectionalLight3D"]
 transform = Transform3D(1, 0, 0, 0, 0.594655, -0.803981, 0, 0.803981, 0.594655, 2.07682, -1.9454, -0.783735)
+light_color = Color(1, 0, 0, 1)
 light_energy = 46.455
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -174,6 +182,7 @@ spot_angle = 4.50403
 
 [node name="WallSpot2" type="SpotLight3D" parent="DirectionalLight3D"]
 transform = Transform3D(1, 0, 0, 0, 0.626862, -0.77913, 0, 0.77913, 0.626862, -1.76276, -1.89688, -0.72038)
+light_color = Color(1, 0, 0, 1)
 light_energy = 46.455
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -187,3 +196,27 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -13.9996, 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.781, 0.855, -2.444)
 current = true
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.73, 0, 1.10227e-07, 0, 0.73, 0, -1.10227e-07, 0, -0.73, -7.5587, 0.461141, -4.93016)
+turn_off = true
+
+[node name="CharacterBody3D2" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.579148, 0, -0.444396, 0, 0.73, 0, 0.444396, 0, -0.579148, -10.2361, 0.461141, -4.93016)
+turn_off = true
+
+[node name="CharacterBody3D3" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.73, 0, 1.10227e-07, 0, 0.73, 0, -1.10227e-07, 0, -0.73, -9.66418, 0.461141, -5.36925)
+turn_off = true
+
+[node name="CharacterBody3D4" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.73, 0, 1.10227e-07, 0, 0.73, 0, -1.10227e-07, 0, -0.73, -8.33022, 0.461141, -5.36925)
+turn_off = true
+
+[node name="CharacterBody3D5" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.300034, 0, -0.665492, 0, 0.73, 0, 0.665492, 0, -0.300034, -10.284, 0.461, -3.99)
+turn_off = true
+
+[node name="CharacterBody3D6" parent="." instance=ExtResource("6_fne6j")]
+transform = Transform3D(-0.456427, 0, 0.569714, 0, 0.73, 0, -0.569714, 0, -0.456427, -7.499, 0.461, -3.75)
+turn_off = true

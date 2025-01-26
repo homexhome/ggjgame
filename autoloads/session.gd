@@ -23,6 +23,7 @@ var active_tool : Tool
 var custom_info_area
 
 var all_events : Dictionary
+var current_environment : WorldEnvironment
 
 signal info_signal
 
@@ -39,6 +40,7 @@ func set_up_camera(_camera : Camera):
 
 func set_up_world(_world : World):
 	world = _world
+	current_environment = world.get_node("WorldEnvironment")
 
 func get_world() -> World:
 	return world
@@ -112,3 +114,4 @@ func add_event(id : int):
 
 func check_event(id : int):
 	return all_events.has(id)
+
