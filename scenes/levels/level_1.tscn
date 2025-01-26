@@ -1,7 +1,10 @@
+[gd_scene load_steps=37 format=3 uid="uid://b0p7hss0binm3"]
 [gd_scene load_steps=31 format=3 uid="uid://b0p7hss0binm3"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_pyfsg"]
 [ext_resource type="Texture2D" uid="uid://xaeeqtijrbes" path="res://assets/imports/пол много.png" id="4_4eopd"]
+[ext_resource type="Texture2D" uid="uid://dxcc3psrfg6r4" path="res://assets/imports/Light/texture_10.png" id="4_b2dwg"]
+[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="5_b2lh3"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="5_b2lh3"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="6_327uf"]
 [ext_resource type="Script" path="res://scripts/fish_path_follow_3d.gd" id="8_m66td"]
@@ -9,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bta7nxuh6c0sl" path="res://scenes/fish.tscn" id="9_ftj0x"]
 [ext_resource type="PackedScene" uid="uid://vw064nrftrc8" path="res://scenes/teleport_point.tscn" id="9_nl5n4"]
 [ext_resource type="Script" path="res://scripts/follower_spawn.gd" id="10_kqq3p"]
+[ext_resource type="PackedScene" uid="uid://ch3da3dbymsdd" path="res://scenes/bubble_1.tscn" id="10_u6v24"]
 [ext_resource type="PackedScene" uid="uid://b6rpxkw48b26m" path="res://scenes/items/scarf.tscn" id="10_pf345"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ur0k"]
@@ -64,6 +68,14 @@ uv1_scale = Vector3(10, 10, 10)
 bake_interval = 115.54
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.945, 0, 0, 0, 0, 0, 0, 0, 0, -2.12305, 0.00951576, -3.1186, 0, 0, 0, 0, 0, 0, -1.174, 1.102, -5.735, 0, 0, 0, 0, 0, 0, -0.405, 1.252, -8.799, 0, 0, 0, 0, 0, 0, -0.805, 1.329, -11.463, 0, 0, 0, 0, 0, 0, -0.0526053, -0.101456, -14.403, 0, 0, 0, 0, 0, 0, -4.87692, 0.157117, -15.7581, 0, 0, 0, 0, 0, 0, -11.0478, 3.49419, -15.6244, 0, 0, 0, 0, 0, 0, -15.2192, 0.71144, -13.5008, 0, 0, 0, 0, 0, 0, -16.0571, 0.756355, -10.6849, 0, 0, 0, 0, 0, 0, -16.4102, 0.775278, -7.45569, 0, 0, 0, 0, 0, 0, -16.2454, 0.766447, -4.76858, 0, 0, 0, 0, 0, 0, -15.8218, 0.743739, -1.84576, 0, 0, 0, 0, 0, 0, -13.6799, 0.628938, 0.841341, 0, 0, 0, 0, 0, 0, -8.45459, 0.348873, 1.59562, 0, 0, 0, 0, 0, 0, -4.31202, 0.12684, 1.05348, 0, 0, 0, 0, 0, 0, -1.945, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 17
+
+[sub_resource type="Curve3D" id="Curve3D_11pc7"]
+bake_interval = 115.54
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.945, 0, 0, 0, 0, 0, 0, 0, 0, -2.12305, 0.00951576, -3.1186, 0, 0, 0, 0, 0, 0, -0.540038, 1.05327, -5.52539, 0, 0, 0, 0, 0, 0, -0.405, 1.252, -8.799, 0, 0, 0, 0, 0, 0, 0.651488, 1.268, -11.6835, 0, 0, 0, 0, 0, 0, -0.0526053, -0.101456, -14.403, 0, 0, 0, 0, 0, 0, -4.87692, 0.157117, -15.7581, 0, 0, 0, 0, 0, 0, -11.2648, 3.14273, -16.8689, 0, 0, 0, 0, 0, 0, -16.1874, 0.0119477, -16.3192, 0, 0, 0, 0, 0, 0, -17.5803, -0.10517, -11.1244, 0, 0, 0, 0, 0, 0, -17.9211, 2.37702, -7.35818, 0, 0, 0, 0, 0, 0, -17.0903, 0.308755, -4.71827, 0, 0, 0, 0, 0, 0, -17.0024, 1.95104, -1.50721, 0, 0, 0, 0, 0, 0, -13.959, 0.69447, 2.31002, 0, 0, 0, 0, 0, 0, -8.45459, 0.348873, 1.59562, 0, 0, 0, 0, 0, 0, -4.31202, 0.12684, 1.05348, 0, 0, 0, 0, 0, 0, -1.945, 0, 0),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 17
@@ -394,6 +406,39 @@ transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, 
 script = ExtResource("8_m66td")
 
 [node name="Fish" parent="Environment/Fishes/Path3D3/PathFollow3D" instance=ExtResource("9_ftj0x")]
+
+[node name="Path3D4" type="Path3D" parent="Environment/Fishes"]
+transform = Transform3D(0.320054, -0.0171543, -0.947244, 0.0535211, 0.998567, 0, 0.945886, -0.0506975, 0.320514, -11.644, -0.565028, 5.47787)
+curve = SubResource("Curve3D_11pc7")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D4"]
+transform = Transform3D(0.998371, 0.00017364, 0.0569987, 1.45519e-11, 0.999991, -0.00304626, -0.0569999, 0.00304135, 0.998351, -1.945, 0, 0)
+script = ExtResource("8_m66td")
+
+[node name="Bubble" parent="Environment/Fishes/Path3D4/PathFollow3D" instance=ExtResource("10_u6v24")]
+transform = Transform3D(3.00001, 0, 0, 0, 3.00001, 0, 0, 0, 3, 0, -0.358846, 0)
+
+[node name="Path3D5" type="Path3D" parent="Environment/Fishes"]
+transform = Transform3D(1.15375, -0.0618386, 0.816862, 0.0757323, 1.41297, 8.83794e-09, -0.815691, 0.0437193, 1.15541, 9.28942, 0.947326, -7.064)
+curve = SubResource("Curve3D_11pc7")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D5"]
+transform = Transform3D(0.998371, 0.00017364, 0.0569987, 1.45519e-11, 0.999991, -0.00304626, -0.0569999, 0.00304135, 0.998351, -1.945, 0, 0)
+script = ExtResource("8_m66td")
+
+[node name="Bubble" parent="Environment/Fishes/Path3D5/PathFollow3D" instance=ExtResource("10_u6v24")]
+transform = Transform3D(3.00001, 0, 0, 0, 3.00001, 0, 0, 0, 3, 0, -0.358846, 0)
+
+[node name="Path3D6" type="Path3D" parent="Environment/Fishes"]
+transform = Transform3D(0.178267, -0.00955474, 1.40369, 0.0757323, 1.41297, 1.12196e-08, -1.40168, 0.0751272, 0.178523, 6.04646, 1.75497, -18.7321)
+curve = SubResource("Curve3D_11pc7")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D6"]
+transform = Transform3D(0.998371, 0.00017364, 0.0569987, 1.45519e-11, 0.999991, -0.00304626, -0.0569999, 0.00304135, 0.998351, -1.945, 0, 0)
+script = ExtResource("8_m66td")
+
+[node name="Bubble" parent="Environment/Fishes/Path3D6/PathFollow3D" instance=ExtResource("10_u6v24")]
+transform = Transform3D(3.00001, 0, 0, 0, 3.00001, 0, 0, 0, 3, 0, -0.358846, 0)
 
 [node name="TeleportPoint" parent="." instance=ExtResource("9_nl5n4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1976, 0.929757, -1.34257)

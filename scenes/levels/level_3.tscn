@@ -1,7 +1,8 @@
+[gd_scene load_steps=42 format=3 uid="uid://bcapll2vqvrcu"]
 [gd_scene load_steps=44 format=4 uid="uid://bcapll2vqvrcu"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_ooi14"]
-[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="2_dyo1a"]
+[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="2_dyo1a"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="3_x7wqg"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="4_cd7y2"]
 [ext_resource type="PackedScene" uid="uid://54flo02akx83" path="res://scenes/items/scotch.tscn" id="5_gv1l6"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/fish_path_follow_3d.gd" id="8_a2ae5"]
 [ext_resource type="PackedScene" uid="uid://bta7nxuh6c0sl" path="res://scenes/fish.tscn" id="9_scebk"]
 [ext_resource type="PackedScene" uid="uid://vw064nrftrc8" path="res://scenes/teleport_point.tscn" id="10_5m3og"]
+[ext_resource type="PackedScene" uid="uid://ch3da3dbymsdd" path="res://scenes/bubble_1.tscn" id="10_xw34y"]
 [ext_resource type="Script" path="res://scenes/items/scarf.gd" id="11_1u8hb"]
 [ext_resource type="Script" path="res://scripts/follower_spawn.gd" id="11_ibyqs"]
 [ext_resource type="Script" path="res://scripts/to_delete.gd" id="12_ytico"]
@@ -86,7 +88,15 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="Curve3D" id="Curve3D_kh216"]
 bake_interval = 115.54
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.945, 0, 0, 0, 0, 0, 0, 0, 0, -2.12305, 0.00951576, -3.1186, 0, 0, 0, 0, 0, 0, -1.174, 1.102, -5.735, 0, 0, 0, 0, 0, 0, -0.405, 1.252, -8.799, 0, 0, 0, 0, 0, 0, -0.805, 1.329, -11.463, 0, 0, 0, 0, 0, 0, -0.0526053, -0.101456, -14.403, 0, 0, 0, 0, 0, 0, -4.87692, 0.157117, -15.7581, 0, 0, 0, 0, 0, 0, -11.0478, 3.49419, -15.6244, 0, 0, 0, 0, 0, 0, -15.2192, 0.71144, -13.5008, 0, 0, 0, 0, 0, 0, -16.0571, 0.756355, -10.6849, 0, 0, 0, 0, 0, 0, -16.4102, 0.775278, -7.45569, 0, 0, 0, 0, 0, 0, -16.2454, 0.766447, -4.76858, 0, 0, 0, 0, 0, 0, -15.8218, 0.743739, -1.84576, 0, 0, 0, 0, 0, 0, -13.6799, 0.628938, 0.841341, 0, 0, 0, 0, 0, 0, -8.45459, 0.348873, 1.59562, 0, 0, 0, 0, 0, 0, -4.31202, 0.12684, 1.05348, 0, 0, 0, 0, 0, 0, -1.945, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.945, 0, 0, 0, 0, 0, 0, 0, 0, -2.12305, 0.00951576, -3.1186, 0, 0, 0, 0, 0, 0, -1.174, 1.102, -5.735, 0, 0, 0, 0, 0, 0, -0.405, 1.252, -8.799, 0, 0, 0, 0, 0, 0, 2.04784, 1.20952, -11.8948, 0, 0, 0, 0, 0, 0, 4.38974, -0.082212, -13.698, 0, 0, 0, 0, 0, 0, -4.83769, -1.4186, -18.9514, 0, 0, 0, 0, 0, 0, -13.8592, 1.06694, -21.653, 0, 0, 0, 0, 0, 0, -20.4002, -6.04975, -24.057, 0, 0, 0, 0, 0, 0, -22.729, 2.35385, -10.462, 0, 0, 0, 0, 0, 0, -23.6166, 3.31088, -3.464, 0, 0, 0, 0, 0, 0, -19.3736, 0.245758, 3.41697, 0, 0, 0, 0, 0, 0, -16.2676, 0.477949, 3.25155, 0, 0, 0, 0, 0, 0, -13.436, 0.81769, 3.25937, 0, 0, 0, 0, 0, 0, -7.91826, 0.515827, 3.15438, 0, 0, 0, 0, 0, 0, -3.35467, 0.296335, 2.66541, 0, 0, 0, 0, 0, 0, -1.945, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 17
+
+[sub_resource type="Curve3D" id="Curve3D_yt8js"]
+bake_interval = 115.54
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.945, 0, 0, 0, 0, 0, 0, 0, 0, -2.12305, 0.00951576, -3.1186, 0, 0, 0, 0, 0, 0, -1.174, 1.102, -5.735, 0, 0, 0, 0, 0, 0, -0.405, 1.252, -8.799, 0, 0, 0, 0, 0, 0, -0.805, 1.329, -11.463, 0, 0, 0, 0, 0, 0, -0.0526053, -0.101456, -14.403, 0, 0, 0, 0, 0, 0, -4.87692, 0.157117, -15.7581, 0, 0, 0, 0, 0, 0, -10.1638, 1.9804, -18.9623, 0, 0, 0, 0, 0, 0, -16.0506, 4.26198, -19.2001, 0, 0, 0, 0, 0, 0, -22.0844, 3.53664, -13.9716, 0, 0, 0, 0, 0, 0, -23.8291, 4.29149, -9.68717, 0, 0, 0, 0, 0, 0, -24.7431, 4.68705, -5.65477, 0, 0, 0, 0, 0, 0, -22.2818, 6.06668, -2.09165, 0, 0, 0, 0, 0, 0, -17.0774, 2.65919, 3.39382, 0, 0, 0, 0, 0, 0, -9.97223, 1.10454, 6.99884, 0, 0, 0, 0, 0, 0, -4.31202, 0.12684, 1.05348, 0, 0, 0, 0, 0, 0, -1.945, 0, 0),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 17
@@ -415,37 +425,73 @@ material_good_hover = SubResource("StandardMaterial3D_v5bj4")
 material_bad_hover = SubResource("StandardMaterial3D_cmrrs")
 
 [node name="Fishes" type="Node3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6122, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.82952, 0, 0)
 
 [node name="Path3D" type="Path3D" parent="Environment/Fishes"]
-transform = Transform3D(0.998567, -0.0535211, 0, 0.0535211, 0.998567, 0, 0, 0, 1, 0.290007, 2.08741, 1.6285)
+transform = Transform3D(0.998567, -0.0535211, 0, 0.0535211, 0.998567, 0, 0, 0, 1, 5.28237, 2.35499, 1.6285)
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D"]
+transform = Transform3D(0.998371, 0.00017364, 0.0569988, 1.45519e-11, 0.999992, -0.00304626, -0.0569999, 0.00304135, 0.998351, -1.945, 0, 0)
 transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_a2ae5")
 
 [node name="Fish" parent="Environment/Fishes/Path3D/PathFollow3D" instance=ExtResource("9_scebk")]
 
 [node name="Path3D2" type="Path3D" parent="Environment/Fishes"]
-transform = Transform3D(-0.751268, 0.0402664, -0.658768, 0.0535211, 0.998567, 0, 0.657824, -0.035258, -0.752346, -18.8951, 5.03698, -4.90782)
+transform = Transform3D(-0.751268, 0.0402664, -0.658768, 0.0535211, 0.998567, 0, 0.657824, -0.035258, -0.752346, -20.6628, 5.10149, -4.91124)
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D2"]
+transform = Transform3D(0.998371, 0.00017364, 0.0569988, 1.45519e-11, 0.999992, -0.00304626, -0.0569999, 0.00304135, 0.998351, -1.945, 0, 0)
 transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_a2ae5")
 
 [node name="Fish" parent="Environment/Fishes/Path3D2/PathFollow3D" instance=ExtResource("9_scebk")]
 
 [node name="Path3D3" type="Path3D" parent="Environment/Fishes"]
-transform = Transform3D(0.0487275, -0.00261169, -0.998809, 0.0535211, 0.998567, -2.80271e-09, 0.997378, -0.0534573, 0.0487974, -14.3239, 1.53686, 4.57978)
+transform = Transform3D(0.0487275, -0.00261169, -0.998809, 0.0535211, 0.998567, -2.80271e-09, 0.997378, -0.0534573, 0.0487974, -14.282, 1.58288, 5.43744)
 curve = SubResource("Curve3D_kh216")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D3"]
+transform = Transform3D(0.998371, 0.00017364, 0.0569988, 1.45519e-11, 0.999992, -0.00304626, -0.0569999, 0.00304135, 0.998351, -1.945, 0, 0)
 transform = Transform3D(0.998372, 0.00017364, 0.0569997, 1.45519e-11, 0.999992, -0.00304631, -0.0569999, 0.00304135, 0.998367, -1.945, 0, 0)
 script = ExtResource("8_a2ae5")
 
 [node name="Fish" parent="Environment/Fishes/Path3D3/PathFollow3D" instance=ExtResource("9_scebk")]
+
+[node name="Path3D4" type="Path3D" parent="Environment/Fishes"]
+transform = Transform3D(0.320054, -0.0171543, -0.947244, 0.0535211, 0.998567, 0, 0.945886, -0.0506975, 0.320514, -9.62682, -0.548846, 7.5023)
+curve = SubResource("Curve3D_yt8js")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D4"]
+transform = Transform3D(0.998371, 0.00017364, 0.0569988, 1.45519e-11, 0.999992, -0.00304626, -0.0569999, 0.00304135, 0.998351, -1.945, 0, 0)
+script = ExtResource("8_a2ae5")
+
+[node name="Bubble" parent="Environment/Fishes/Path3D4/PathFollow3D" instance=ExtResource("10_xw34y")]
+transform = Transform3D(3.00001, 0, 0, 0, 3.00001, 0, 0, 0, 3, 0, -0.358846, 0)
+
+[node name="Path3D5" type="Path3D" parent="Environment/Fishes"]
+transform = Transform3D(1.15375, -0.0618386, 0.816862, 0.0757323, 1.41297, 8.83794e-09, -0.815691, 0.0437193, 1.15541, 10.4748, -0.600968, -10.0888)
+curve = SubResource("Curve3D_yt8js")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D5"]
+transform = Transform3D(0.998371, 0.00017364, 0.0569988, 1.45519e-11, 0.999992, -0.00304626, -0.0569999, 0.00304135, 0.998351, -1.945, 0, 0)
+script = ExtResource("8_a2ae5")
+
+[node name="Bubble" parent="Environment/Fishes/Path3D5/PathFollow3D" instance=ExtResource("10_xw34y")]
+transform = Transform3D(3.00001, 0, 0, 0, 3.00001, 0, 0, 0, 3, 0, -0.358846, 0)
+
+[node name="Path3D6" type="Path3D" parent="Environment/Fishes"]
+transform = Transform3D(0.178267, -0.00955474, 1.40369, 0.0757323, 1.41297, 1.12196e-08, -1.40168, 0.0751272, 0.178523, 4.79403, 0.28162, -23.0369)
+curve = SubResource("Curve3D_yt8js")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Environment/Fishes/Path3D6"]
+transform = Transform3D(0.998371, 0.00017364, 0.0569988, 1.45519e-11, 0.999992, -0.00304626, -0.0569999, 0.00304135, 0.998351, -1.945, 0, 0)
+script = ExtResource("8_a2ae5")
+
+[node name="Bubble" parent="Environment/Fishes/Path3D6/PathFollow3D" instance=ExtResource("10_xw34y")]
+transform = Transform3D(3.00001, 0, 0, 0, 3.00001, 0, 0, 0, 3, 0, -0.358846, 0)
 
 [node name="TeleportPoint" parent="." instance=ExtResource("10_5m3og")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 3.5, -12)
