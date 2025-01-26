@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://cvgvdl3b8bue5"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_fg7g1"]
-[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="2_lm0y4"]
+[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="2_lm0y4"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="3_5r2ab"]
 [ext_resource type="Texture2D" uid="uid://byyunudj815hf" path="res://assets/imports/Light/texture_07.png" id="4_rhf7v"]
 [ext_resource type="PackedScene" uid="uid://dmti64qangmbb" path="res://scenes/scalable_object.tscn" id="7_seidj"]
@@ -81,7 +81,7 @@ size = Vector3(4.80702, 1, 2.07156)
 [sub_resource type="BoxMesh" id="BoxMesh_bs4fr"]
 size = Vector3(0.2, 0.2, 0.2)
 
-[node name="Level" type="Node3D" node_paths=PackedStringArray("access_poits")]
+[node name="Level3" type="Node3D" node_paths=PackedStringArray("access_poits")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0261402, -0.0106106, -0.00465226)
 script = ExtResource("1_fg7g1")
 website_path = "http://awell.world/blueprint"
