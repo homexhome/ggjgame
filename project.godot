@@ -32,6 +32,7 @@ window/size/viewport_height=900
 [global_group]
 
 bake=""
+Interactable=""
 
 [input]
 

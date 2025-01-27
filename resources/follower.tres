@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bky5lgin2rc0y"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cjje42ais6fsb"]
 
-[ext_resource type="Texture2D" uid="uid://dg5k3c8ef2cx1" path="res://blender_adeleheart/player/player_player_texture.png" id="1_5qrs2"]
+[ext_resource type="Texture2D" uid="uid://blmbubcflb6qe" path="res://blender_adeleheart/guardian/guardian_guardian_texture.png" id="1_1nd2x"]
 
 [sub_resource type="Shader" id="Shader_jm88j"]
 code = "shader_type spatial;
@@ -60,6 +60,6 @@ render_priority = 0
 shader = SubResource("Shader_jm88j")
 shader_parameter/affine_mapping = true
 shader_parameter/alpha_scissor = 0.5
-shader_parameter/jitter = 0.2
+shader_parameter/jitter = 0.3
 shader_parameter/resolution = Vector2i(320, 240)
-shader_parameter/albedo = ExtResource("1_5qrs2")
+shader_parameter/albedo = ExtResource("1_1nd2x")

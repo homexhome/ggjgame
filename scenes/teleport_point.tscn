@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://vw064nrftrc8"]
+[gd_scene load_steps=10 format=3 uid="uid://vw064nrftrc8"]
 
 [ext_resource type="Script" path="res://scripts/teleport_point.gd" id="1_24cu3"]
 [ext_resource type="Texture2D" uid="uid://de36g3ldx6wbi" path="res://blender_adeleheart/enviroment/portal/portal_portal_texture.png" id="2_lkkkg"]
+[ext_resource type="Script" path="res://scenes/area_for_teleport.gd" id="2_ychu0"]
 [ext_resource type="AudioStream" uid="uid://b6rjmwf0iwwdi" path="res://music/sounds/transition.wav" id="3_rekte"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kc0aw"]
+radius = 0.7
 
 [sub_resource type="SphereMesh" id="SphereMesh_fr8xv"]
 radius = 0.25
@@ -98,7 +100,9 @@ _data = {
 [node name="TeleportPoint" type="Node3D"]
 script = ExtResource("1_24cu3")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["Interactable"]]
+priority = 2
+script = ExtResource("2_ychu0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_kc0aw")
@@ -130,5 +134,3 @@ autoplay = "idle"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_rekte")
-
-[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

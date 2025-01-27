@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://bbfrj1a81hn3f"]
+[gd_scene load_steps=14 format=4 uid="uid://bbfrj1a81hn3f"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_fedsv"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="2_ovn64"]
 [ext_resource type="Script" path="res://scenes/items/end.gd" id="3_qdewb"]
 [ext_resource type="Texture2D" uid="uid://dmj02texqgj76" path="res://blender_adeleheart/enviroment/menu/human_human_texture.png" id="4_0bc8w"]
 [ext_resource type="FontFile" uid="uid://dfm8acj5sgvk1" path="res://fonts/Nintendo-DS-BIOS.ttf" id="5_o814v"]
+[ext_resource type="AudioStream" uid="uid://dgjklx2jr8iiy" path="res://music/credits.wav" id="6_2s4ce"]
 
 [sub_resource type="Shader" id="Shader_jm88j"]
 code = "shader_type spatial;
@@ -215,3 +216,9 @@ vertical_alignment = 1
 transform = Transform3D(2.6226e-06, 20.0577, 1.72853e-06, -1, 5.14984e-05, 2.17557e-06, 2.20537e-06, -3.33786e-05, 1, 0.00433528, 1.32754, 2.00996)
 mesh = SubResource("ArrayMesh_um3gj")
 skeleton = NodePath("")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2s4ce")
+volume_db = -5.0
+pitch_scale = 0.91
+autoplay = true

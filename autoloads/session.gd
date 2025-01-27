@@ -139,3 +139,12 @@ func show_ad():
 func clear_ads():
 	if current_spam != null:
 		current_spam.hide_ads()
+
+var current_interact
+func set_current_interact(node):
+	if is_instance_valid(current_interact) and current_interact != null:
+		current_interact._on_area_3d_mouse_exited()
+	current_interact = node
+
+func get_current_interact():
+	return current_interact

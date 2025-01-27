@@ -23,7 +23,7 @@ func change_active_status(_status : bool):
 	active = _status
 
 
-func _on_area_3d_input_event(_camera: Node, _event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+func interact() -> void:
 	if active == false: 
 		if Input.is_action_just_pressed("left_click"):
 			Session.get_browser().play_message("Access Node too far away!")

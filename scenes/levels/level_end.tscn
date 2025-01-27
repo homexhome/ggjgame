@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=4 uid="uid://c6g6v3wx2xx4r"]
+[gd_scene load_steps=27 format=4 uid="uid://c6g6v3wx2xx4r"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_0ny85"]
 [ext_resource type="Script" path="res://scenes/items/end.gd" id="3_ei27u"]
 [ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="4_0o0da"]
 [ext_resource type="Texture2D" uid="uid://dmj02texqgj76" path="res://blender_adeleheart/enviroment/menu/human_human_texture.png" id="4_fnbqb"]
 [ext_resource type="FontFile" uid="uid://dfm8acj5sgvk1" path="res://fonts/Nintendo-DS-BIOS.ttf" id="5_wv83f"]
+[ext_resource type="AudioStream" uid="uid://dgjklx2jr8iiy" path="res://music/credits.wav" id="6_imy7h"]
 
 [sub_resource type="Shader" id="Shader_jm88j"]
 code = "shader_type spatial;
@@ -1044,3 +1045,8 @@ text = "Paycheck earned : $200
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_imy7h")
+volume_db = -5.0
+autoplay = true

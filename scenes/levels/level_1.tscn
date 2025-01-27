@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_pyfsg"]
 [ext_resource type="Texture2D" uid="uid://xaeeqtijrbes" path="res://assets/imports/пол много.png" id="4_4eopd"]
-[ext_resource type="PackedScene" path="res://scenes/access_point.tscn" id="5_b2lh3"]
+[ext_resource type="PackedScene" uid="uid://bn7fx557coo2v" path="res://scenes/access_point.tscn" id="5_b2lh3"]
 [ext_resource type="Script" path="res://scripts/camera_placer_area.gd" id="6_327uf"]
 [ext_resource type="Script" path="res://scripts/fish_path_follow_3d.gd" id="8_m66td"]
 [ext_resource type="PackedScene" uid="uid://dmti64qangmbb" path="res://scenes/scalable_object.tscn" id="8_o8jy3"]
@@ -87,6 +87,7 @@ size = Vector3(0.2, 0.2, 0.2)
 script = ExtResource("1_pyfsg")
 website_path = "http://awell.world/passion"
 access_poits = [NodePath("AccessPoint"), NodePath("AccessPoint2")]
+event_on_load = 1
 
 [node name="AccessPoint" parent="." instance=ExtResource("5_b2lh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1752, 0.573416, -0.650846)
